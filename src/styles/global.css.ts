@@ -7,18 +7,16 @@ globalStyle('*, *::before, *::after', {
   boxSizing: 'border-box',
 });
 
-// #root 스타일
-globalStyle('#root', {
-  position: 'relative',
-  width: '100%',
-  minHeight: '100dvh',
-  backgroundColor: '#fff',
+/* html 스타일 */
+globalStyle('html', {
+  scrollBehavior: 'smooth',
 });
 
-// body 스타일
-globalStyle('html, body', {
+/* body 스타일 */
+globalStyle('body', {
+  position: 'relative',
+  minHeight: '100dvh',
   fontFamily: `var(--font-pretendard), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif`,
-  scrollBehavior: 'smooth',
 });
 
 /* Remove default margin and padding */
