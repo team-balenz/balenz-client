@@ -1,3 +1,3 @@
 export default function Home() {
-  return <h3>balenz</h3>;
+  return <p>balenz</p>;
 }
