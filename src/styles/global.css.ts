@@ -17,7 +17,7 @@ globalStyle('#root', {
 
 // body 스타일
 globalStyle('html, body', {
-  fontFamily: `'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif`,
+  fontFamily: `var(--font-pretendard), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif`,
   scrollBehavior: 'smooth',
 });
 

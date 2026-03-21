@@ -1,5 +1,13 @@
 import type { Metadata } from 'next';
+import localFont from 'next/font/local';
 import '@/styles/global.css.ts';
+
+const pretendard = localFont({
+  src: '../fonts/PretendardVariable.woff2',
+  display: 'swap',
+  weight: '100 900',
+  variable: '--font-pretendard',
+});
 
 export const metadata: Metadata = {
   title: 'balenz',
@@ -15,13 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
-        />
-      </head>
+    <html lang="ko" className={pretendard.variable}>
       <body>{children}</body>
     </html>
   );
