@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import '@/styles/index.css.ts';
+import '@/styles/global.css.ts';
 
 export const metadata: Metadata = {
   title: 'balenz',
