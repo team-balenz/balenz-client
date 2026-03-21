@@ -64,3 +64,9 @@ globalStyle('button', {
 globalStyle('input, textarea', {
   outline: 'none',
 });
+
+/* 접근성을 위한 기본 포커스 스타일 - 추후 커스터마이징 필요 */
+globalStyle('input:focus-visible, textarea:focus-visible', {
+  outline: '1px solid #767676',
+  outlineOffset: '1px',
+});
