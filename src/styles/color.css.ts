@@ -16,6 +16,8 @@ export const color = createGlobalTheme(':root', {
     progressive: '#23A2FF',
     center: '#A463FF',
     conservative: '#FF4848',
+    gray1: '#F3F3F3',
+    gray2: '#D9D9D9',
   },
   system: {
     success: '#2E7D32',
