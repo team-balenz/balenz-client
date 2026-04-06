@@ -50,6 +50,14 @@
       "gray2": {
         "$type": "color",
         "$value": "#D9D9D9"
+      },
+      "Progressive2": {
+        "$type": "color",
+        "$value": "#707DFF"
+      },
+      "Conservative2": {
+        "$type": "color",
+        "$value": "#C859B6"
       }
     },
     "system": {
@@ -133,6 +141,170 @@
           "fontSize": "12px",
           "lineHeight": "140%",
           "fontWeight": "400"
+        }
+      },
+      "h4": {
+        "$type": "typography",
+        "$value": {
+          "fontSize": "18",
+          "lineHeight": "150%",
+          "fontWeight": "600"
+        }
+      }
+    },
+    "tablet": {
+      "display": {
+        "$type": "typography",
+        "$value": {
+          "fontWeight": "700",
+          "fontSize": "32",
+          "lineHeight": "140%"
+        }
+      },
+      "h1": {
+        "$type": "typography",
+        "$value": {
+          "fontSize": "26",
+          "lineHeight": "140%",
+          "fontWeight": "700"
+        }
+      },
+      "h2": {
+        "$type": "typography",
+        "$value": {
+          "fontWeight": "700",
+          "fontSize": "22",
+          "lineHeight": "140%"
+        }
+      },
+      "h3": {
+        "$type": "typography",
+        "$value": {
+          "fontSize": "18",
+          "fontWeight": "600",
+          "lineHeight": "140%"
+        }
+      },
+      "h4": {
+        "$type": "typography",
+        "$value": {
+          "fontSize": "17",
+          "fontWeight": "600",
+          "lineHeight": "140%"
+        }
+      },
+      "body1": {
+        "$type": "typography",
+        "$value": {
+          "fontSize": "17",
+          "lineHeight": "140%",
+          "fontWeight": "400"
+        }
+      },
+      "body2": {
+        "$type": "typography",
+        "$value": {
+          "fontSize": "15",
+          "lineHeight": "140%",
+          "fontWeight": "500"
+        }
+      },
+      "body3": {
+        "$type": "typography",
+        "$value": {
+          "fontSize": "13",
+          "lineHeight": "140%",
+          "fontWeight": "500"
+        }
+      },
+      "button": {
+        "$type": "typography",
+        "$value": {
+          "fontWeight": "600",
+          "fontSize": "13",
+          "lineHeight": "140%"
+        }
+      },
+      "caption": {
+        "$type": "typography",
+        "$value": {
+          "fontWeight": "500",
+          "fontSize": "11",
+          "lineHeight": "140%"
+        }
+      }
+    },
+    "phone": {
+      "display": {
+        "$type": "typography",
+        "$value": {
+          "fontWeight": "700",
+          "fontSize": "26",
+          "lineHeight": "140%"
+        }
+      },
+      "h1": {
+        "$type": "typography",
+        "$value": {
+          "fontSize": "20",
+          "fontWeight": "700",
+          "lineHeight": "140%"
+        }
+      },
+      "h2": {
+        "$type": "typography",
+        "$value": {
+          "fontWeight": "700",
+          "fontSize": "18",
+          "lineHeight": "140%"
+        }
+      },
+      "h3": {
+        "$type": "typography",
+        "$value": {
+          "fontWeight": "600",
+          "fontSize": "16",
+          "lineHeight": "140%"
+        }
+      },
+      "body1": {
+        "$type": "typography",
+        "$value": {
+          "fontWeight": "400",
+          "fontSize": "16",
+          "lineHeight": "160%"
+        }
+      },
+      "body2": {
+        "$type": "typography",
+        "$value": {
+          "fontWeight": "500",
+          "fontSize": "14",
+          "lineHeight": "140%"
+        }
+      },
+      "body3": {
+        "$type": "typography",
+        "$value": {
+          "fontWeight": "500",
+          "fontSize": "12",
+          "lineHeight": "140%"
+        }
+      },
+      "button": {
+        "$type": "typography",
+        "$value": {
+          "fontWeight": "600",
+          "fontSize": "12",
+          "lineHeight": "140%"
+        }
+      },
+      "caption": {
+        "$type": "typography",
+        "$value": {
+          "fontSize": "11",
+          "fontWeight": "500",
+          "lineHeight": "140%"
         }
       }
     }
