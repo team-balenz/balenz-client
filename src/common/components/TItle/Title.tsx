@@ -1,11 +1,11 @@
 import { subtitleStyle, titleStyle } from '@/common/components/TItle/title.css';
 
-interface TitleProps {
+interface TitlePropTypes {
   subtitle: string;
   title: string;
 }
 
-const Title = ({ subtitle, title }: TitleProps) => {
+const Title = ({ subtitle, title }: TitlePropTypes) => {
   return (
     <div>
       <h3 className={subtitleStyle}>{subtitle}</h3>
