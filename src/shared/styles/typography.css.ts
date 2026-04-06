@@ -104,7 +104,7 @@ export const typography = createGlobalTheme(':root', {
     },
   },
 
-  mobile: {
+  phone: {
     display: {
       fontSize: '26px',
       lineHeight: '140%',
