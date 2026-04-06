@@ -3,5 +3,7 @@
 
 export * from './global.css';
 
+export * from './media';
+
 export { color } from './color.css';
 export { typography } from './typography.css';
