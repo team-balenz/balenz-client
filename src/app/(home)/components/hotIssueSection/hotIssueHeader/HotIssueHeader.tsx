@@ -2,8 +2,8 @@ import Image from 'next/image';
 import * as styles from './hotIssueHeader.css';
 
 interface HotIssueHeaderPropTypes {
-  ideology: string;
-  hotIssueKeyword: string;
+  ideology: 'progressive' | 'conservative';
+  keyword: string;
 }
 
 const IDEOLOGY_ICON_PATHS: Record<string, string> = {
@@ -11,7 +11,7 @@ const IDEOLOGY_ICON_PATHS: Record<string, string> = {
   conservative: '/icons/ic_hash_red.svg',
 };
 
-const HotIssueHeader = ({ ideology, hotIssueKeyword }: HotIssueHeaderPropTypes) => {
+const HotIssueHeader = ({ ideology, keyword }: HotIssueHeaderPropTypes) => {
   const iconPath = IDEOLOGY_ICON_PATHS[ideology] ?? IDEOLOGY_ICON_PATHS.conservative;
 
   return (
@@ -25,7 +25,7 @@ const HotIssueHeader = ({ ideology, hotIssueKeyword }: HotIssueHeaderPropTypes) 
           sizes="(max-width: 768px) 1.25rem, (max-width: 1024px) 1.625rem, 2rem"
         />
       </span>
-      <p className={styles.hotIssueKeyword}>{hotIssueKeyword}</p>
+      <p className={styles.keyword}>{keyword}</p>
     </div>
   );
 };

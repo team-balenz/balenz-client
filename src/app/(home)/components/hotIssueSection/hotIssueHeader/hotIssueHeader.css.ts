@@ -33,7 +33,7 @@ export const icon = style({
   objectFit: 'contain',
 });
 
-export const hotIssueKeyword = style({
+export const keyword = style({
   ...typography.correction,
   ...typography.desktop.h3,
   color: color.text.main,
