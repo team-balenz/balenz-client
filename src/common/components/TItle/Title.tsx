@@ -1,4 +1,4 @@
-import { subtitleStyle, titleStyle } from '@/common/components/TItle/title.css';
+import { subtitleStyle, titleStyle } from '@/common/components/title/title.css';
 
 interface TitlePropTypes {
   subtitle: string;
