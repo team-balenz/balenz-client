@@ -3,11 +3,12 @@
 import Image from 'next/image';
 import * as styles from './hotIssueArticleItem.css';
 import IdeologyIndicator from '@/common/components/indicator/IdeologyIndicator';
+import { type IdeologyIndicatorValueTypes } from '@/common/components/indicator/constants';
 
 interface HotIssueArticleItemPropTypes {
   articleId: number;
   articleThumbnail: string;
-  ideology: 'SL' | 'L' | 'C' | 'R' | 'SR';
+  ideologyIndicatorValue: IdeologyIndicatorValueTypes;
   articleTitle: string;
   mediaName: string;
 }
@@ -15,7 +16,7 @@ interface HotIssueArticleItemPropTypes {
 const HotIssueArticleItem = ({
   articleId,
   articleThumbnail,
-  ideology,
+  ideologyIndicatorValue,
   articleTitle,
   mediaName,
 }: HotIssueArticleItemPropTypes) => {
@@ -40,7 +41,7 @@ const HotIssueArticleItem = ({
         <Image src={articleThumbnail} alt={articleTitle} fill className={styles.image} />
       </div>
       <IdeologyIndicator
-        value={ideology}
+        value={ideologyIndicatorValue}
         size={{ desktop: 'medium', tablet: 'small', mobile: 'small' }}
       />
       <p className={styles.articleTitle}>{articleTitle}</p>
