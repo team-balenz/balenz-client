@@ -19,7 +19,7 @@ const HotIssueHeader = ({ ideology, keyword }: HotIssueHeaderPropTypes) => {
       <span className={styles.iconWrapper}>
         <Image
           src={iconPath}
-          alt="hotIssueHeader"
+          alt=""
           className={styles.icon}
           fill
           sizes="(max-width: 768px) 1.25rem, (max-width: 1024px) 1.625rem, 2rem"
