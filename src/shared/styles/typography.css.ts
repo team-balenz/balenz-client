@@ -3,6 +3,11 @@
 import { createGlobalTheme } from '@vanilla-extract/css';
 
 export const typography = createGlobalTheme(':root', {
+  correction: {
+    WebkitFontSmoothing: 'antialiased',
+    MozOsxFontSmoothing: 'grayscale',
+    textRendering: 'optimizeLegibility',
+  },
   desktop: {
     display: {
       fontSize: '32px',
