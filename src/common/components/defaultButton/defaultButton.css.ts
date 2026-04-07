@@ -26,7 +26,7 @@ export const defaultButton = style({
       ...typography.tablet.body2,
     },
     [media.mobile]: {
-      ...typography.phone.body2,
+      ...typography.phone.button,
     },
   },
 });
