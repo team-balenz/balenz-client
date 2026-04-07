@@ -17,6 +17,11 @@ globalStyle('body', {
   position: 'relative',
   minHeight: '100dvh',
   fontFamily: `var(--font-pretendard), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif`,
+
+  // 폰트 렌더링 보정
+  WebkitFontSmoothing: 'antialiased', // 크롬·사파리 안티앨리어싱
+  MozOsxFontSmoothing: 'grayscale', // 파이어폭스(macOS) 안티앨리어싱
+  textRendering: 'optimizeLegibility', // 커닝·리게이처 적용
 });
 
 /* Remove default margin and padding */
