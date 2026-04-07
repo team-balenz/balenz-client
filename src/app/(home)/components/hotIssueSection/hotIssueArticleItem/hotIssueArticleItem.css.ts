@@ -2,10 +2,11 @@ import { style } from '@vanilla-extract/css';
 import { color, typography, media } from '@/shared/styles';
 
 export const container = style({
+  width: '100%',
   display: 'flex',
   flexDirection: 'column',
   gap: '0.5rem',
-  width: '100%',
+  cursor: 'pointer',
 });
 
 export const imageWrapper = style({

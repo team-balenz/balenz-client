@@ -1,8 +1,11 @@
+'use client';
+
 import Image from 'next/image';
 import * as styles from './hotIssueArticleItem.css';
 import IdeologyIndicator from '@/common/components/indicator/IdeologyIndicator';
 
 interface HotIssueArticleItemPropTypes {
+  articleId: number;
   articleThumbnail: string;
   ideology: 'SL' | 'L' | 'C' | 'R' | 'SR';
   articleTitle: string;
@@ -10,13 +13,18 @@ interface HotIssueArticleItemPropTypes {
 }
 
 const HotIssueArticleItem = ({
+  articleId,
   articleThumbnail,
   ideology,
   articleTitle,
   mediaName,
 }: HotIssueArticleItemPropTypes) => {
+  const handleClickArticle = () => {
+    console.log('[HotIssueArticleItem] 기사 상세 페이지로 이동 예정', { articleId });
+  };
+
   return (
-    <div className={styles.container}>
+    <div className={styles.container} onClick={handleClickArticle}>
       <div className={styles.imageWrapper}>
         <Image src={articleThumbnail} alt="hotIssueArticleItem" fill className={styles.image} />
       </div>
