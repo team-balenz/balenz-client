@@ -3,6 +3,7 @@ import { media } from '@/shared/styles/media';
 import { typography, color } from '@/shared/styles';
 
 export const subtitleStyle = style({
+  ...typography.correction,
   ...typography.desktop.h3,
   color: color.text.tertiary,
   '@media': {
@@ -16,6 +17,7 @@ export const subtitleStyle = style({
 });
 
 export const titleStyle = style({
+  ...typography.correction,
   ...typography.desktop.h1,
   color: color.text.main,
   '@media': {
