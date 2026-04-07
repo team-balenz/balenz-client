@@ -2,8 +2,7 @@ import { style } from '@vanilla-extract/css';
 import { color, typography, media } from '@/shared/styles';
 
 export const container = style({
-  margin: '2.5rem',
-  minWidth: 'max-content',
+  width: '100%',
   padding: '0.9375rem',
   display: 'flex',
   alignItems: 'center',
