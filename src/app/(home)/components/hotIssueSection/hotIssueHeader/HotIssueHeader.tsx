@@ -6,7 +6,7 @@ interface HotIssueHeaderPropTypes {
   keyword: string;
 }
 
-const IDEOLOGY_ICON_PATHS: Record<string, string> = {
+const IDEOLOGY_ICON_PATHS: Record<HotIssueHeaderPropTypes['ideology'], string> = {
   progressive: '/icons/ic_hash_blue.svg',
   conservative: '/icons/ic_hash_red.svg',
 };
