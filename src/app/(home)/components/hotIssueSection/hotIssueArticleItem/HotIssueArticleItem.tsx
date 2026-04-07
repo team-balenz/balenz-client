@@ -24,7 +24,18 @@ const HotIssueArticleItem = ({
   };
 
   return (
-    <div className={styles.container} onClick={handleClickArticle}>
+    <div
+      className={styles.container}
+      role="button"
+      // tabIndex={0}
+      onClick={handleClickArticle}
+      // onKeyDown={(e) => {
+      //   if (e.key === 'Enter' || e.key === ' ') {
+      //     e.preventDefault();
+      //     handleClickArticle();
+      //   }
+      // }}
+    >
       <div className={styles.imageWrapper}>
         <Image src={articleThumbnail} alt={articleTitle} fill className={styles.image} />
       </div>
