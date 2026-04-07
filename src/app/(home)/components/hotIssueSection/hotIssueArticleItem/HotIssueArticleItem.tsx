@@ -26,7 +26,7 @@ const HotIssueArticleItem = ({
   return (
     <div className={styles.container} onClick={handleClickArticle}>
       <div className={styles.imageWrapper}>
-        <Image src={articleThumbnail} alt="hotIssueArticleItem" fill className={styles.image} />
+        <Image src={articleThumbnail} alt={articleTitle} fill className={styles.image} />
       </div>
       <IdeologyIndicator
         value={ideology}
