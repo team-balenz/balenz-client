@@ -71,7 +71,7 @@ const Header = () => {
             onClick={() => setIsMobileMenuOpen((prev) => !prev)}
             aria-label="모바일 메뉴 토글"
             aria-expanded={isMobileMenuOpen}
-            aria-controls="mobile-menu"
+            // 모바일 메뉴 구현 시 aria-controls="mobile-menu" 추가
           >
             <Image src={ICONS.menu} alt="메뉴 열기" width={40} height={40} />
           </button>
@@ -91,6 +91,14 @@ const Header = () => {
           <DefaultButton label="로그인" />
         </Link>
       </div>
+
+      {/* 추후 모바일 메뉴 패널 구현 필요 */}
+      {/* 
+        다음과 같은 구조로 구현 예정:
+        - id="mobile-menu" 추가
+        - isMobileMenuOpen 상태에 따라 렌더링
+        - 메뉴 버튼의 aria-controls="mobile-menu" 복구
+      */}
     </header>
   );
 };
