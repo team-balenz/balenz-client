@@ -7,14 +7,31 @@ import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import DefaultButton from '../defaultButton/DefaultButton';
 import { NAV_ITEMS, ICONS } from './constants';
+import { ROUTES } from '@/shared/constants/route';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
+  /**
+   * 경로에 따라 네비게이션 아이템의 활성화 여부를 결정
+   * @param href - 확인할 네비게이션 아이템의 경로
+   * @returns 해당 아이템이 활성화되어야 하면 true
+   *
+   * 규칙:
+   * - pathname이 '/global'로 시작하면: href가 '/global'인 아이템(글로벌 관점)만 활성화
+   * - 그 외의 경우: href가 '/'안 아이템(이념 관점) 활성화 (기본값)
+   */
+  const isActive = (href: string) => {
+    if (pathname.startsWith(ROUTES.GLOBAL)) {
+      return href === ROUTES.GLOBAL;
+    }
+    return href === ROUTES.IDEOLOGY;
+  };
+
   return (
     <header className={styles.headerWrapper}>
-      {/* Logo */}
+      {/* 로고 */}
       <Link href="/" aria-label="홈으로 이동">
         <Image
           src="/logo/header_logo.svg"
@@ -25,41 +42,54 @@ const Header = () => {
         />
       </Link>
 
-      {/* Desktop,Tablet Navigation */}
-      <nav className={styles.navWrapper}>
-        {NAV_ITEMS.map((item) => (
-          <Link
-            key={item.label}
-            className={styles.navItem({ isActive: pathname === item.href })}
-            href={item.href}
-            aria-label={`${item.label} 페이지로 이동`}
-          >
-            {item.label}
-          </Link>
-        ))}
+      {/* 네비게이션 */}
+      <nav className={styles.navWrapper} aria-label="메인 네비게이션">
+        <ul className={styles.navList}>
+          {NAV_ITEMS.map((item) => (
+            <li key={item.label} className={styles.navListItem}>
+              <Link
+                className={styles.navItem({
+                  isActive: isActive(item.href),
+                })}
+                href={item.href}
+                aria-label={`${item.label} 페이지로 이동`}
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </nav>
 
-      {/* Right Section: Search & Login */}
+      {/* Right Section: 메뉴/검색 & 로그인 */}
       <div className={styles.rightSection}>
-        {/* Icon Section */}
-        <div className={styles.IconSection}>
-          {/* Menu Button */}
+        {/* Icon Section: 메뉴/검색 */}
+        <div className={styles.iconSection}>
+          {/* 메뉴 버튼 */}
           <button
             className={styles.menuButton}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="모바일 메뉴 활성화"
+            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+            aria-label="모바일 메뉴 토글"
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
-            <Image src={ICONS.menu} alt="menu" width={40} height={40} />
+            <Image src={ICONS.menu} alt="메뉴 열기" width={40} height={40} />
           </button>
 
-          {/* Search Button */}
-          <Link href="/search" className={styles.searchButton} aria-label="검색 페이지로 이동">
-            <Image src={ICONS.search} alt="search" width={40} height={40} />
+          {/* 검색 버튼 */}
+          <Link
+            href={ROUTES.SEARCH}
+            className={styles.searchButton}
+            aria-label="검색 페이지로 이동"
+          >
+            <Image src={ICONS.search} alt="검색" width={40} height={40} />
           </Link>
         </div>
 
-        {/* Login Button */}
-        <DefaultButton label="로그인" />
+        {/* 로그인 버튼 */}
+        <Link href={ROUTES.LOGIN} aria-label="로그인 페이지로 이동">
+          <DefaultButton label="로그인" />
+        </Link>
       </div>
     </header>
   );

@@ -56,6 +56,28 @@ export const navWrapper = style({
   },
 });
 
+export const navList = style({
+  display: 'flex',
+  gap: '50px',
+  alignItems: 'center',
+  height: '100%',
+  listStyle: 'none',
+  margin: 0,
+  padding: 0,
+
+  '@media': {
+    [media.tablet]: {
+      gap: '20px',
+    },
+  },
+});
+
+export const navListItem = style({
+  height: '100%',
+  display: 'flex',
+  alignItems: 'center',
+});
+
 export const navItem = recipe({
   base: {
     ...typography.desktop.h4,
