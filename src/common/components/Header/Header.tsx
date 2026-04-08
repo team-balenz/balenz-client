@@ -1,64 +1,62 @@
 'use client';
 
-import {
-  headerWrapper,
-  logoSection,
-  logoImage,
-  navWrapper,
-  navItem,
-  rightSection,
-  menuButton,
-  searchButton,
-} from './header.css';
+import * as styles from './header.css';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
-import DefaultButton from '../DefaultButton/DefaultButton';
+import { usePathname } from 'next/navigation';
+import DefaultButton from '../defaultButton/DefaultButton';
+import { NAV_ITEMS, ICONS } from './constants';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const navItems = [
-    { label: '이념 관점', href: '#' },
-    { label: '글로벌 관점', href: '#' },
-  ];
+  const pathname = usePathname();
 
   return (
-    <header className={headerWrapper}>
+    <header className={styles.headerWrapper}>
       {/* Logo */}
-      <div className={logoSection}>
+      <Link href="/" aria-label="홈으로 이동">
         <Image
           src="/logo/header_logo.svg"
           alt="balenz logo"
-          className={logoImage}
+          className={styles.logoImage}
           width={167}
           height={32}
         />
-      </div>
+      </Link>
 
-      {/* Desktop Navigation */}
-      <nav className={navWrapper}>
-        {navItems.map((item) => (
-          <a key={item.label} className={navItem} href={item.href}>
+      {/* Desktop,Tablet Navigation */}
+      <nav className={styles.navWrapper}>
+        {NAV_ITEMS.map((item) => (
+          <Link
+            key={item.label}
+            className={styles.navItem({ isActive: pathname === item.href })}
+            href={item.href}
+            aria-label={`${item.label} 페이지로 이동`}
+          >
             {item.label}
-          </a>
+          </Link>
         ))}
       </nav>
 
       {/* Right Section: Search & Login */}
-      <div className={rightSection}>
-        {/* Menu Button (Tablet/Mobile) */}
-        <button
-          className={menuButton}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="메뉴"
-        >
-          ☰
-        </button>
+      <div className={styles.rightSection}>
+        {/* Icon Section */}
+        <div className={styles.IconSection}>
+          {/* Menu Button */}
+          <button
+            className={styles.menuButton}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="모바일 메뉴 활성화"
+          >
+            <Image src={ICONS.menu} alt="menu" width={40} height={40} />
+          </button>
 
-        {/* Search Button */}
-        <button className={searchButton} aria-label="검색">
-          🔍
-        </button>
+          {/* Search Button */}
+          <Link href="/search" className={styles.searchButton} aria-label="검색 페이지로 이동">
+            <Image src={ICONS.search} alt="search" width={40} height={40} />
+          </Link>
+        </div>
 
         {/* Login Button */}
         <DefaultButton label="로그인" />

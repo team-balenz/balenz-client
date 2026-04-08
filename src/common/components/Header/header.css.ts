@@ -1,48 +1,38 @@
 import { style } from '@vanilla-extract/css';
-import { media } from '@/shared/styles/media';
-import { color, typography } from '@/shared/styles';
+import { recipe } from '@vanilla-extract/recipes';
+import { color, typography, media } from '@/shared/styles';
+import { HEADER_LAYOUT, LOGO_SIZE } from './constants';
 
 export const headerWrapper = style({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-  padding: '0 80px',
+  position: 'sticky',
+  top: 0,
+  backgroundColor: color.brand.background,
   borderBottom: `1px solid ${color.brand.gray2}`,
-  height: '80px',
+  ...HEADER_LAYOUT.desktop,
 
   '@media': {
     [media.tablet]: {
-      padding: '0 40px',
-      height: '70px',
+      ...HEADER_LAYOUT.tablet,
     },
     [media.mobile]: {
-      padding: '70px 20px 15px 20px',
-      height: '40px',
+      ...HEADER_LAYOUT.mobile,
     },
   },
 });
 
-export const logoSection = style({
-  display: 'flex',
-  alignItems: 'center',
-});
-
 export const logoImage = style({
-  width: '167px',
-  height: '32px',
-  aspectRatio: '167/32',
+  ...LOGO_SIZE.desktop,
   objectFit: 'contain',
 
   '@media': {
     [media.tablet]: {
-      width: '126px',
-      height: '24px',
-      aspectRatio: '21/4',
+      ...LOGO_SIZE.tablet,
     },
     [media.mobile]: {
-      width: '105px',
-      height: '20px',
-      aspectRatio: '21/4',
+      ...LOGO_SIZE.mobile,
     },
   },
 });
@@ -53,34 +43,42 @@ export const navWrapper = style({
   alignItems: 'center',
   flex: 1,
   marginLeft: '80px',
+  height: '100%',
 
   '@media': {
+    [media.tablet]: {
+      marginLeft: '50px',
+      gap: '20px',
+    },
     [media.mobile]: {
       display: 'none',
     },
   },
 });
 
-export const navItem = style({
-  ...typography.desktop.h4,
-  color: color.text.main,
-  cursor: 'pointer',
-  position: 'relative',
+export const navItem = recipe({
+  base: {
+    ...typography.desktop.h4,
+    color: color.text.main,
+    cursor: 'pointer',
+    width: '100px',
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    display: 'flex',
+    borderBottom: `3px solid transparent`,
 
-  '::after': {
-    content: '""',
-    position: 'absolute',
-    bottom: '0',
-    left: '0',
-    width: '0',
-    height: '2px',
-    backgroundColor: color.brand.main,
-    transition: 'width 0.3s ease',
+    '@media': {
+      [media.tablet]: {
+        ...typography.tablet.h4,
+      },
+    },
   },
-
-  '@media': {
-    [media.tablet]: {
-      ...typography.tablet.h4,
+  variants: {
+    isActive: {
+      true: {
+        borderBottom: `3px solid ${color.brand.main}`,
+      },
     },
   },
 });
@@ -89,6 +87,22 @@ export const rightSection = style({
   display: 'flex',
   gap: '20px',
   alignItems: 'center',
+  justifyContent: 'center',
+
+  '@media': {
+    [media.mobile]: {
+      gap: '10px',
+    },
+  },
+});
+
+export const IconSection = style({
+  '@media': {
+    [media.mobile]: {
+      display: 'flex',
+      gap: '5px',
+    },
+  },
 });
 
 export const menuButton = style({
@@ -96,9 +110,6 @@ export const menuButton = style({
   background: 'none',
   border: 'none',
   cursor: 'pointer',
-  padding: '8px',
-  color: color.text.main,
-  fontSize: '24px',
 
   '@media': {
     [media.tablet]: {
@@ -116,10 +127,8 @@ export const searchButton = style({
   background: 'none',
   border: 'none',
   cursor: 'pointer',
-  padding: '8px',
-  color: color.text.main,
-  fontSize: '20px',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  padding: '0',
 });
