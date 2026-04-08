@@ -3,6 +3,7 @@ import { media } from '@/shared/styles/media';
 import { color, typography } from '@/shared/styles';
 
 export const defaultButton = style({
+  ...typography.desktop.body2,
   display: 'flex',
   padding: '10px 15px',
   justifyContent: 'center',
@@ -15,11 +16,6 @@ export const defaultButton = style({
   cursor: 'pointer',
   transition: 'background-color 0.2s ease',
 
-  // ...typography.desktop.button (누락)
-  fontSize: '16px',
-  fontWeight: '400',
-  lineHeight: '150%',
-
   ':disabled': {
     backgroundColor: color.text.disabled,
     cursor: 'not-allowed',
@@ -27,7 +23,7 @@ export const defaultButton = style({
 
   '@media': {
     [media.tablet]: {
-      ...typography.tablet.button,
+      ...typography.tablet.body2,
     },
     [media.mobile]: {
       ...typography.phone.button,
