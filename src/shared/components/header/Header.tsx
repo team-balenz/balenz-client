@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
-import DefaultButton from '../defaultButton/DefaultButton';
+import DefaultButton from '@/common/components/defaultButton/DefaultButton';
 import { NAV_ITEMS, ICONS } from './constants';
 import { ROUTES } from '@/shared/constants/route';
 
