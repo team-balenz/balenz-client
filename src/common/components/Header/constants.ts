@@ -1,10 +1,12 @@
+import { ROUTES } from '@/shared/constants/route';
+
 /**
  * 헤더의 네비게이션 메뉴 항목들
  * 각 항목은 라벨(화면에 표시되는 텍스트)과 경로(href)로 구성
  */
 export const NAV_ITEMS = [
-  { label: '이념 관점', href: '/' },
-  { label: '글로벌 관점', href: '/global' },
+  { label: '이념 관점', href: ROUTES.IDEOLOGY },
+  { label: '글로벌 관점', href: ROUTES.GLOBAL },
 ];
 
 /**
