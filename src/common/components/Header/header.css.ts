@@ -96,7 +96,7 @@ export const rightSection = style({
   },
 });
 
-export const IconSection = style({
+export const iconSection = style({
   '@media': {
     [media.mobile]: {
       display: 'flex',
