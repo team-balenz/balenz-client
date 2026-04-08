@@ -10,12 +10,6 @@ export const NAV_ITEMS = [
 ];
 
 /**
- * 기본 활성 네비게이션 항목
- * 페이지 로드 시 처음 표시될 활성 탭을 지정
- */
-export const DEFAULT_ACTIVE_TAB = NAV_ITEMS[0].label;
-
-/**
  * 로고 이미지의 반응형 크기 (width, height, aspectRatio)
  */
 export const LOGO_SIZE = {
