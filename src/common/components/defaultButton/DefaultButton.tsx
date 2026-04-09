@@ -1,6 +1,6 @@
 'use client';
 
-import { defaultButton } from './defaultButton.css';
+import * as styles from './defaultButton.css';
 
 interface DefaultButtonPropTypes {
   label: string;
@@ -16,7 +16,7 @@ const DefaultButton = ({
   type = 'button',
 }: DefaultButtonPropTypes) => {
   return (
-    <button className={defaultButton} onClick={onClick} disabled={disabled} type={type}>
+    <button className={styles.defaultButton} onClick={onClick} disabled={disabled} type={type}>
       {label}
     </button>
   );
