@@ -10,7 +10,7 @@ export const headerWrapper = style({
   position: 'sticky',
   top: 0,
   backgroundColor: color.brand.background,
-  borderBottom: `1px solid ${color.brand.gray2}`,
+  borderBottom: `0.0625rem solid ${color.brand.gray2}`,
   ...HEADER_LAYOUT.desktop,
 
   '@media': {
@@ -39,16 +39,16 @@ export const logoImage = style({
 
 export const navWrapper = style({
   display: 'flex',
-  gap: '50px',
+  gap: '3.125rem',
   alignItems: 'center',
   flex: 1,
-  marginLeft: '80px',
+  marginLeft: '5rem',
   height: '100%',
 
   '@media': {
     [media.tablet]: {
-      marginLeft: '50px',
-      gap: '20px',
+      marginLeft: '3.125rem',
+      gap: '1.25rem',
     },
     [media.mobile]: {
       display: 'none',
@@ -58,7 +58,7 @@ export const navWrapper = style({
 
 export const navList = style({
   display: 'flex',
-  gap: '50px',
+  gap: '3.125rem',
   alignItems: 'center',
   height: '100%',
   listStyle: 'none',
@@ -67,7 +67,7 @@ export const navList = style({
 
   '@media': {
     [media.tablet]: {
-      gap: '20px',
+      gap: '1.25rem',
     },
   },
 });
@@ -83,12 +83,12 @@ export const navItem = recipe({
     ...typography.desktop.h4,
     color: color.text.main,
     cursor: 'pointer',
-    width: '100px',
+    width: '6.25rem',
     height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
     display: 'flex',
-    borderBottom: `3px solid transparent`,
+    borderBottom: `0.1875rem solid transparent`,
 
     '@media': {
       [media.tablet]: {
@@ -99,7 +99,7 @@ export const navItem = recipe({
   variants: {
     isActive: {
       true: {
-        borderBottom: `3px solid ${color.brand.main}`,
+        borderBottom: `0.1875rem solid ${color.brand.main}`,
       },
     },
   },
@@ -107,13 +107,13 @@ export const navItem = recipe({
 
 export const rightSection = style({
   display: 'flex',
-  gap: '20px',
+  gap: '1.25rem',
   alignItems: 'center',
   justifyContent: 'center',
 
   '@media': {
     [media.mobile]: {
-      gap: '10px',
+      gap: '0.625rem',
     },
   },
 });
@@ -122,7 +122,7 @@ export const iconSection = style({
   '@media': {
     [media.mobile]: {
       display: 'flex',
-      gap: '5px',
+      gap: '0.3125rem',
     },
   },
 });
