@@ -13,12 +13,17 @@ const ScopePercentBar = ({
   conservativePercent,
   size,
 }: ScopePercentBarPropTypes) => {
-  // 퍼센트 검증
-  const total = progressivePercent + centerPercent + conservativePercent;
+  // 퍼센트 검증 + 음수/비정상 수 정제
+  const safeProgressive = Number.isFinite(progressivePercent) ? Math.max(0, progressivePercent) : 0;
+  const safeCenter = Number.isFinite(centerPercent) ? Math.max(0, centerPercent) : 0;
+  const safeConservative = Number.isFinite(conservativePercent)
+    ? Math.max(0, conservativePercent)
+    : 0;
+  const total = safeProgressive + safeCenter + safeConservative;
 
-  const validProgressive = total ? (progressivePercent / total) * 100 : 0;
-  const validCenter = total ? (centerPercent / total) * 100 : 0;
-  const validConservative = total ? (conservativePercent / total) * 100 : 0;
+  const validProgressive = total ? (safeProgressive / total) * 100 : 0;
+  const validCenter = total ? (safeCenter / total) * 100 : 0;
+  const validConservative = total ? (safeConservative / total) * 100 : 0;
 
   const containerClass = `${styles.baseContainer} ${styles.containerVariants[size]}`;
 
