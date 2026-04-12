@@ -12,6 +12,7 @@
   "dependencies": {
     "@vanilla-extract/css": "^1.20.0",
     "@vanilla-extract/recipes": "^0.5.7",
+    "embla-carousel-react": "^8.6.0",
     "next": "16.1.7",
     "react": "19.2.3",
     "react-dom": "19.2.3"
@@ -37,5 +38,6 @@
     "*.{json,md,css}": [
       "prettier --write"
     ]
-  }
+  },
+  "packageManager": "pnpm@10.20.0+sha512.cf9998222162dd85864d0a8102e7892e7ba4ceadebbf5a31f9c2fce48dfce317a9c53b9f6464d1ef9042cba2e02ae02a9f7c143a2b438cd93c91840f0192b9dd"
 }
