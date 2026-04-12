@@ -49,7 +49,7 @@ const ArticlePreviewItem = ({
       <div className={styles.articleContentWrapper({ renderType })}>
         <div className={styles.metaRow}>
           <span className={styles.metaRowText}>{mediaName}</span>
-          {renderType === 'expanded' && (
+          {renderType === 'expanded' && articlePublishedDate && (
             <>
               <span className={styles.metaRowText}>•</span>
               <span className={styles.metaRowText}>{articlePublishedDate}</span>
@@ -57,7 +57,9 @@ const ArticlePreviewItem = ({
           )}
         </div>
         <p className={styles.articleTitle({ renderType })}>{articleTitle}</p>
-        {renderType === 'expanded' && <p className={styles.articleSummary}>{articleSummary}</p>}
+        {renderType === 'expanded' && articleSummary && (
+          <p className={styles.articleSummary}>{articleSummary}</p>
+        )}
       </div>
       <div className={styles.ideologyIndicatorWrapper}>
         <IdeologyIndicator
