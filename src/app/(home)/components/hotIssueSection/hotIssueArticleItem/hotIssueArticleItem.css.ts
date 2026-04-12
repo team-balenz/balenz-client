@@ -21,6 +21,10 @@ export const image = style({
   objectFit: 'cover',
 });
 
+export const ideologyIndicatorWrapper = style({
+  margin: '0 auto',
+});
+
 export const articleTitle = style({
   ...typography.correction,
   ...typography.desktop.h4,

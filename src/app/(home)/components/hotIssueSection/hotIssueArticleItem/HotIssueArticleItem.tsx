@@ -40,10 +40,12 @@ const HotIssueArticleItem = ({
       <div className={styles.imageWrapper}>
         <Image src={articleThumbnail} alt={articleTitle} fill className={styles.image} />
       </div>
-      <IdeologyIndicator
-        value={ideologyIndicatorValue}
-        size={{ desktop: 'medium', tablet: 'small', mobile: 'small' }}
-      />
+      <div className={styles.ideologyIndicatorWrapper}>
+        <IdeologyIndicator
+          value={ideologyIndicatorValue}
+          size={{ desktop: 'medium', tablet: 'small', mobile: 'small' }}
+        />
+      </div>
       <p className={styles.articleTitle}>{articleTitle}</p>
       <p className={styles.mediaName}>{mediaName}</p>
     </div>

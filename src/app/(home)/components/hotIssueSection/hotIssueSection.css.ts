@@ -1,32 +1,29 @@
 import { style } from '@vanilla-extract/css';
 import { media } from '@/shared/styles';
 
-export const group = style({
-  width: '100%',
-  maxWidth: '25.6875rem',
+export const section = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: '0.69rem',
+  alignItems: 'start',
+  gap: '1.88rem',
   '@media': {
     [media.tablet]: {
-      maxWidth: '20.75rem',
+      gap: '2.25rem',
     },
     [media.mobile]: {
-      maxWidth: '21.875rem',
+      gap: '0.94rem',
     },
   },
 });
 
 export const container = style({
   display: 'grid',
-  gridTemplateColumns: 'repeat(2, 1fr)',
-  gap: '0.69rem',
+  gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+  gap: '3.12rem 1.44rem',
   '@media': {
-    [media.tablet]: {
-      gap: '1.12rem',
-    },
     [media.mobile]: {
-      gap: '0.75rem',
+      gridTemplateColumns: '1fr',
+      gap: '3.125rem 1.5rem',
     },
   },
 });
