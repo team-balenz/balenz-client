@@ -1,4 +1,3 @@
-export type IdeologyType = 'progressive' | 'conservative';
 export type CategoryType = 'politics' | 'economy' | 'society' | 'world' | 'culture' | 'technology';
 
 export interface ArticleType {
@@ -6,7 +5,7 @@ export interface ArticleType {
   image: string;
 }
 
-export interface ScopeCategoryType {
+export interface ScopeCarouselDataType {
   id: string;
   category: CategoryType;
   categoryLabel: string;
