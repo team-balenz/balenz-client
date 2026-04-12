@@ -13,6 +13,7 @@ interface ArticlePreviewItemPropTypes {
   articleTitle: string;
   articleSummary?: string; // 선택적 속성 (expanded 타입에만 사용)
   ideologyIndicatorValue: IdeologyIndicatorValueTypes;
+  onArticleClick: (articleId: number) => void;
 }
 
 /**
@@ -35,9 +36,10 @@ const ArticlePreviewItem = ({
   articleTitle,
   articleSummary,
   ideologyIndicatorValue,
+  onArticleClick,
 }: ArticlePreviewItemPropTypes) => {
   const handleClickArticle = () => {
-    console.log('[ArticlePreviewItem] 기사 상세 페이지로 이동 예정', { articleId });
+    onArticleClick(articleId);
   };
 
   return (
