@@ -2,16 +2,17 @@ import { style } from '@vanilla-extract/css';
 import { media } from '@/shared/styles';
 
 export const group = style({
-  width: '25.6875rem',
+  width: '100%',
+  maxWidth: '25.6875rem',
   display: 'flex',
   flexDirection: 'column',
   gap: '0.69rem',
   '@media': {
     [media.tablet]: {
-      width: '20.75rem',
+      maxWidth: '20.75rem',
     },
     [media.mobile]: {
-      width: '21.875rem',
+      maxWidth: '21.875rem',
     },
   },
 });
