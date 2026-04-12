@@ -2,6 +2,8 @@
 
 import { globalStyle } from '@vanilla-extract/css';
 
+import { color } from './color.css';
+
 /* Set default box-sizing */
 globalStyle('*, *::before, *::after', {
   boxSizing: 'border-box',
@@ -14,6 +16,7 @@ globalStyle('html', {
 
 /* body 스타일 */
 globalStyle('body', {
+  backgroundColor: color.brand.background,
   position: 'relative',
   minHeight: '100dvh',
   fontFamily: `var(--font-pretendard), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif`,
@@ -67,6 +70,6 @@ globalStyle('input, textarea', {
 
 /* 접근성을 위한 기본 포커스 스타일 - 추후 커스터마이징 필요 */
 globalStyle('input:focus-visible, textarea:focus-visible', {
-  outline: '1px solid #767676',
+  outline: `1px solid ${color.text.tertiary}`,
   outlineOffset: '1px',
 });
