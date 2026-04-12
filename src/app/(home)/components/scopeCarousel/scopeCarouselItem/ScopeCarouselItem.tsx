@@ -1,8 +1,6 @@
-'use client';
-
 import Image from 'next/image';
-import * as styles from './scopeCarousel.css';
-import { ArticleType, IdeologyType } from './types';
+import * as styles from './scopeCarouselItem.css';
+import { ArticleType, IdeologyType } from '../types';
 
 interface ScopeCarouselItemPropTypes {
   item: ArticleType;
@@ -15,13 +13,7 @@ const ScopeCarouselItem = ({ item, ideology }: ScopeCarouselItemPropTypes) => {
 
   return (
     <div className={styles.card}>
-      <Image
-        src={item.image}
-        alt={item.title}
-        width={400}
-        height={300}
-        className={styles.cardImage}
-      />
+      <Image src={item.image} alt={item.title} fill className={styles.cardImage} />
       <div className={`${styles.ideologyBar} ${barClass}`} />
       <div className={styles.cardContent}>
         <h3 className={styles.cardTitle}>{item.title}</h3>

@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import * as styles from './scopeCarousel.css';
-import { ICONS } from './constants';
+import * as styles from './scopeCarouselControls.css';
+import { ICONS } from '../constants';
 
 interface ScopeCarouselControlsPropTypes {
   onPrevClick: () => void;
