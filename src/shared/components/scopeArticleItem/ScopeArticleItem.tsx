@@ -3,10 +3,10 @@ import ScopePercentBar from '@/common/components/percentBar/ScopePercentBar';
 import { IDEOLOGY_LABELS, type IdeologyType } from './constants';
 import * as styles from './scopeArticleItem.css';
 
-export interface ScopeArticleItemPropTypes {
+interface ScopeArticleItemPropTypes {
   imageUrl: string;
   imageAlt: string;
-  title: string;
+  keyword: string;
   ideology: IdeologyType;
   progressiveCount: number;
   centerCount: number;
@@ -18,7 +18,7 @@ export interface ScopeArticleItemPropTypes {
 const ScopeArticleItem = ({
   imageUrl,
   imageAlt,
-  title,
+  keyword,
   ideology,
   progressiveCount,
   centerCount,
@@ -40,7 +40,7 @@ const ScopeArticleItem = ({
         <div className={styles.textContent({ size })}>
           <div className={styles.header}>
             <p className={styles.category({ size })}>SCOPE</p>
-            <h3 className={styles.title}>{title}</h3>
+            <h3 className={styles.title}>{keyword}</h3>
             <p className={styles.description({ size })}>{description}</p>
           </div>
 
