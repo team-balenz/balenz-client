@@ -13,6 +13,7 @@ const FilterTabs = ({ tabs, activeKey, onChange, variant = 'scope' }: FilterTabs
     <div className={styles.container} role="group" aria-label="필터 탭">
       {tabs.map((tab) => (
         <button
+          type="button"
           key={tab.key}
           aria-pressed={tab.key === activeKey}
           className={`${styles.tab({ variant })} ${tab.key === activeKey ? styles.activeTab : ''}`}
