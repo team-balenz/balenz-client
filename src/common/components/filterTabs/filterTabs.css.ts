@@ -48,7 +48,7 @@ export const tab = recipe({
 
   variants: {
     variant: {
-      category: {
+      scope: {
         width: '6.5625rem',
         '@media': {
           [media.tablet]: {
@@ -60,7 +60,7 @@ export const tab = recipe({
           },
         },
       },
-      ideology: {
+      summary: {
         padding: '0.625rem 1.875rem',
         '@media': {
           [media.mobile]: {

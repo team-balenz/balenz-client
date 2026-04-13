@@ -5,10 +5,10 @@ interface FilterTabsPropTypes {
   tabs: readonly FilterTabItem[];
   activeKey: string;
   onChange: (id: string) => void;
-  variant?: 'category' | 'ideology';
+  variant?: 'scope' | 'summary';
 }
 
-const FilterTabs = ({ tabs, activeKey, onChange, variant = 'category' }: FilterTabsPropTypes) => {
+const FilterTabs = ({ tabs, activeKey, onChange, variant = 'scope' }: FilterTabsPropTypes) => {
   return (
     <div className={styles.container} role="tablist">
       {tabs.map((tab) => (
