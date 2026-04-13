@@ -1,13 +1,8 @@
 import * as styles from './filterTabs.css';
-
-interface FilterTabItem {
-  key: string;
-  label: string;
-  mobileLabel?: string;
-}
+import type { FilterTabItem } from './types';
 
 interface FilterTabsPropTypes {
-  tabs: FilterTabItem[];
+  tabs: readonly FilterTabItem[];
   activeKey: string;
   onChange: (id: string) => void;
   variant?: 'category' | 'ideology';
