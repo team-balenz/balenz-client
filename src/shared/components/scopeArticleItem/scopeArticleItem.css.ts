@@ -24,7 +24,11 @@ export const container = recipe({
     size: {
       small: {}, // base 그대로
       large: {
-        padding: '1.25rem 0.625rem 1.25rem 0.3125rem',
+        '@media': {
+          [media.tablet]: {
+            padding: '1.25rem 0.625rem 1.25rem 0.3125rem',
+          },
+        },
       },
     },
   },
@@ -68,8 +72,12 @@ export const imageWrapper = recipe({
     size: {
       small: {}, // base 그대로
       large: {
-        width: '11.125rem',
-        height: '6.25rem',
+        '@media': {
+          [media.tablet]: {
+            width: '11.125rem',
+            height: '6.25rem',
+          },
+        },
       },
     },
   },
@@ -93,7 +101,11 @@ export const textContent = recipe({
     size: {
       small: {}, // base 그대로
       large: {
-        gap: '1.125rem',
+        '@media': {
+          [media.tablet]: {
+            gap: '1.125rem',
+          },
+        },
       },
     },
   },
@@ -122,7 +134,11 @@ export const category = recipe({
     size: {
       small: {}, // base 그대로
       large: {
-        ...typography.desktop.body3,
+        '@media': {
+          [media.tablet]: {
+            ...typography.desktop.body3,
+          },
+        },
       },
     },
   },
@@ -160,7 +176,11 @@ export const description = recipe({
     size: {
       small: {}, // base 그대로
       large: {
-        ...typography.desktop.caption,
+        '@media': {
+          [media.tablet]: {
+            ...typography.desktop.caption,
+          },
+        },
       },
     },
   },
