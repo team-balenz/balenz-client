@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 import ScopePercentBar from '@/common/components/percentBar/ScopePercentBar';
 import { IDEOLOGY_LABELS, type IdeologyType } from './constants';
