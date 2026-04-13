@@ -10,12 +10,11 @@ interface FilterTabsPropTypes {
 
 const FilterTabs = ({ tabs, activeKey, onChange, variant = 'scope' }: FilterTabsPropTypes) => {
   return (
-    <div className={styles.container} role="tablist">
+    <div className={styles.container} role="group" aria-label="필터 탭">
       {tabs.map((tab) => (
         <button
           key={tab.key}
-          role="tab"
-          aria-selected={tab.key === activeKey}
+          aria-pressed={tab.key === activeKey}
           className={`${styles.tab({ variant })} ${tab.key === activeKey ? styles.activeTab : ''}`}
           onClick={() => onChange(tab.key)}
         >
