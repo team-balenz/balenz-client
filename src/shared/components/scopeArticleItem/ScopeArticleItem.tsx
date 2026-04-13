@@ -1,5 +1,8 @@
+'use client';
+
 import Image from 'next/image';
 import ScopePercentBar from '@/common/components/percentBar/ScopePercentBar';
+import { useMediaQuery } from '@/shared/hooks/useMediaQuery';
 import { IDEOLOGY_LABELS, type IdeologyType } from './constants';
 import * as styles from './scopeArticleItem.css';
 
@@ -26,7 +29,15 @@ const ScopeArticleItem = ({
   size = 'small',
   percentBarSize = 'small',
 }: ScopeArticleItemPropTypes) => {
-  const description = `에 대해 ${IDEOLOGY_LABELS[ideology]} 관점으로 보도된 기사가 더 많습니다.`;
+  const breakpoint = useMediaQuery();
+
+  // desktop 또는 tablet이면서 size가 large일 때만 "프레이밍한"/"성향으로", 나머지는 "보도된"/"관점으로"
+  const isLargeOnDesktopTablet =
+    breakpoint === 'desktop' || (breakpoint === 'tablet' && size === 'large');
+
+  const description = isLargeOnDesktopTablet
+    ? `에 대해 ${IDEOLOGY_LABELS[ideology]} 성향으로 프레이밍한 기사가 더 많습니다.`
+    : `에 대해 ${IDEOLOGY_LABELS[ideology]} 관점으로 보도된 기사가 더 많습니다.`;
 
   return (
     <div className={styles.container({ size })}>
