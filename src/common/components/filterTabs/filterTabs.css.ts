@@ -14,10 +14,7 @@ export const container = style({
   width: '52.8125rem',
 
   '@media': {
-    [media.tablet]: {
-      width: '100%',
-    },
-    [media.mobile]: {
+    [media.belowDesktop]: {
       width: '100%',
     },
   },
