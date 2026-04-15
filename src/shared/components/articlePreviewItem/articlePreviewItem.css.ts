@@ -24,7 +24,7 @@ export const articlePreviewWrapper = recipe({
       },
       compact: {
         padding: '1.25rem 1.125rem 2.19rem 1.125rem',
-        gap: '5rem',
+        gap: '0.5rem',
         '@media': {
           [media.belowDesktop]: {
             padding: '0',
