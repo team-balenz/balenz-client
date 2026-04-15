@@ -33,7 +33,7 @@ const ArticlePreviewItem = (props: ArticlePreviewItemTypes) => {
       <div className={styles.articleContentWrapper({ renderType })}>
         <div className={styles.metaRow}>
           <span className={styles.metaRowText}>{mediaName}</span>
-          {renderType === 'expanded' && (
+          {renderType === 'expanded' && props.articlePublishedDate && (
             <>
               <span className={styles.metaRowText}>•</span>
               <span className={styles.metaRowText}>{props.articlePublishedDate}</span>
@@ -41,7 +41,7 @@ const ArticlePreviewItem = (props: ArticlePreviewItemTypes) => {
           )}
         </div>
         <p className={styles.articleTitle({ renderType })}>{articleTitle}</p>
-        {renderType === 'expanded' && (
+        {renderType === 'expanded' && props.articleSummary && (
           <p className={styles.articleSummary}>{props.articleSummary}</p>
         )}
       </div>
