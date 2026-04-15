@@ -7,7 +7,7 @@ export interface ArticleBaseTypes {
   mediaName: string;
   articleTitle: string;
   ideologyIndicatorValue: IdeologyIndicatorValueTypes;
-  onArticleClick: (articleId: number) => void;
+  //   onArticleClick: (articleId: number) => void;
 }
 
 // expanded 타입에만 사용하는 타입

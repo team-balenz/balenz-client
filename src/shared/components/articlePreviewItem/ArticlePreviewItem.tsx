@@ -18,11 +18,10 @@ const IDEOLOGY_INDICATOR_SIZE_BY_RENDER_TYPE: Record<
 };
 
 const ArticlePreviewItem = (props: ArticlePreviewItemTypes) => {
-  const { renderType, articleId, mediaName, articleTitle, ideologyIndicatorValue, onArticleClick } =
-    props;
+  const { renderType, articleId, mediaName, articleTitle, ideologyIndicatorValue } = props;
 
   const handleClickArticle = () => {
-    onArticleClick(articleId);
+    console.log('[ArticlePreviewItem] 기사 상세 페이지로 이동 예정', { articleId });
   };
 
   return (
