@@ -5,7 +5,6 @@ export const articleItem = style({
   borderBottom: `1px solid ${color.brand.gray2}`,
   '@media': {
     [media.belowDesktop]: {
-      paddingBottom: '0',
       marginBottom: '1.25rem',
     },
   },
