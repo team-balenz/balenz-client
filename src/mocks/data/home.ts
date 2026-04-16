@@ -253,6 +253,7 @@ export const SCOPE_CAROUSEL_DATA: ScopeCarouselDataType[] = [
 
 /**
  * ScopeCategorySection 카테고리별 아이템 데이터
+ * 카테고리 key(all, politics, economy 등)를 인덱스로 하는 아이템 배열
  */
 import type { IdeologyType } from '@/shared/components/scopeArticleItem/constants';
 
