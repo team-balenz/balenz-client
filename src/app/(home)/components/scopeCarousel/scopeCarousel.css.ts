@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css';
 import { media } from '@/shared/styles';
 
 export const container = style({
-  width: '53.4375rem',
+  width: '52.8125rem',
   display: 'flex',
   flexDirection: 'column',
   gap: '0.9375rem',
