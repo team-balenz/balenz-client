@@ -250,3 +250,189 @@ export const SCOPE_CAROUSEL_DATA: ScopeCarouselDataType[] = [
     },
   },
 ];
+
+/**
+ * ScopeCategorySection 카테고리별 아이템 데이터
+ */
+import type { IdeologyType } from '@/shared/components/scopeArticleItem/constants';
+
+export interface ScopeArticleItemData {
+  id: string;
+  imageUrl: string;
+  imageAlt: string;
+  keyword: string;
+  ideology: IdeologyType;
+  progressiveCount: number;
+  centerCount: number;
+  conservativeCount: number;
+}
+
+const ALL_ITEMS: ScopeArticleItemData[] = [
+  {
+    id: '1',
+    imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
+    imageAlt: '대통령 탄핵 이미지',
+    keyword: '대통령 탄핵',
+    ideology: 'progressive',
+    progressiveCount: 50,
+    centerCount: 30,
+    conservativeCount: 20,
+  },
+  {
+    id: '2',
+    imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
+    imageAlt: '최저임금 이미지',
+    keyword: '최저임금',
+    ideology: 'conservative',
+    progressiveCount: 20,
+    centerCount: 30,
+    conservativeCount: 50,
+  },
+  {
+    id: '3',
+    imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
+    imageAlt: '부동산 정책 이미지',
+    keyword: '부동산 정책',
+    ideology: 'center',
+    progressiveCount: 30,
+    centerCount: 50,
+    conservativeCount: 20,
+  },
+  {
+    id: '4',
+    imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
+    imageAlt: '한미 동맹 이미지',
+    keyword: '한미 동맹',
+    ideology: 'conservative',
+    progressiveCount: 15,
+    centerCount: 25,
+    conservativeCount: 60,
+  },
+  {
+    id: '5',
+    imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
+    imageAlt: '기후 변화 이미지',
+    keyword: '기후 변화',
+    ideology: 'progressive',
+    progressiveCount: 60,
+    centerCount: 25,
+    conservativeCount: 15,
+  },
+  {
+    id: '6',
+    imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
+    imageAlt: '의료 개혁 이미지',
+    keyword: '의료 개혁',
+    ideology: 'progressive',
+    progressiveCount: 45,
+    centerCount: 35,
+    conservativeCount: 20,
+  },
+];
+
+// API 연동 전 목데이터 — 카테고리별 실제 데이터는 API 연동 시 제거
+export const MOCK_SCOPE_ARTICLES: Record<string, ScopeArticleItemData[]> = {
+  all: ALL_ITEMS,
+  politics: [
+    {
+      id: 'p1',
+      imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
+      imageAlt: '대통령 탄핵 이미지',
+      keyword: '대통령 탄핵',
+      ideology: 'progressive',
+      progressiveCount: 50,
+      centerCount: 30,
+      conservativeCount: 20,
+    },
+    {
+      id: 'p2',
+      imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
+      imageAlt: '한미 동맹 이미지',
+      keyword: '한미 동맹',
+      ideology: 'conservative',
+      progressiveCount: 15,
+      centerCount: 25,
+      conservativeCount: 60,
+    },
+  ],
+  economy: [
+    {
+      id: 'e1',
+      imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
+      imageAlt: '최저임금 이미지',
+      keyword: '최저임금',
+      ideology: 'conservative',
+      progressiveCount: 20,
+      centerCount: 30,
+      conservativeCount: 50,
+    },
+    {
+      id: 'e2',
+      imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
+      imageAlt: '부동산 정책 이미지',
+      keyword: '부동산 정책',
+      ideology: 'center',
+      progressiveCount: 30,
+      centerCount: 50,
+      conservativeCount: 20,
+    },
+  ],
+  society: [
+    {
+      id: 's1',
+      imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
+      imageAlt: '교육 정책 이미지',
+      keyword: '교육 정책',
+      ideology: 'progressive',
+      progressiveCount: 55,
+      centerCount: 25,
+      conservativeCount: 20,
+    },
+  ],
+  world: [
+    {
+      id: 'w1',
+      imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
+      imageAlt: '우크라이나 전쟁 이미지',
+      keyword: '우크라이나 전쟁',
+      ideology: 'center',
+      progressiveCount: 35,
+      centerCount: 45,
+      conservativeCount: 20,
+    },
+  ],
+  culture: [
+    {
+      id: 'c1',
+      imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
+      imageAlt: '문화유산 보존 이미지',
+      keyword: '문화유산 보존',
+      ideology: 'center',
+      progressiveCount: 40,
+      centerCount: 45,
+      conservativeCount: 15,
+    },
+  ],
+  tech: [
+    {
+      id: 't1',
+      imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
+      imageAlt: '기후 변화 이미지',
+      keyword: '기후 변화',
+      ideology: 'progressive',
+      progressiveCount: 60,
+      centerCount: 25,
+      conservativeCount: 15,
+    },
+    {
+      id: 't2',
+      imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
+      imageAlt: '의료 개혁 이미지',
+      keyword: '의료 개혁',
+      ideology: 'progressive',
+      progressiveCount: 45,
+      centerCount: 35,
+      conservativeCount: 20,
+    },
+  ],
+};
