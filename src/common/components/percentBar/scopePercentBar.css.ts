@@ -6,6 +6,7 @@ import { media } from '@/shared/styles';
 export const baseContainer = style({
   display: 'flex',
   overflow: 'hidden',
+  width: '100%',
 });
 
 export const containerVariants = styleVariants({
