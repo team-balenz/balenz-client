@@ -3,17 +3,11 @@
 import Image from 'next/image';
 import ScopePercentBar from '@/common/components/percentBar/ScopePercentBar';
 import { useMediaQuery } from '@/shared/hooks/useMediaQuery';
-import { IDEOLOGY_LABELS, type IdeologyType } from './constants';
+import { IDEOLOGY_LABELS } from './constants';
+import type { ScopeArticleItemData } from '@/shared/components/scopeArticleItem/types';
 import * as styles from './scopeArticleItem.css';
 
-interface ScopeArticleItemPropTypes {
-  imageUrl: string;
-  imageAlt: string;
-  keyword: string;
-  ideology: IdeologyType;
-  progressiveCount: number;
-  centerCount: number;
-  conservativeCount: number;
+interface ScopeArticleItemPropTypes extends ScopeArticleItemData {
   size?: 'small' | 'large';
   percentBarSize?: 'small' | 'medium' | 'large';
 }

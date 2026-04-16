@@ -1,5 +1,6 @@
 import { type HotIssueGroupTypes } from '@/app/(home)/types/hotIssueSection';
 import { type ScopeCarouselDataType } from '@/app/(home)/types/scopeCarousel';
+import type { ScopeArticleItemData } from '@/shared/components/scopeArticleItem/types';
 
 export const HOT_ISSUE_ARTICLE_GROUP: HotIssueGroupTypes[] = [
   {
@@ -255,22 +256,10 @@ export const SCOPE_CAROUSEL_DATA: ScopeCarouselDataType[] = [
  * ScopeCategorySection 카테고리별 아이템 데이터
  * 카테고리 key(all, politics, economy 등)를 인덱스로 하는 아이템 배열
  */
-import type { IdeologyType } from '@/shared/components/scopeArticleItem/constants';
-
-export interface ScopeArticleItemData {
-  id: string;
-  imageUrl: string;
-  imageAlt: string;
-  keyword: string;
-  ideology: IdeologyType;
-  progressiveCount: number;
-  centerCount: number;
-  conservativeCount: number;
-}
 
 const ALL_ITEMS: ScopeArticleItemData[] = [
   {
-    id: '1',
+    keywordId: '1',
     imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
     imageAlt: '대통령 탄핵 이미지',
     keyword: '대통령 탄핵',
@@ -280,7 +269,7 @@ const ALL_ITEMS: ScopeArticleItemData[] = [
     conservativeCount: 20,
   },
   {
-    id: '2',
+    keywordId: '2',
     imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
     imageAlt: '최저임금 이미지',
     keyword: '최저임금',
@@ -290,7 +279,7 @@ const ALL_ITEMS: ScopeArticleItemData[] = [
     conservativeCount: 50,
   },
   {
-    id: '3',
+    keywordId: '3',
     imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
     imageAlt: '부동산 정책 이미지',
     keyword: '부동산 정책',
@@ -300,7 +289,7 @@ const ALL_ITEMS: ScopeArticleItemData[] = [
     conservativeCount: 20,
   },
   {
-    id: '4',
+    keywordId: '4',
     imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
     imageAlt: '한미 동맹 이미지',
     keyword: '한미 동맹',
@@ -310,7 +299,7 @@ const ALL_ITEMS: ScopeArticleItemData[] = [
     conservativeCount: 60,
   },
   {
-    id: '5',
+    keywordId: '5',
     imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
     imageAlt: '기후 변화 이미지',
     keyword: '기후 변화',
@@ -320,7 +309,7 @@ const ALL_ITEMS: ScopeArticleItemData[] = [
     conservativeCount: 15,
   },
   {
-    id: '6',
+    keywordId: '6',
     imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
     imageAlt: '의료 개혁 이미지',
     keyword: '의료 개혁',
@@ -336,7 +325,7 @@ export const MOCK_SCOPE_ARTICLES: Record<string, ScopeArticleItemData[]> = {
   all: ALL_ITEMS,
   politics: [
     {
-      id: 'p1',
+      keywordId: 'p1',
       imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
       imageAlt: '대통령 탄핵 이미지',
       keyword: '대통령 탄핵',
@@ -346,7 +335,7 @@ export const MOCK_SCOPE_ARTICLES: Record<string, ScopeArticleItemData[]> = {
       conservativeCount: 20,
     },
     {
-      id: 'p2',
+      keywordId: 'p2',
       imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
       imageAlt: '한미 동맹 이미지',
       keyword: '한미 동맹',
@@ -358,7 +347,7 @@ export const MOCK_SCOPE_ARTICLES: Record<string, ScopeArticleItemData[]> = {
   ],
   economy: [
     {
-      id: 'e1',
+      keywordId: 'e1',
       imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
       imageAlt: '최저임금 이미지',
       keyword: '최저임금',
@@ -368,7 +357,7 @@ export const MOCK_SCOPE_ARTICLES: Record<string, ScopeArticleItemData[]> = {
       conservativeCount: 50,
     },
     {
-      id: 'e2',
+      keywordId: 'e2',
       imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
       imageAlt: '부동산 정책 이미지',
       keyword: '부동산 정책',
@@ -380,7 +369,7 @@ export const MOCK_SCOPE_ARTICLES: Record<string, ScopeArticleItemData[]> = {
   ],
   society: [
     {
-      id: 's1',
+      keywordId: 's1',
       imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
       imageAlt: '교육 정책 이미지',
       keyword: '교육 정책',
@@ -392,7 +381,7 @@ export const MOCK_SCOPE_ARTICLES: Record<string, ScopeArticleItemData[]> = {
   ],
   world: [
     {
-      id: 'w1',
+      keywordId: 'w1',
       imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
       imageAlt: '우크라이나 전쟁 이미지',
       keyword: '우크라이나 전쟁',
@@ -404,7 +393,7 @@ export const MOCK_SCOPE_ARTICLES: Record<string, ScopeArticleItemData[]> = {
   ],
   culture: [
     {
-      id: 'c1',
+      keywordId: 'c1',
       imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
       imageAlt: '문화유산 보존 이미지',
       keyword: '문화유산 보존',
@@ -416,7 +405,7 @@ export const MOCK_SCOPE_ARTICLES: Record<string, ScopeArticleItemData[]> = {
   ],
   tech: [
     {
-      id: 't1',
+      keywordId: 't1',
       imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
       imageAlt: '기후 변화 이미지',
       keyword: '기후 변화',
@@ -426,7 +415,7 @@ export const MOCK_SCOPE_ARTICLES: Record<string, ScopeArticleItemData[]> = {
       conservativeCount: 15,
     },
     {
-      id: 't2',
+      keywordId: 't2',
       imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
       imageAlt: '의료 개혁 이미지',
       keyword: '의료 개혁',
