@@ -13,7 +13,7 @@ export const articlePreviewWrapper = recipe({
   variants: {
     renderType: {
       default: {
-        padding: '1.25rem 0.9375rem 0 0.9375rem',
+        padding: '1.25rem 0.9375rem 2.19rem 0.9375rem',
         gap: '0.5rem',
         '@media': {
           [media.belowDesktop]: {
@@ -23,8 +23,8 @@ export const articlePreviewWrapper = recipe({
         },
       },
       compact: {
-        padding: '1.25rem 1.125rem 0 1.125rem',
-        gap: '5rem',
+        padding: '1.25rem 1.125rem 2.19rem 1.125rem',
+        gap: '0.5rem',
         '@media': {
           [media.belowDesktop]: {
             padding: '0',
@@ -33,7 +33,7 @@ export const articlePreviewWrapper = recipe({
         },
       },
       expanded: {
-        padding: '1.25rem 0.625rem 0 0.625rem',
+        padding: '1.25rem 0.625rem 2.19rem 0.625rem',
         gap: '0.5rem',
       },
     },
