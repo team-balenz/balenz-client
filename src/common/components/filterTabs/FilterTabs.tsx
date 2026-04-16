@@ -5,12 +5,12 @@ interface FilterTabsPropTypes {
   tabs: readonly FilterTabItem[];
   activeKey: string;
   onChange: (id: string) => void;
-  variant?: 'scope' | 'summary';
+  variant?: 'scope' | 'summary' | 'byIdeology';
 }
 
 const FilterTabs = ({ tabs, activeKey, onChange, variant = 'scope' }: FilterTabsPropTypes) => {
   return (
-    <div className={styles.container} role="group" aria-label="필터 탭">
+    <div className={styles.container({ variant })} role="group" aria-label="필터 탭">
       {tabs.map((tab) => (
         <button
           type="button"

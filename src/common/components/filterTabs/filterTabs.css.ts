@@ -3,19 +3,37 @@ import { color } from '@/shared/styles/color.css';
 import { media, typography } from '@/shared/styles';
 import { recipe } from '@vanilla-extract/recipes';
 
-export const container = style({
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  borderRadius: '0.5rem',
-  overflow: 'scroll',
-  backgroundColor: color.brand.gray1,
-  padding: '0.3125rem',
-  width: '52.8125rem',
+export const container = recipe({
+  base: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    borderRadius: '0.5rem',
+    overflow: 'scroll',
+    backgroundColor: color.brand.gray1,
+    padding: '0.3125rem',
+    width: '52.8125rem',
 
-  '@media': {
-    [media.belowDesktop]: {
-      width: '100%',
+    '@media': {
+      [media.belowDesktop]: {
+        width: '100%',
+      },
+    },
+  },
+  variants: {
+    variant: {
+      scope: {},
+      summary: {},
+      byIdeology: {
+        display: 'none',
+        '@media': {
+          [media.mobile]: {
+            display: 'flex',
+            padding: '0.125rem',
+            backgroundColor: color.brand.gray2, // 모바일에서만 렌더링
+          },
+        },
+      },
     },
   },
 });
@@ -65,6 +83,14 @@ export const tab = recipe({
         '@media': {
           [media.mobile]: {
             height: '2.5rem',
+          },
+        },
+      },
+      byIdeology: {
+        padding: '0.625rem 1.875rem',
+        '@media': {
+          [media.mobile]: {
+            height: '2.1875rem',
           },
         },
       },
