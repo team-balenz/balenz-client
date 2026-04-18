@@ -12,13 +12,7 @@ export const container = recipe({
     overflow: 'scroll',
     backgroundColor: color.brand.gray1,
     padding: '0.3125rem',
-    width: '52.8125rem',
-
-    '@media': {
-      [media.belowDesktop]: {
-        width: '100%',
-      },
-    },
+    width: '100%',
   },
   variants: {
     variant: {
