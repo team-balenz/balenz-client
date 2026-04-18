@@ -15,6 +15,10 @@ export const SECTION_TITLES = {
     subtitle: 'BY IDEOLOGY',
     title: '이념별로 뉴스 모아보기',
   },
+  hotArticle: {
+    subtitle: 'HOT ARTICLE',
+    title: '실시간 관심 기사',
+  },
 } as const;
 
 /**
