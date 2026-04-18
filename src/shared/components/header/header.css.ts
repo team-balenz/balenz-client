@@ -9,6 +9,7 @@ export const headerWrapper = style({
   alignItems: 'center',
   position: 'sticky',
   top: 0,
+  zIndex: 100, // 임시 부여, 추후 z-index 상수화 예정
   backgroundColor: color.brand.background,
   borderBottom: `0.0625rem solid ${color.brand.gray2}`,
   ...HEADER_LAYOUT.desktop,
