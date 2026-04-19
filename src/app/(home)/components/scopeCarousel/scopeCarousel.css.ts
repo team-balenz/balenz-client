@@ -2,17 +2,13 @@ import { style } from '@vanilla-extract/css';
 import { media } from '@/shared/styles';
 
 export const container = style({
-  width: '52.8125rem',
+  width: '100%',
   display: 'flex',
   flexDirection: 'column',
   gap: '0.9375rem',
 
   '@media': {
-    [media.tablet]: {
-      width: '100%',
-    },
     [media.mobile]: {
-      width: '100%',
       display: 'flex',
     },
   },
