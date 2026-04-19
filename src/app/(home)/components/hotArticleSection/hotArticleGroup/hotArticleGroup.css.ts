@@ -16,6 +16,7 @@ const belowDesktopArticleAnimation = keyframes({
 
 export const group = style({
   width: '100%',
+  minWidth: '12.125rem',
   maxWidth: '25.69rem',
   display: 'flex',
   flexDirection: 'column',
@@ -28,6 +29,7 @@ export const group = style({
     },
     [media.belowDesktop]: {
       padding: '0',
+      minWidth: '9.8125rem',
     },
     [media.tablet]: {
       maxWidth: '23.625rem',
