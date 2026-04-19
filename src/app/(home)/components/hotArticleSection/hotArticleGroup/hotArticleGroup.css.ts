@@ -1,6 +1,18 @@
-import { style } from '@vanilla-extract/css';
+import { keyframes, style } from '@vanilla-extract/css';
 import { color, media, typography } from '@/shared/styles';
 import { recipe } from '@vanilla-extract/recipes';
+
+/** 태블릿, 모바일: 짧은 페이드 + 아주 작은 Y 이동 애니메이션 */
+const belowDesktopArticleAnimation = keyframes({
+  '0%': {
+    transform: 'translateY(0.375rem)',
+    opacity: 0,
+  },
+  '100%': {
+    transform: 'translateY(0)',
+    opacity: 1,
+  },
+});
 
 export const group = style({
   width: '100%',
@@ -87,6 +99,7 @@ export const belowDesktopArticleItem = style({
   '@media': {
     [media.belowDesktop]: {
       marginTop: '0.62rem',
+      animation: `${belowDesktopArticleAnimation} 0.38s ease-out`,
     },
   },
 });

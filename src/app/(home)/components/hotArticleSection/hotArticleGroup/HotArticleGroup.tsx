@@ -12,15 +12,15 @@ export default function HotArticleGroup({ ideology, articleItems }: HotArticleSe
   const breakpoint = useMediaQuery();
   const isDesktop = breakpoint === 'desktop';
 
+  // 태블릿, 모바일: 한 칸만 보이게 설정하기 위한 인덱스 관리 (0부터 시작)
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // 태블릿, 모바일: 한 칸만 보이게 설정하기 위한 타이머 설정
   useEffect(() => {
     if (isDesktop || articleItems.length <= 1) return;
-
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % articleItems.length);
-    }, 3000);
-
+    }, 4000);
     return () => clearInterval(timer);
   }, [isDesktop, articleItems.length]);
 
