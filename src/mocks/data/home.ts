@@ -255,9 +255,10 @@ export const SCOPE_CAROUSEL_DATA: ScopeCarouselDataType[] = [
 /**
  * ScopeCategorySection 카테고리별 아이템 데이터
  * 카테고리 key(all, politics, economy 등)를 인덱스로 하는 아이템 배열
+ * - 인기 SCOPE 섹션에서도 사용 (같은 구조의 mock data 필요)
  */
 
-const ALL_ITEMS: ScopeArticleItemData[] = [
+export const SCOPE_ALL_ITEMS: ScopeArticleItemData[] = [
   {
     keywordId: '1',
     imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
@@ -322,7 +323,7 @@ const ALL_ITEMS: ScopeArticleItemData[] = [
 
 // API 연동 전 목데이터 — 카테고리별 실제 데이터는 API 연동 시 제거
 export const MOCK_SCOPE_ARTICLES: Record<string, ScopeArticleItemData[]> = {
-  all: ALL_ITEMS,
+  all: SCOPE_ALL_ITEMS,
   politics: [
     {
       keywordId: 'p1',
