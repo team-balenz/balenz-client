@@ -27,13 +27,7 @@ const ScopeCategorySection = () => {
           {items.map((item) => {
             const { keywordId, ...itemProps } = item;
             return (
-              <ScopeArticleItem
-                key={keywordId}
-                keywordId={keywordId}
-                {...itemProps}
-                size="small"
-                percentBarSize="small"
-              />
+              <ScopeArticleItem key={keywordId} keywordId={keywordId} {...itemProps} size="small" />
             );
           })}
         </div>
