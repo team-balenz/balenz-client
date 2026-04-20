@@ -2,6 +2,7 @@ import { style } from '@vanilla-extract/css';
 import { media } from '@/shared/styles';
 
 export const section = style({
+  width: '100%',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'start',
@@ -17,6 +18,7 @@ export const section = style({
 });
 
 export const container = style({
+  width: '100%',
   display: 'grid',
   gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
   gap: '3.12rem 1.44rem',
