@@ -19,14 +19,7 @@ const IdeologyIndicator = ({ value, size }: IdeologyIndicatorPropTypes) => {
   const mobileSize = size?.mobile ?? tabletSize;
 
   return (
-    <div
-      className={[
-        styles.container,
-        styles.containerDesktopGap[desktopSize],
-        styles.containerTabletGap[tabletSize],
-        styles.containerMobileGap[mobileSize],
-      ].join(' ')}
-    >
+    <div className={styles.container}>
       {IDEOLOGY_OPTIONS.map((item) => {
         const isActive = item.value === value;
 

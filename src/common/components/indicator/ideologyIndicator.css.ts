@@ -1,76 +1,19 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 import { color, media } from '@/shared/styles';
 import { recipe } from '@vanilla-extract/recipes';
-import {
-  IDEOLOGY_COLOR_THEME,
-  IDEOLOGY_CONTAINER_GAP_STYLE,
-  IDEOLOGY_SIZE_STYLE,
-} from './constants';
+import { IDEOLOGY_COLOR_THEME, IDEOLOGY_SIZE_STYLE } from './constants';
 
 export const container = style({
+  width: '100%',
+  padding: '0 0.12rem',
   display: 'flex',
   alignItems: 'center',
-  width: 'fit-content',
-});
-
-/**
- * 이념 지표 컨테이너 flex gap — 데스크탑
- */
-export const containerDesktopGap = styleVariants({
-  small: { gap: IDEOLOGY_CONTAINER_GAP_STYLE.desktop.SMALL },
-  medium: { gap: IDEOLOGY_CONTAINER_GAP_STYLE.desktop.MEDIUM },
-  large: { gap: IDEOLOGY_CONTAINER_GAP_STYLE.desktop.LARGE },
-});
-
-/**
- * 이념 지표 컨테이너 flex gap — 태블릿
- */
-export const containerTabletGap = styleVariants({
-  small: {
-    '@media': {
-      [media.tablet]: { gap: IDEOLOGY_CONTAINER_GAP_STYLE.tablet.SMALL },
-    },
-  },
-  medium: {
-    '@media': {
-      [media.tablet]: { gap: IDEOLOGY_CONTAINER_GAP_STYLE.tablet.MEDIUM },
-    },
-  },
-  large: {
-    '@media': {
-      [media.tablet]: { gap: IDEOLOGY_CONTAINER_GAP_STYLE.tablet.LARGE },
-    },
-  },
-});
-
-/**
- * 이념 지표 컨테이너 flex gap — 모바일
- */
-export const containerMobileGap = styleVariants({
-  extraSmall: {
-    '@media': {
-      [media.mobile]: { gap: IDEOLOGY_CONTAINER_GAP_STYLE.mobile.EXTRA_SMALL },
-    },
-  },
-  small: {
-    '@media': {
-      [media.mobile]: { gap: IDEOLOGY_CONTAINER_GAP_STYLE.mobile.SMALL },
-    },
-  },
-  medium: {
-    '@media': {
-      [media.mobile]: { gap: IDEOLOGY_CONTAINER_GAP_STYLE.mobile.MEDIUM },
-    },
-  },
-  large: {
-    '@media': {
-      [media.mobile]: { gap: IDEOLOGY_CONTAINER_GAP_STYLE.mobile.LARGE },
-    },
-  },
+  justifyContent: 'space-between',
 });
 
 export const item = recipe({
   base: {
+    width: '18%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

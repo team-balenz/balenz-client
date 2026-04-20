@@ -5,6 +5,7 @@ export const container = style({
   width: '100%',
   display: 'flex',
   flexDirection: 'column',
+  alignItems: 'stretch',
   gap: '0.5rem',
   cursor: 'pointer',
 });
@@ -22,10 +23,13 @@ export const image = style({
 });
 
 export const ideologyIndicatorWrapper = style({
-  margin: '0 auto',
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
 });
 
 export const articleTitle = style({
+  width: '100%',
   ...typography.correction,
   ...typography.desktop.h4,
   color: color.text.main,
@@ -44,6 +48,7 @@ export const articleTitle = style({
 });
 
 export const mediaName = style({
+  width: '100%',
   ...typography.desktop.body3,
   color: color.text.tertiary,
   '@media': {

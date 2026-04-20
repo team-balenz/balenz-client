@@ -3,23 +3,22 @@ import { media } from '@/shared/styles';
 
 export const group = style({
   width: '100%',
-  maxWidth: '25.6875rem',
+  minWidth: 0,
   display: 'flex',
   flexDirection: 'column',
   gap: '0.69rem',
   '@media': {
-    [media.tablet]: {
-      maxWidth: '20.75rem',
-    },
-    [media.mobile]: {
-      maxWidth: '21.875rem',
+    [media.belowDesktop]: {
+      minWidth: 0,
     },
   },
 });
 
 export const container = style({
+  width: '100%',
+  minWidth: 0,
   display: 'grid',
-  gridTemplateColumns: 'repeat(2, 1fr)',
+  gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
   gap: '0.69rem',
   '@media': {
     [media.tablet]: {
