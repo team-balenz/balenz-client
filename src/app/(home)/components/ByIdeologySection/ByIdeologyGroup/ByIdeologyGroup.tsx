@@ -7,7 +7,7 @@ const ByIdeologyGroup = ({ ideology, articleItems }: ByIdeologySectionGroupTypes
   return (
     <section>
       <ByIdeologyHeader ideology={ideology} />
-      <div>
+      <div className={styles.list}>
         {articleItems.map((item) => (
           <div key={item.articleId} className={styles.articleItem}>
             <ArticlePreviewItem {...item} renderType="default" />
