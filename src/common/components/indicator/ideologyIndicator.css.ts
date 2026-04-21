@@ -7,6 +7,7 @@ export const container = style({
   width: '100%',
   padding: '0 0.12rem',
   display: 'flex',
+  minWidth: 0,
   alignItems: 'center',
   justifyContent: 'space-between',
 });
