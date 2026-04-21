@@ -1,10 +1,12 @@
-import * as styles from './hotIssueGroup.css';
-import HotIssueHeader from '../hotIssueHeader/HotIssueHeader';
-import HotIssueArticleItem from '../hotIssueArticleItem/HotIssueArticleItem';
 import {
   type HotIssueGroupTypes,
   type HotIssueArticleItemTypes,
 } from '@/app/(home)/types/hotIssueSection';
+
+import HotIssueHeader from '../hotIssueHeader/HotIssueHeader';
+import HotIssueArticleItem from '../hotIssueArticleItem/HotIssueArticleItem';
+
+import * as styles from './hotIssueGroup.css';
 
 interface HotIssueGroupPropTypes {
   ideology: HotIssueGroupTypes['ideology'];

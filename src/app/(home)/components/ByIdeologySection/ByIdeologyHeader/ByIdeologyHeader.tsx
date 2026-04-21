@@ -1,5 +1,6 @@
-import * as styles from './byIdeologyHeader.css';
 import { color } from '@/shared/styles/color.css';
+
+import * as styles from './byIdeologyHeader.css';
 
 interface ByIdeologyHeaderPropTypes {
   ideology: 'progressive' | 'center' | 'conservative';

@@ -1,9 +1,11 @@
 'use client';
 
 import Image from 'next/image';
-import * as styles from './hotIssueArticleItem.css';
+
 import IdeologyIndicator from '@/common/components/indicator/IdeologyIndicator';
 import { type IdeologyIndicatorValueTypes } from '@/common/components/indicator/constants';
+
+import * as styles from './hotIssueArticleItem.css';
 
 interface HotIssueArticleItemPropTypes {
   articleId: number;

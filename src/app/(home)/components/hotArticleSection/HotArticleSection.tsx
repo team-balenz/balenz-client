@@ -1,10 +1,11 @@
 import Title from '@/common/components/title/Title';
-import HotArticleGroup from './hotArticleGroup/HotArticleGroup';
-import * as styles from './hotArticleSection.css';
 import { SECTION_TITLES } from '@/app/(home)/constants';
 import { HOT_ARTICLE_GROUP } from '@/mocks/data/home';
 
-export default function HotArticleSection() {
+import HotArticleGroup from './hotArticleGroup/HotArticleGroup';
+import * as styles from './hotArticleSection.css';
+
+const HotArticleSection = () => {
   return (
     <section className={styles.section}>
       {/* mobile only */}
@@ -29,4 +30,6 @@ export default function HotArticleSection() {
       </div>
     </section>
   );
-}
+};
+
+export default HotArticleSection;

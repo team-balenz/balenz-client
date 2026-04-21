@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 import * as styles from './hotIssueHeader.css';
 
 interface HotIssueHeaderPropTypes {
