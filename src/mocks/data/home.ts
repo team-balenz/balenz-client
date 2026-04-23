@@ -1,8 +1,8 @@
-import { type HotIssueGroupTypes } from '@/app/(home)/types/hotIssueSection';
-import { type ScopeCarouselDataType } from '@/app/(home)/types/scopeCarousel';
+import { type HotIssueGroupTypes } from '@/app/(main)/(home)/types/hotIssueSection';
+import { type ScopeCarouselDataType } from '@/app/(main)/(home)/types/scopeCarousel';
 import type { ScopeArticleItemData } from '@/shared/components/scopeArticleItem/types';
-import { type HotArticleSectionGroupTypes } from '@/app/(home)/types/hotArticleSection';
-import { type ByIdeologySectionGroupTypes } from '@/app/(home)/types/byIdeologySection';
+import { type HotArticleSectionGroupTypes } from '@/app/(main)/(home)/types/hotArticleSection';
+import { type ByIdeologySectionGroupTypes } from '@/app/(main)/(home)/types/byIdeologySection';
 
 export const HOT_ISSUE_ARTICLE_GROUP: HotIssueGroupTypes[] = [
   {
