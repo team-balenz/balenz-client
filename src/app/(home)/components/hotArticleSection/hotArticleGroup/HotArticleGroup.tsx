@@ -1,13 +1,14 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import ArticlePreviewItem from '@/shared/components/articlePreviewItem/ArticlePreviewItem';
-import * as styles from './hotArticleGroup.css';
 
+import ArticlePreviewItem from '@/shared/components/articlePreviewItem/ArticlePreviewItem';
 import { useMediaQuery } from '@/shared/hooks/useMediaQuery';
 import { type HotArticleSectionGroupTypes } from '@/app/(home)/types/hotArticleSection';
 
-export default function HotArticleGroup({ ideology, articleItems }: HotArticleSectionGroupTypes) {
+import * as styles from './hotArticleGroup.css';
+
+const HotArticleGroup = ({ ideology, articleItems }: HotArticleSectionGroupTypes) => {
   // 미디어 쿼리 확인 후 데스크탑 여부 확인
   const breakpoint = useMediaQuery();
   const isDesktop = breakpoint === 'desktop';
@@ -54,4 +55,6 @@ export default function HotArticleGroup({ ideology, articleItems }: HotArticleSe
       )}
     </div>
   );
-}
+};
+
+export default HotArticleGroup;

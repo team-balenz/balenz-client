@@ -13,11 +13,11 @@ export const articlePreviewWrapper = recipe({
   variants: {
     renderType: {
       default: {
-        padding: '1.25rem 0.9375rem 2.19rem 0.9375rem',
+        padding: '1.25rem 0 2.19rem',
         gap: '0.5rem',
         '@media': {
           [media.belowDesktop]: {
-            padding: '1.25rem 0.3125rem',
+            padding: '1.25rem 0',
             gap: '1.25rem',
           },
         },
@@ -100,8 +100,9 @@ export const articleTitle = recipe({
     color: color.text.main,
     display: '-webkit-box',
     WebkitBoxOrient: 'vertical',
-    overflow: 'hidden',
     WebkitLineClamp: 3,
+    overflow: 'hidden',
+    alignSelf: 'stretch',
   },
 
   variants: {
@@ -174,5 +175,16 @@ export const articleSummary = style({
 });
 
 export const ideologyIndicatorWrapper = style({
+  width: '100%',
+  maxWidth: '12.6875rem',
   padding: '0 0.125rem',
+  minWidth: 0,
+  '@media': {
+    [media.tablet]: {
+      maxWidth: '12.6875rem',
+    },
+    [media.mobile]: {
+      maxWidth: '14.25rem',
+    },
+  },
 });
