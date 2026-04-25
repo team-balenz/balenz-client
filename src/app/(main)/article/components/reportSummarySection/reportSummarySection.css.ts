@@ -94,7 +94,6 @@ export const divider = style({
 export const label = style({
   ...typography.desktop.body1,
   color: color.text.main,
-  textOverflow: 'ellipsis',
 
   '@media': {
     [media.tablet]: { ...typography.tablet.body2, color: color.text.tertiary },
