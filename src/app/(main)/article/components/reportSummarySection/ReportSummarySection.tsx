@@ -14,7 +14,7 @@ import { IDEOLOGY_LABELS, ITEM_LABELS } from './constants';
  * @property biasPercentage       - 편향 퍼센트 (0–100)
  * @property relatedArticleCount  - 연관 기사 수 (선택적, tablet/mobile 전용)
  */
-export interface ReportSummarySectionData {
+interface ReportSummarySectionPropTypes {
   totalNewsCount: number;
   progressiveCount: number;
   conservativeCount: number;
@@ -32,7 +32,7 @@ const ReportSummarySection = ({
   biasIdeology,
   biasPercentage,
   relatedArticleCount,
-}: ReportSummarySectionData) => {
+}: ReportSummarySectionPropTypes) => {
   const breakpoint = useMediaQuery();
   const isMobile = breakpoint === 'mobile';
 
