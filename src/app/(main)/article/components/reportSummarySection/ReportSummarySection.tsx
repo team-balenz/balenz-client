@@ -1,5 +1,6 @@
 'use client';
 
+import { Fragment } from 'react';
 import { useMediaQuery } from '@/shared/hooks/useMediaQuery';
 import type { IdeologyType } from '@/shared/components/scopeArticleItem/types';
 import * as styles from './reportSummarySection.css';
@@ -85,15 +86,13 @@ const ReportSummarySection = ({
 
       <div className={styles.content}>
         {items.map((item, index) => (
-          <>
-            <div key={`item-${index}`} className={styles.item}>
+          <Fragment key={`item-${index}`}>
+            <div className={styles.item}>
               <p className={styles.label}>{item.label}</p>
               <div className={styles.value}>{item.value}</div>
             </div>
-            {index < items.length - 1 && (
-              <div key={`divider-${index}`} className={styles.divider} />
-            )}
-          </>
+            {index < items.length - 1 && <div className={styles.divider} />}
+          </Fragment>
         ))}
       </div>
     </div>
