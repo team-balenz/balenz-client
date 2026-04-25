@@ -6,7 +6,7 @@ import * as styles from './reportSummarySection.css';
 import { IDEOLOGY_LABELS, ITEM_LABELS } from './constants';
 
 /**
- * @property totalNewsCount       - 총 뉴스 수
+ * @property totalNewsCount       - 총 뉴스 수 (선택적, desktop 전용)
  * @property progressiveCount     - 진보성향 기사 수
  * @property conservativeCount    - 보수성향 기사 수
  * @property centerCount          - 중도성향 기사 수
@@ -15,7 +15,7 @@ import { IDEOLOGY_LABELS, ITEM_LABELS } from './constants';
  * @property relatedArticleCount  - 연관 기사 수 (선택적, tablet/mobile 전용)
  */
 interface ReportSummarySectionPropTypes {
-  totalNewsCount: number;
+  totalNewsCount?: number;
   progressiveCount: number;
   conservativeCount: number;
   centerCount: number;
@@ -56,7 +56,9 @@ const ReportSummarySection = ({
       : []),
 
     // 총 뉴스 수 — desktop 전용
-    ...('totalNews' in label ? [{ label: label.totalNews, value: totalNewsCount }] : []),
+    ...('totalNews' in label && totalNewsCount !== undefined
+      ? [{ label: label.totalNews, value: totalNewsCount }]
+      : []),
 
     // 이념 관점 기사 수
     { label: label.progressive, value: countValue(progressiveCount) },
