@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 import ArticlePreviewItem from '@/shared/components/articlePreviewItem/ArticlePreviewItem';
 import { useMediaQuery } from '@/shared/hooks/useMediaQuery';
-import { type HotArticleSectionGroupTypes } from '@/app/(home)/types/hotArticleSection';
+import { type HotArticleSectionGroupTypes } from '@/app/(main)/(home)/types/hotArticleSection';
 
 import * as styles from './hotArticleGroup.css';
 
