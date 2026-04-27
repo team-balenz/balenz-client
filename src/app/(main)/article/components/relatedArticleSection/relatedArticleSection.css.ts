@@ -72,9 +72,4 @@ export const articlesContainer = style({
 
 export const articleItem = style({
   borderBottom: `1px solid ${color.brand.gray2}`,
-  // '@media': {
-  //   [media.belowDesktop]: {
-  //     marginBottom: '1.25rem',
-  //   },
-  // },
 });
