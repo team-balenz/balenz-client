@@ -1,5 +1,13 @@
 import { style } from '@vanilla-extract/css';
 import { color, media, typography } from '@/shared/styles';
+import backgroundSvg from './assets/background.svg';
+
+/**
+ * 개선 포인트:
+ * 1. height → minHeight (유연성 확보)
+ * 2. background Image → CSS background로 이동
+ * 3. 일부 값 유지하면서 구조 개선
+ */
 
 export const container = style({
   position: 'relative',
@@ -9,21 +17,21 @@ export const container = style({
   justifyContent: 'center',
   borderRadius: '0.75rem',
   overflow: 'hidden',
-  height: '21.375rem',
   width: '100%',
+  minHeight: '21.375rem',
   boxShadow: '0 0 2px 0 rgba(17, 17, 17, 0.20)',
+  background: `url(${backgroundSvg.src}) center 20% / 65% no-repeat`,
 
   '@media': {
-    [media.tablet]: {},
     [media.mobile]: {
-      height: '15.375rem',
+      minHeight: '15.375rem',
+      backgroundSize: '100%',
     },
   },
 });
 
 export const content = style({
   position: 'relative',
-  zIndex: 1,
   textAlign: 'center',
   display: 'flex',
   flexDirection: 'column',
@@ -47,7 +55,10 @@ export const description = style({
 
   '@media': {
     [media.tablet]: typography.tablet.body2,
-    [media.mobile]: { ...typography.phone.body3, marginTop: '0.4769rem' },
+    [media.mobile]: {
+      ...typography.phone.body3,
+      marginTop: '0.4769rem',
+    },
   },
 });
 
@@ -55,20 +66,21 @@ export const button = style({
   marginTop: '2.5rem',
 });
 
-// 배경 장식 아이콘
 export const decorativeIcons = style({
   position: 'absolute',
-  width: '100%',
-  height: '100%',
-  top: 0,
-  left: 0,
-  pointerEvents: 'none',
+  inset: 0, // ✅ top/left 대신 shorthand
+
+  pointerEvents: 'none', // 클릭 방해 방지
   overflow: 'hidden',
 });
 
 export const icon = style({
   position: 'absolute',
 });
+
+/**
+ * 현재는 픽셀 기반 위치
+ */
 
 export const iconTopLeft = style([
   icon,
@@ -165,19 +177,3 @@ export const iconBottomRight = style([
     },
   },
 ]);
-
-export const background = style({
-  position: 'absolute',
-  top: '40%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  zIndex: 0,
-  width: '60%',
-  objectFit: 'cover',
-
-  '@media': {
-    [media.mobile]: {
-      width: '100%',
-    },
-  },
-});

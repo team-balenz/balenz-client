@@ -1,31 +1,48 @@
 'use client';
 
+import Link from 'next/link';
 import Image from 'next/image';
 import DefaultButton from '@/common/components/defaultButton/DefaultButton';
 import { ROUTES } from '@/shared/constants/route';
 import * as styles from './dailyFocusSection.css';
-import backgroundSvg from './assets/background.svg';
 import noteIcon from './assets/note.svg';
 import listIcon from './assets/list.svg';
 import folderIcon from './assets/folder.svg';
 import calendarIcon from './assets/calendar.svg';
-import Link from 'next/link';
 
 const DailyFocusSection = () => {
+  const icons = [
+    {
+      id: 'note',
+      src: noteIcon,
+      className: styles.iconTopLeft,
+    },
+    {
+      id: 'list',
+      src: listIcon,
+      className: styles.iconTopRight,
+    },
+    {
+      id: 'folder',
+      src: folderIcon,
+      className: styles.iconBottomLeft,
+    },
+    {
+      id: 'calendar',
+      src: calendarIcon,
+      className: styles.iconBottomRight,
+    },
+  ];
+
   return (
     <div className={styles.container}>
-      {/* 배경 이미지 */}
-      <Image src={backgroundSvg} alt="background" className={styles.background} />
-
       {/* 배경 장식 아이콘 */}
       <div className={styles.decorativeIcons}>
-        <Image src={noteIcon} alt="note icon" className={styles.iconTopLeft} />
-        <Image src={listIcon} alt="list icon" className={styles.iconTopRight} />
-        <Image src={folderIcon} alt="folder icon" className={styles.iconBottomLeft} />
-        <Image src={calendarIcon} alt="calendar icon" className={styles.iconBottomRight} />
+        {icons.map((icon) => (
+          <Image key={icon.id} src={icon.src} alt="" aria-hidden className={icon.className} />
+        ))}
       </div>
 
-      {/* 메인 콘텐츠 */}
       <div className={styles.content}>
         <h2 className={styles.title}>짧게 읽고, 관점은 넓게.</h2>
         <p className={styles.description}>
