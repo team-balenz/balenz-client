@@ -33,11 +33,11 @@ const DailyFocusSection = () => {
           <br />
           서로 다른 시각을 한 번에 확인하세요.
         </p>
-        <Link href={ROUTES.DAILY_FOCUS}>
-          <div className={styles.button}>
+        <div className={styles.button}>
+          <Link href={ROUTES.DAILY_FOCUS}>
             <DefaultButton label="데일리 포커스 보기" />
-          </div>
-        </Link>
+          </Link>
+        </div>
       </div>
     </div>
   );
