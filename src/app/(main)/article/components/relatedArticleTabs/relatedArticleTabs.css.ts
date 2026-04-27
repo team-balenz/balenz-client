@@ -27,6 +27,7 @@ export const tab = recipe({
     padding: '1.03rem 0',
     cursor: 'pointer',
     border: 'none',
+    borderBottom: `3px solid transparent`,
     backgroundColor: 'transparent',
     '@media': {
       [media.tablet]: {
