@@ -1,7 +1,7 @@
 import {
   type HotIssueGroupTypes,
   type HotIssueArticleItemTypes,
-} from '@/app/(home)/types/hotIssueSection';
+} from '@/app/(main)/(home)/types/hotIssueSection';
 
 import HotIssueHeader from '../hotIssueHeader/HotIssueHeader';
 import HotIssueArticleItem from '../hotIssueArticleItem/HotIssueArticleItem';

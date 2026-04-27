@@ -1,5 +1,5 @@
 import Title from '@/common/components/title/Title';
-import { SECTION_TITLES } from '@/app/(home)/constants';
+import { SECTION_TITLES } from '@/app/(main)/(home)/constants';
 import { HOT_ISSUE_ARTICLE_GROUP } from '@/mocks/data/home';
 
 import HotIssueGroup from './hotIssueGroup/HotIssueGroup';

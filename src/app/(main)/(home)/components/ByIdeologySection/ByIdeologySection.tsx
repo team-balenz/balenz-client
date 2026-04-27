@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import { BY_IDEOLOGY_CATEGORY_TABS, SECTION_TITLES } from '@/app/(home)/constants';
+import { BY_IDEOLOGY_CATEGORY_TABS, SECTION_TITLES } from '@/app/(main)/(home)/constants';
 import FilterTabs from '@/common/components/filterTabs/FilterTabs';
 import Title from '@/common/components/title/Title';
 import { BY_IDEOLOGY_SECTION_DATA } from '@/mocks/data/home';

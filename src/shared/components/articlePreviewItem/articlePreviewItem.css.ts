@@ -33,7 +33,7 @@ export const articlePreviewWrapper = recipe({
         },
       },
       expanded: {
-        padding: '1.25rem 0.625rem 2.19rem 0.625rem',
+        padding: '1.25rem 0 2.19rem',
         gap: '0.5rem',
       },
     },
