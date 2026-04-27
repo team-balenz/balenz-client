@@ -6,10 +6,10 @@ import { RELATED_ARTICLE_TAB_LIST, type RelatedArticleTabValue } from './constan
 
 type RelatedArticleTabsProps = {
   activeTab: RelatedArticleTabValue;
-  onChangeTab: (value: RelatedArticleTabValue) => void;
+  onTabChange: (value: RelatedArticleTabValue) => void;
 };
 
-const RelatedArticleTabs = ({ activeTab, onChangeTab }: RelatedArticleTabsProps) => {
+const RelatedArticleTabs = ({ activeTab, onTabChange }: RelatedArticleTabsProps) => {
   return (
     <div className={styles.tabsWrapper} role="tablist" aria-label="관련 기사 이념 필터">
       {RELATED_ARTICLE_TAB_LIST.map((tab) => (
@@ -19,7 +19,7 @@ const RelatedArticleTabs = ({ activeTab, onChangeTab }: RelatedArticleTabsProps)
           role="tab"
           aria-selected={tab.value === activeTab}
           className={styles.tab({ active: tab.value === activeTab })}
-          onClick={() => onChangeTab(tab.value)}
+          onClick={() => onTabChange(tab.value)}
         >
           {tab.label}
         </button>
