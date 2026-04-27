@@ -1,6 +1,5 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import DefaultButton from '@/common/components/defaultButton/DefaultButton';
 import { ROUTES } from '@/shared/constants/route';
@@ -10,13 +9,9 @@ import noteIcon from './assets/note.svg';
 import listIcon from './assets/list.svg';
 import folderIcon from './assets/folder.svg';
 import calendarIcon from './assets/calendar.svg';
+import Link from 'next/link';
 
 const DailyFocusSection = () => {
-  const router = useRouter();
-
-  const handleViewClick = () => {
-    router.push(ROUTES.DAILY_FOCUS);
-  };
   return (
     <div className={styles.container}>
       {/* 배경 이미지 */}
@@ -38,9 +33,11 @@ const DailyFocusSection = () => {
           <br />
           서로 다른 시각을 한 번에 확인하세요.
         </p>
-        <div className={styles.button}>
-          <DefaultButton label="데일리 포커스 보기" onClick={handleViewClick} />
-        </div>
+        <Link href={ROUTES.DAILY_FOCUS}>
+          <div className={styles.button}>
+            <DefaultButton label="데일리 포커스 보기" />
+          </div>
+        </Link>
       </div>
     </div>
   );
