@@ -12,6 +12,7 @@ export const ROUTES = {
   LOGIN: '/login',
   JOIN: '/join',
   SEARCH: '/search',
+  DAILY_FOCUS: '/daily-focus',
 } as const;
 
 /**
