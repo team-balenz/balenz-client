@@ -17,7 +17,7 @@ const ArticleDetailThumbnail = ({
   progressiveCount,
   centerCount,
   conservativeCount,
-  imageAlt = 'Article Thumbnail',
+  imageAlt = '아티클 썸네일',
 }: ArticleDetailThumbnailPropTypes) => {
   return (
     <div className={styles.container}>
