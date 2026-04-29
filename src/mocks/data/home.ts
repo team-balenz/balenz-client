@@ -3,6 +3,7 @@ import { type ScopeCarouselDataType } from '@/app/(main)/(home)/types/scopeCarou
 import type { ScopeArticleItemData } from '@/shared/components/scopeArticleItem/types';
 import { type HotArticleSectionGroupTypes } from '@/app/(main)/(home)/types/hotArticleSection';
 import { type ByIdeologySectionGroupTypes } from '@/app/(main)/(home)/types/byIdeologySection';
+import { type RelatedArticleSectionGroupTypes } from '@/app/(main)/article/types/relatedArticleSection';
 
 export const HOT_ISSUE_ARTICLE_GROUP: HotIssueGroupTypes[] = [
   {
@@ -753,6 +754,85 @@ export const BY_IDEOLOGY_SECTION_DATA: ByIdeologySectionGroupTypes[] = [
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
+      },
+    ],
+  },
+];
+
+// 스코프, 링크 세부 페이지 연관기사 영역 데이터
+export const RELATED_ARTICLE_SECTION_DATA: RelatedArticleSectionGroupTypes[] = [
+  {
+    ideology: 'progressive',
+    articleItems: [
+      {
+        articleId: 1,
+        ideologyIndicatorValue: 'L',
+        articleTitle:
+          '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
+        mediaName: '언론사명',
+        articlePublishedDate: '2026-04-25',
+        articleSummary:
+          '해당 섹션은 기사의 요약 부분입니다. “아티클_링크” 페이지 내 요약을 최대 세 줄까지 노출합니다. 세 줄 초과의 경우, 말줄임표를 적용해주세요. 다음은 주제 키워드에 대해 각 성향의 기사들이 어떤 식으로 서술하고 있는지 기사 성향을 설명하는 내용입니다. 예를 들어 “진보 성향으로 서술된 기사의 경우, 주제 키워드에 대해 ~식으로 묘사하고 있는 반면 보수 성향 기사는 ~식으로 표현하고 있습니다. 독자는 각기 다른 주제 키워드에 대한 책임 소재에 유의하길 바랍니다.”와 같이 주제 키워드에 대해 각 기사들이 어떻게 표현하고 있는지 묘사합니다.',
+      },
+      {
+        articleId: 2,
+        ideologyIndicatorValue: 'SL',
+        articleTitle:
+          '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
+        mediaName: '언론사명',
+        articlePublishedDate: '2026-04-25',
+        articleSummary:
+          '해당 섹션은 기사의 요약 부분입니다. “아티클_링크” 페이지 내 요약을 최대 세 줄까지 노출합니다. 세 줄 초과의 경우, 말줄임표를 적용해주세요. 다음은 주제 키워드에 대해 각 성향의 기사들이 어떤 식으로 서술하고 있는지 기사 성향을 설명하는 내용입니다. 예를 들어 “진보 성향으로 서술된 기사의 경우, 주제 키워드에 대해 ~식으로 묘사하고 있는 반면 보수 성향 기사는 ~식으로 표현하고 있습니다. 독자는 각기 다른 주제 키워드에 대한 책임 소재에 유의하길 바랍니다.”와 같이 주제 키워드에 대해 각 기사들이 어떻게 표현하고 있는지 묘사합니다.',
+      },
+    ],
+  },
+  {
+    ideology: 'center',
+    articleItems: [
+      {
+        articleId: 3,
+        ideologyIndicatorValue: 'C',
+        articleTitle:
+          '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
+        mediaName: '언론사명',
+        articlePublishedDate: '2026-04-25',
+        articleSummary:
+          '해당 섹션은 기사의 요약 부분입니다. “아티클_링크” 페이지 내 요약을 최대 세 줄까지 노출합니다. 세 줄 초과의 경우, 말줄임표를 적용해주세요. 다음은 주제 키워드에 대해 각 성향의 기사들이 어떤 식으로 서술하고 있는지 기사 성향을 설명하는 내용입니다. 예를 들어 “진보 성향으로 서술된 기사의 경우, 주제 키워드에 대해 ~식으로 묘사하고 있는 반면 보수 성향 기사는 ~식으로 표현하고 있습니다. 독자는 각기 다른 주제 키워드에 대한 책임 소재에 유의하길 바랍니다.”와 같이 주제 키워드에 대해 각 기사들이 어떻게 표현하고 있는지 묘사합니다.',
+      },
+      {
+        articleId: 4,
+        ideologyIndicatorValue: 'C',
+        articleTitle:
+          '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
+        mediaName: '언론사명',
+        articlePublishedDate: '2026-04-25',
+        articleSummary:
+          '해당 섹션은 기사의 요약 부분입니다. “아티클_링크” 페이지 내 요약을 최대 세 줄까지 노출합니다. 세 줄 초과의 경우, 말줄임표를 적용해주세요. 다음은 주제 키워드에 대해 각 성향의 기사들이 어떤 식으로 서술하고 있는지 기사 성향을 설명하는 내용입니다. 예를 들어 “진보 성향으로 서술된 기사의 경우, 주제 키워드에 대해 ~식으로 묘사하고 있는 반면 보수 성향 기사는 ~식으로 표현하고 있습니다. 독자는 각기 다른 주제 키워드에 대한 책임 소재에 유의하길 바랍니다.”와 같이 주제 키워드에 대해 각 기사들이 어떻게 표현하고 있는지 묘사합니다.',
+      },
+    ],
+  },
+  {
+    ideology: 'conservative',
+    articleItems: [
+      {
+        articleId: 5,
+        ideologyIndicatorValue: 'R',
+        articleTitle:
+          '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
+        mediaName: '언론사명',
+        articlePublishedDate: '2026-04-25',
+        articleSummary:
+          '해당 섹션은 기사의 요약 부분입니다. “아티클_링크” 페이지 내 요약을 최대 세 줄까지 노출합니다. 세 줄 초과의 경우, 말줄임표를 적용해주세요. 다음은 주제 키워드에 대해 각 성향의 기사들이 어떤 식으로 서술하고 있는지 기사 성향을 설명하는 내용입니다. 예를 들어 “진보 성향으로 서술된 기사의 경우, 주제 키워드에 대해 ~식으로 묘사하고 있는 반면 보수 성향 기사는 ~식으로 표현하고 있습니다. 독자는 각기 다른 주제 키워드에 대한 책임 소재에 유의하길 바랍니다.”와 같이 주제 키워드에 대해 각 기사들이 어떻게 표현하고 있는지 묘사합니다.',
+      },
+      {
+        articleId: 6,
+        ideologyIndicatorValue: 'SR',
+        articleTitle:
+          '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
+        mediaName: '언론사명',
+        articlePublishedDate: '2026-04-25',
+        articleSummary:
+          '해당 섹션은 기사의 요약 부분입니다. “아티클_링크” 페이지 내 요약을 최대 세 줄까지 노출합니다. 세 줄 초과의 경우, 말줄임표를 적용해주세요. 다음은 주제 키워드에 대해 각 성향의 기사들이 어떤 식으로 서술하고 있는지 기사 성향을 설명하는 내용입니다. 예를 들어 “진보 성향으로 서술된 기사의 경우, 주제 키워드에 대해 ~식으로 묘사하고 있는 반면 보수 성향 기사는 ~식으로 표현하고 있습니다. 독자는 각기 다른 주제 키워드에 대한 책임 소재에 유의하길 바랍니다.”와 같이 주제 키워드에 대해 각 기사들이 어떻게 표현하고 있는지 묘사합니다.',
       },
     ],
   },
