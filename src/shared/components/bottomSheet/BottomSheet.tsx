@@ -10,13 +10,13 @@ import * as styles from './bottomSheet.css';
  */
 const CLOSE_THRESHOLD = 100;
 
-interface BottomSheetProps {
+interface BottomSheetPropTypes {
   children: React.ReactNode;
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }
 
-const BottomSheet = ({ children, open, onOpenChange }: BottomSheetProps) => {
+const BottomSheet = ({ children, open, onOpenChange }: BottomSheetPropTypes) => {
   // 드래그 시작 Y좌표 저장
   const startYRef = useRef(0);
 
