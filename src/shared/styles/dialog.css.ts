@@ -4,6 +4,7 @@
  */
 
 import { style, keyframes } from '@vanilla-extract/css';
+import { zIndex } from './zIndex.css';
 
 /**
  * 페이드인 애니메이션
@@ -20,7 +21,7 @@ export const overlay = style({
   position: 'fixed',
   inset: 0,
   backgroundColor: 'rgba(17, 17, 17, 0.5)',
-  zIndex: 1000,
+  zIndex: zIndex.overlay,
   animation: `${fadeIn} 0.2s ease-out`,
 });
 

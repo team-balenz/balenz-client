@@ -1,5 +1,5 @@
 import { style, keyframes } from '@vanilla-extract/css';
-import { color } from '@/shared/styles/color.css';
+import { color, zIndex } from '@/shared/styles';
 export { overlay, hiddenTitle } from '@/shared/styles/dialog.css';
 
 /**
@@ -26,7 +26,7 @@ export const bottomSheet = style({
   boxShadow: '0 0 10px 0 rgba(28, 35, 43, 0.20)',
   maxHeight: '80vh',
   overflowY: 'auto',
-  zIndex: 1001,
+  zIndex: zIndex.dialogContent,
   outline: 'none',
   animation: `${slideUp} 0.3s ease-out`,
   WebkitOverflowScrolling: 'touch',
