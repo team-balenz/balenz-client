@@ -36,9 +36,6 @@ export const subtitleStyle = recipe({
     ...typography.correction,
     ...typography.desktop.h3,
     color: color.text.tertiary,
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
     '@media': {
       [media.tablet]: {
         ...typography.tablet.h3,
@@ -73,15 +70,18 @@ export const subtitleStyle = recipe({
 /**
  * 메인 제목 스타일
  * articleHeader만 타이포 상이
+ * 2줄 초과 시 말줄임표 부여
  */
 export const titleStyle = recipe({
   base: {
     ...typography.correction,
     ...typography.desktop.h1,
     color: color.text.main,
+    display: '-webkit-box',
+    WebkitBoxOrient: 'vertical',
+    WebkitLineClamp: 2,
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
     '@media': {
       [media.tablet]: {
         ...typography.tablet.h1,
