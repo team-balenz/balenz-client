@@ -1,6 +1,7 @@
 import { style } from '@vanilla-extract/css';
 import { color } from '@/shared/styles/color.css';
 import { fadeIn } from '@/shared/styles/dialog.css';
+import { media } from '@/shared/styles';
 export { overlay, hiddenTitle } from '@/shared/styles/dialog.css';
 
 export const content = style({
@@ -16,4 +17,14 @@ export const content = style({
   zIndex: 1001,
   outline: 'none',
   animation: `${fadeIn} 0.3s ease-out`,
+  width: '39.25rem',
+
+  '@media': {
+    [media.tablet]: {
+      width: '37.9375rem',
+    },
+    [media.mobile]: {
+      width: '90%',
+    },
+  },
 });
