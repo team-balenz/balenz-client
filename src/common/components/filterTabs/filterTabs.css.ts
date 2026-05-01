@@ -9,7 +9,7 @@ export const container = recipe({
     justifyContent: 'space-between',
     alignItems: 'center',
     borderRadius: '0.5rem',
-    overflow: 'scroll',
+    // overflow: 'scroll',
     backgroundColor: color.brand.gray1,
     padding: '0.3125rem',
     width: '100%',
