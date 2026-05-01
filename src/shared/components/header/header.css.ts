@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
-import { color, typography, media } from '@/shared/styles';
+import { color, typography, media, zIndex } from '@/shared/styles';
 import { HEADER_LAYOUT, LOGO_SIZE } from './constants';
 
 export const headerWrapper = style({
@@ -9,7 +9,7 @@ export const headerWrapper = style({
   alignItems: 'center',
   position: 'sticky',
   top: 0,
-  zIndex: 100, // 임시 부여, 추후 z-index 상수화 예정
+  zIndex: zIndex.header,
   backgroundColor: color.brand.background,
   borderBottom: `0.0625rem solid ${color.brand.gray2}`,
   ...HEADER_LAYOUT.desktop,

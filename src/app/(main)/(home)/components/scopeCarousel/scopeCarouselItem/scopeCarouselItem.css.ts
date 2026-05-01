@@ -1,6 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { color } from '@/shared/styles/color.css';
-import { media, typography } from '@/shared/styles';
+import { media, color, typography, zIndex } from '@/shared/styles';
 
 export const card = style({
   display: 'flex',
@@ -47,7 +46,7 @@ export const cardContent = style({
   bottom: 0,
   left: 0,
   right: 0,
-  zIndex: 10,
+  zIndex: zIndex.carouselCard,
 
   '@media': {
     [media.mobile]: {
@@ -83,7 +82,7 @@ export const ideologyBar = style({
   position: 'absolute',
   top: 0,
   left: 0,
-  zIndex: 20,
+  zIndex: zIndex.carouselBar,
 
   '@media': {
     [media.mobile]: {
