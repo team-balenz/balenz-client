@@ -10,7 +10,7 @@ import * as styles from './hotIssueArticleItem.css';
 interface HotIssueArticleItemPropTypes {
   articleId: number;
   articleThumbnail: string;
-  ideologyIndicatorValue: IdeologyIndicatorValueTypes;
+  frameType: IdeologyIndicatorValueTypes;
   articleTitle: string;
   mediaName: string;
 }
@@ -18,7 +18,7 @@ interface HotIssueArticleItemPropTypes {
 const HotIssueArticleItem = ({
   articleId,
   articleThumbnail,
-  ideologyIndicatorValue,
+  frameType,
   articleTitle,
   mediaName,
 }: HotIssueArticleItemPropTypes) => {
@@ -44,7 +44,7 @@ const HotIssueArticleItem = ({
       </div>
       <div className={styles.ideologyIndicatorWrapper}>
         <IdeologyIndicator
-          value={ideologyIndicatorValue}
+          value={frameType}
           size={{ desktop: 'medium', tablet: 'small', mobile: 'small' }}
         />
       </div>
