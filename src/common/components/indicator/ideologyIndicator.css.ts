@@ -92,7 +92,7 @@ export const item = recipe({
 
   defaultVariants: {
     active: false,
-    tone: 'C',
+    tone: 'NEUTRAL',
   },
 });
 
