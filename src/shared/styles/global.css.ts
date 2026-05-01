@@ -61,6 +61,9 @@ globalStyle('img, video', {
 /* Set default button styles */
 globalStyle('button', {
   cursor: 'pointer',
+  border: 'none',
+  backgroundColor: 'transparent',
+  padding: 0,
 });
 
 /* Remove default input and textarea styles */
