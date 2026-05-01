@@ -6,7 +6,7 @@ export interface ArticleBaseTypes {
   articleId: number;
   mediaName: string;
   articleTitle: string;
-  ideologyIndicatorValue: IdeologyIndicatorValueTypes;
+  frameType: IdeologyIndicatorValueTypes;
   //   onArticleClick: (articleId: number) => void;
 }
 

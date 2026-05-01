@@ -14,7 +14,7 @@ export const HOT_ISSUE_ARTICLE_GROUP: HotIssueGroupTypes[] = [
       {
         articleId: 1,
         articleThumbnail: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
-        ideologyIndicatorValue: 'SL',
+        frameType: 'STRONG_VALUE',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
@@ -22,7 +22,7 @@ export const HOT_ISSUE_ARTICLE_GROUP: HotIssueGroupTypes[] = [
       {
         articleId: 2,
         articleThumbnail: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
-        ideologyIndicatorValue: 'L',
+        frameType: 'VALUE',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
@@ -37,7 +37,7 @@ export const HOT_ISSUE_ARTICLE_GROUP: HotIssueGroupTypes[] = [
       {
         articleId: 3,
         articleThumbnail: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
-        ideologyIndicatorValue: 'SR',
+        frameType: 'STRONG_NORM',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
@@ -45,7 +45,7 @@ export const HOT_ISSUE_ARTICLE_GROUP: HotIssueGroupTypes[] = [
       {
         articleId: 4,
         articleThumbnail: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
-        ideologyIndicatorValue: 'SR',
+        frameType: 'STRONG_NORM',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
@@ -60,7 +60,7 @@ export const HOT_ISSUE_ARTICLE_GROUP: HotIssueGroupTypes[] = [
       {
         articleId: 5,
         articleThumbnail: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
-        ideologyIndicatorValue: 'SL',
+        frameType: 'STRONG_VALUE',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
@@ -68,7 +68,7 @@ export const HOT_ISSUE_ARTICLE_GROUP: HotIssueGroupTypes[] = [
       {
         articleId: 6,
         articleThumbnail: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
-        ideologyIndicatorValue: 'L',
+        frameType: 'VALUE',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
@@ -83,7 +83,7 @@ export const HOT_ISSUE_ARTICLE_GROUP: HotIssueGroupTypes[] = [
       {
         articleId: 7,
         articleThumbnail: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
-        ideologyIndicatorValue: 'SR',
+        frameType: 'STRONG_NORM',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
@@ -91,7 +91,7 @@ export const HOT_ISSUE_ARTICLE_GROUP: HotIssueGroupTypes[] = [
       {
         articleId: 8,
         articleThumbnail: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
-        ideologyIndicatorValue: 'SR',
+        frameType: 'STRONG_NORM',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
@@ -106,7 +106,7 @@ export const HOT_ISSUE_ARTICLE_GROUP: HotIssueGroupTypes[] = [
       {
         articleId: 9,
         articleThumbnail: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
-        ideologyIndicatorValue: 'SL',
+        frameType: 'STRONG_VALUE',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
@@ -114,7 +114,7 @@ export const HOT_ISSUE_ARTICLE_GROUP: HotIssueGroupTypes[] = [
       {
         articleId: 10,
         articleThumbnail: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
-        ideologyIndicatorValue: 'L',
+        frameType: 'VALUE',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
@@ -129,7 +129,7 @@ export const HOT_ISSUE_ARTICLE_GROUP: HotIssueGroupTypes[] = [
       {
         articleId: 11,
         articleThumbnail: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
-        ideologyIndicatorValue: 'SR',
+        frameType: 'STRONG_NORM',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
@@ -137,7 +137,7 @@ export const HOT_ISSUE_ARTICLE_GROUP: HotIssueGroupTypes[] = [
       {
         articleId: 12,
         articleThumbnail: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
-        ideologyIndicatorValue: 'SR',
+        frameType: 'STRONG_NORM',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
@@ -440,42 +440,42 @@ export const HOT_ARTICLE_GROUP: HotArticleSectionGroupTypes[] = [
     articleItems: [
       {
         articleId: 1,
-        ideologyIndicatorValue: 'SL',
+        frameType: 'STRONG_VALUE',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 2,
-        ideologyIndicatorValue: 'SL',
+        frameType: 'STRONG_VALUE',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 3,
-        ideologyIndicatorValue: 'SL',
+        frameType: 'STRONG_VALUE',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 4,
-        ideologyIndicatorValue: 'SL',
+        frameType: 'STRONG_VALUE',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 5,
-        ideologyIndicatorValue: 'SL',
+        frameType: 'STRONG_VALUE',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 6,
-        ideologyIndicatorValue: 'SL',
+        frameType: 'STRONG_VALUE',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
@@ -487,42 +487,42 @@ export const HOT_ARTICLE_GROUP: HotArticleSectionGroupTypes[] = [
     articleItems: [
       {
         articleId: 7,
-        ideologyIndicatorValue: 'SR',
+        frameType: 'STRONG_NORM',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 8,
-        ideologyIndicatorValue: 'SR',
+        frameType: 'STRONG_NORM',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 9,
-        ideologyIndicatorValue: 'SR',
+        frameType: 'STRONG_NORM',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 10,
-        ideologyIndicatorValue: 'SR',
+        frameType: 'STRONG_NORM',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 11,
-        ideologyIndicatorValue: 'SR',
+        frameType: 'STRONG_NORM',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 12,
-        ideologyIndicatorValue: 'SR',
+        frameType: 'STRONG_NORM',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
@@ -537,70 +537,70 @@ export const BY_IDEOLOGY_SECTION_DATA: ByIdeologySectionGroupTypes[] = [
     articleItems: [
       {
         articleId: 1,
-        ideologyIndicatorValue: 'SL',
+        frameType: 'STRONG_VALUE',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 두 줄 초과의 경우, 말줄임표 적용해주세요',
         mediaName: '언론사명',
       },
       {
         articleId: 2,
-        ideologyIndicatorValue: 'L',
+        frameType: 'VALUE',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 3,
-        ideologyIndicatorValue: 'L',
+        frameType: 'VALUE',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 4,
-        ideologyIndicatorValue: 'SL',
+        frameType: 'STRONG_VALUE',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 5,
-        ideologyIndicatorValue: 'L',
+        frameType: 'VALUE',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 6,
-        ideologyIndicatorValue: 'L',
+        frameType: 'VALUE',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 7,
-        ideologyIndicatorValue: 'SL',
+        frameType: 'STRONG_VALUE',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 8,
-        ideologyIndicatorValue: 'L',
+        frameType: 'VALUE',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 9,
-        ideologyIndicatorValue: 'L',
+        frameType: 'VALUE',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 10,
-        ideologyIndicatorValue: 'SL',
+        frameType: 'STRONG_VALUE',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
@@ -612,70 +612,70 @@ export const BY_IDEOLOGY_SECTION_DATA: ByIdeologySectionGroupTypes[] = [
     articleItems: [
       {
         articleId: 11,
-        ideologyIndicatorValue: 'C',
+        frameType: 'NEUTRAL',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다.세 줄 초과시, 말줄임표 적용해주세요',
         mediaName: '언론사명',
       },
       {
         articleId: 12,
-        ideologyIndicatorValue: 'C',
+        frameType: 'NEUTRAL',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 13,
-        ideologyIndicatorValue: 'C',
+        frameType: 'NEUTRAL',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 14,
-        ideologyIndicatorValue: 'C',
+        frameType: 'NEUTRAL',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 15,
-        ideologyIndicatorValue: 'C',
+        frameType: 'NEUTRAL',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 16,
-        ideologyIndicatorValue: 'C',
+        frameType: 'NEUTRAL',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 17,
-        ideologyIndicatorValue: 'C',
+        frameType: 'NEUTRAL',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 18,
-        ideologyIndicatorValue: 'C',
+        frameType: 'NEUTRAL',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 19,
-        ideologyIndicatorValue: 'C',
+        frameType: 'NEUTRAL',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 20,
-        ideologyIndicatorValue: 'C',
+        frameType: 'NEUTRAL',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
@@ -687,70 +687,70 @@ export const BY_IDEOLOGY_SECTION_DATA: ByIdeologySectionGroupTypes[] = [
     articleItems: [
       {
         articleId: 21,
-        ideologyIndicatorValue: 'R',
+        frameType: 'NORM',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 22,
-        ideologyIndicatorValue: 'SR',
+        frameType: 'STRONG_NORM',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 23,
-        ideologyIndicatorValue: 'R',
+        frameType: 'NORM',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 24,
-        ideologyIndicatorValue: 'SR',
+        frameType: 'STRONG_NORM',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 25,
-        ideologyIndicatorValue: 'SR',
+        frameType: 'STRONG_NORM',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 26,
-        ideologyIndicatorValue: 'R',
+        frameType: 'NORM',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 27,
-        ideologyIndicatorValue: 'SR',
+        frameType: 'STRONG_NORM',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 28,
-        ideologyIndicatorValue: 'R',
+        frameType: 'NORM',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 29,
-        ideologyIndicatorValue: 'SR',
+        frameType: 'STRONG_NORM',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
       },
       {
         articleId: 30,
-        ideologyIndicatorValue: 'R',
+        frameType: 'NORM',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
@@ -766,7 +766,7 @@ export const RELATED_ARTICLE_SECTION_DATA: RelatedArticleSectionGroupTypes[] = [
     articleItems: [
       {
         articleId: 1,
-        ideologyIndicatorValue: 'L',
+        frameType: 'VALUE',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
@@ -776,7 +776,7 @@ export const RELATED_ARTICLE_SECTION_DATA: RelatedArticleSectionGroupTypes[] = [
       },
       {
         articleId: 2,
-        ideologyIndicatorValue: 'SL',
+        frameType: 'STRONG_VALUE',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
@@ -791,7 +791,7 @@ export const RELATED_ARTICLE_SECTION_DATA: RelatedArticleSectionGroupTypes[] = [
     articleItems: [
       {
         articleId: 3,
-        ideologyIndicatorValue: 'C',
+        frameType: 'NEUTRAL',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
@@ -801,7 +801,7 @@ export const RELATED_ARTICLE_SECTION_DATA: RelatedArticleSectionGroupTypes[] = [
       },
       {
         articleId: 4,
-        ideologyIndicatorValue: 'C',
+        frameType: 'NEUTRAL',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
@@ -816,7 +816,7 @@ export const RELATED_ARTICLE_SECTION_DATA: RelatedArticleSectionGroupTypes[] = [
     articleItems: [
       {
         articleId: 5,
-        ideologyIndicatorValue: 'R',
+        frameType: 'NORM',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
@@ -826,7 +826,7 @@ export const RELATED_ARTICLE_SECTION_DATA: RelatedArticleSectionGroupTypes[] = [
       },
       {
         articleId: 6,
-        ideologyIndicatorValue: 'SR',
+        frameType: 'STRONG_NORM',
         articleTitle:
           '해당 섹션은 기사의 제목을 작성하는 섹션입니다. 세 줄 초과의 경우, 말줄임표 적용해주세요.',
         mediaName: '언론사명',
