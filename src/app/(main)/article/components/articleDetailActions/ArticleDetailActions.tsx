@@ -14,6 +14,11 @@ interface ArticleDetailActionsPropTypes {
   onScrapClick: () => void;
 }
 
+interface ToastStateTypes {
+  id: number;
+  message: string;
+}
+
 const ArticleDetailActions = ({
   isScraped,
   onShareClick,
@@ -23,7 +28,7 @@ const ArticleDetailActions = ({
   const breakpoint = useMediaQuery();
 
   // 토스트 메시지 상태: 스크랩 성공 또는 취소 메시지 표시
-  const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const [toast, setToast] = useState<ToastStateTypes | null>(null);
 
   // 토스트 메시지 타이머 리프: 토스트 메시지 지속 시간 관리 (2초)
   const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -49,17 +54,24 @@ const ArticleDetailActions = ({
   /**
    * 스크랩 버튼 클릭 핸들러
    * 스크랩 성공 또는 취소 메시지 표시 및 토스트 메시지 지속 시간 관리
+   * 토스트 메시지 아이디 증가 및 메시지 설정 - 토스트 메시지 유니크 키 생성
    */
   const handleScrapClick = () => {
     onScrapClick();
-    setToastMessage(isScraped ? TOAST_MESSAGE.scrapCancelSuccess : TOAST_MESSAGE.scrapSuccess);
+    const nextToastMessage = isScraped
+      ? TOAST_MESSAGE.scrapCancelSuccess
+      : TOAST_MESSAGE.scrapSuccess;
+    setToast((prevToast) => ({
+      id: (prevToast?.id ?? 0) + 1,
+      message: nextToastMessage,
+    }));
 
     if (toastTimerRef.current) {
       clearTimeout(toastTimerRef.current);
     }
 
     toastTimerRef.current = setTimeout(() => {
-      setToastMessage(null);
+      setToast(null);
     }, TOAST_DURATION_MS);
   };
 
@@ -98,9 +110,9 @@ const ArticleDetailActions = ({
           />
           <span className={styles.actionText}>{scrapButtonText}</span>
         </button>
-        {toastMessage && (
-          <div className={styles.scrapToast} role="status" aria-live="polite">
-            {toastMessage}
+        {toast && (
+          <div key={toast.id} className={styles.scrapToast} role="status" aria-live="polite">
+            {toast.message}
           </div>
         )}
       </div>
