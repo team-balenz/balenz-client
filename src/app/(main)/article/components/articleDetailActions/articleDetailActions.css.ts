@@ -1,5 +1,24 @@
-import { style } from '@vanilla-extract/css';
+import { keyframes, style } from '@vanilla-extract/css';
 import { color, typography, media, zIndex } from '@/shared/styles';
+
+const toastFadeInOut = keyframes({
+  '0%': {
+    opacity: 0,
+    marginTop: '0.375rem',
+  },
+  '15%': {
+    opacity: 1,
+    marginTop: '0',
+  },
+  '85%': {
+    opacity: 1,
+    marginTop: '0',
+  },
+  '100%': {
+    opacity: 0,
+    marginTop: '-0.25rem',
+  },
+});
 
 export const container = style({
   width: '100%',
@@ -56,6 +75,7 @@ export const scrapToast = style({
   padding: '1.25rem 1.875rem',
   whiteSpace: 'nowrap',
   zIndex: zIndex.toast,
+  animation: `${toastFadeInOut} 2s ease-in-out forwards`,
   '@media': {
     [media.tablet]: {
       ...typography.tablet.body2,
