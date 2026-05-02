@@ -10,7 +10,7 @@ interface LinkDetailBodyPropTypes {
 
 const LinkDetailBody = ({ summary, articleUrl }: LinkDetailBodyPropTypes) => {
   const handleOriginalArticleClick = () => {
-    window.open(articleUrl, '_blank');
+    window.open(articleUrl, '_blank', 'noopener,noreferrer');
   };
   return (
     <div className={styles.container}>
