@@ -1,10 +1,12 @@
 'use client';
 
-import * as styles from './linkDetailHeader.css';
+import { useState } from 'react';
+
 import ArticleDetailActions from '@/app/(main)/article/components/articleDetailActions/ArticleDetailActions';
 import IdeologyIndicator from '@/common/components/indicator/IdeologyIndicator';
-import { useState } from 'react';
 import { IdeologyIndicatorValueTypes } from '@/common/components/indicator/constants';
+
+import * as styles from './linkDetailHeader.css';
 
 interface LinkDetailHeaderPropTypes {
   id: number;
