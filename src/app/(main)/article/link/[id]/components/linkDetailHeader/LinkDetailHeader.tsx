@@ -1,0 +1,60 @@
+'use client';
+
+import * as styles from './linkDetailHeader.css';
+import ArticleDetailActions from '@/app/(main)/article/components/articleDetailActions/ArticleDetailActions';
+import IdeologyIndicator from '@/common/components/indicator/IdeologyIndicator';
+import { useState } from 'react';
+import { IdeologyIndicatorValueTypes } from '@/common/components/indicator/constants';
+
+interface LinkDetailHeaderPropTypes {
+  id: number;
+  title: string;
+  newsAgencyName: string;
+  publishedAt: string;
+  frameType: IdeologyIndicatorValueTypes;
+  isScraped: boolean;
+}
+
+const LinkDetailHeader = ({
+  id,
+  title,
+  newsAgencyName,
+  publishedAt,
+  frameType,
+  isScraped,
+}: LinkDetailHeaderPropTypes) => {
+  const [localIsScraped, setIsScraped] = useState(isScraped);
+  const handleShareClick = () => {
+    console.log('share');
+  };
+  const handleScrapClick = () => {
+    setIsScraped((prev: boolean) => !prev);
+    console.log(id);
+  };
+  return (
+    <div className={styles.container}>
+      <div className={styles.titleContainer}>
+        <div className={styles.newsAgencyNameText}>{newsAgencyName}</div>
+        <div className={styles.titleText}>{title}</div>
+        <div className={styles.ideologyIndicatorContainer}>
+          <IdeologyIndicator
+            value={frameType}
+            size={{ desktop: 'large', tablet: 'large', mobile: 'large' }}
+          />
+        </div>
+      </div>
+      <div className={styles.infoContainer}>
+        <div className={styles.publishedAtText}>{publishedAt}</div>
+        <div>
+          <ArticleDetailActions
+            isScraped={localIsScraped}
+            onShareClick={handleShareClick}
+            onScrapClick={handleScrapClick}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default LinkDetailHeader;
