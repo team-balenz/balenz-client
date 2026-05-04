@@ -53,7 +53,7 @@ const ShareModal = ({
   // 소셜 미디어 공유
   const handleSocialShare = (platform: SocialPlatform) => {
     const shareLink = platform.getShareUrl(shareUrl, finalTitle);
-    window.open(shareLink, '_blank');
+    window.open(shareLink, '_blank', 'noopener,noreferrer');
   };
 
   return (
