@@ -91,15 +91,14 @@ const ReportModal = ({ open, onOpenChange }: ReportModalPropTypes) => {
         </div>
 
         {/* 문제 선택 섹션 */}
-        <div className={styles.selectSection}>
+        <fieldset className={styles.selectSection}>
           <div className={styles.labelWrapper}>
-            <label className={styles.label}>어떤 문제가 있나요?</label>
+            <legend className={styles.label}>어떤 문제가 있나요?</legend>
             <span className={styles.required}>*</span>
           </div>
           {step === 'error' && (
             <div className={styles.errorMessage}>제보 사유를 필수로 선택해야합니다.</div>
           )}
-
           <div className={styles.radioGroup}>
             {REPORT_REASONS.map((reason) => (
               <label key={reason.id} className={styles.radioLabel}>
@@ -120,7 +119,7 @@ const ReportModal = ({ open, onOpenChange }: ReportModalPropTypes) => {
               </label>
             ))}
           </div>
-        </div>
+        </fieldset>
 
         {/* 추가 설명 섹션 */}
         <div className={styles.additionalSection}>
