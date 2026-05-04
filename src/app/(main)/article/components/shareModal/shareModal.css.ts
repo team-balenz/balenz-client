@@ -139,10 +139,6 @@ export const linkCopyContainer = style({
   border: 'none',
   gap: '0.75rem',
 
-  ':focus-within': {
-    borderColor: color.brand.progressive,
-  },
-
   '@media': {
     [media.belowDesktop]: {
       padding: '0.625rem 0.9375rem',
