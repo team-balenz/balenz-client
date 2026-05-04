@@ -23,11 +23,12 @@ const ReportModal = ({ open, onOpenChange }: ReportModalPropTypes) => {
   // 모달이 닫히면 상태 리셋
   useEffect(() => {
     if (!open) {
-      setTimeout(() => {
+      const timer = setTimeout(() => {
         setStep('initial');
         setSelectedReason('');
         setDescription('');
       }, 300);
+      return () => clearTimeout(timer);
     }
   }, [open]);
 
