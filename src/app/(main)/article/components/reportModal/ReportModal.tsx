@@ -65,9 +65,13 @@ const ReportModal = ({ open, onOpenChange }: ReportModalPropTypes) => {
           <p className={styles.completedDescription}>
             보내주신 의견을 유의 깊게 검토해{'\n'} 더 균형 잡힌 정보 제공에 반영하겠습니다.
           </p>
-          <div className={styles.logoImage}>
-            <Image src="/logo/reportmodal_logo.svg" alt="제보 완료" width={305} height={308} />
-          </div>
+          <Image
+            className={styles.logoImage}
+            src="/logo/reportmodal_logo.svg"
+            alt="제보 완료"
+            width={305}
+            height={308}
+          />
         </div>
       </BaseModal>
     );
