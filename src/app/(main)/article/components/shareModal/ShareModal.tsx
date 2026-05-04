@@ -33,6 +33,13 @@ const ShareModal = ({
     setCurrentUrl(`${window.location.origin}${pathname}`);
   }, [pathname]);
 
+  // 모달이 닫히면 copied 상태 리셋
+  useEffect(() => {
+    if (!open) {
+      setCopied(false);
+    }
+  }, [open]);
+
   // prop으로 받은 url이 있으면 사용, 없으면 currentUrl 사용
   const shareUrl = customShareUrl || currentUrl || '로딩 중...';
 
