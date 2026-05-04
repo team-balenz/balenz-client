@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 import ArticleDetailActions from '@/app/(main)/article/components/articleDetailActions/ArticleDetailActions';
+import ShareModal from '@/app/(main)/article/components/shareModal/ShareModal';
 import IdeologyIndicator from '@/common/components/indicator/IdeologyIndicator';
 import { IdeologyIndicatorValueTypes } from '@/common/components/indicator/constants';
 
@@ -26,8 +27,9 @@ const LinkDetailHeader = ({
   isScraped,
 }: LinkDetailHeaderPropTypes) => {
   const [localIsScraped, setIsScraped] = useState(isScraped);
+  const [shareModalOpen, setShareModalOpen] = useState(false);
   const handleShareClick = () => {
-    console.log('share');
+    setShareModalOpen(true);
   };
   const handleScrapClick = () => {
     setIsScraped((prev: boolean) => !prev);
@@ -55,6 +57,9 @@ const LinkDetailHeader = ({
           />
         </div>
       </div>
+
+      {/* 공유하기 모달 */}
+      <ShareModal open={shareModalOpen} onOpenChange={setShareModalOpen} shareTitle={title} />
     </div>
   );
 };
