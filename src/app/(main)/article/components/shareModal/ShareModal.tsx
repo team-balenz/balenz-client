@@ -43,14 +43,13 @@ const ShareModal = ({
   const ModalComponent = isMobile ? BottomSheet : BaseModal;
 
   // 링크 복사하기
-  const handleCopyLink = () => {
-    if (linkInputRef.current) {
-      linkInputRef.current.select();
-      document.execCommand('copy');
-
-      // 복사 성공 피드백
+  const handleCopyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('복사 실패', err);
     }
   };
 
