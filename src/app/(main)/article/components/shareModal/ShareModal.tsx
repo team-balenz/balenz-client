@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import BaseModal from '@/shared/components/baseModal/BaseModal';
 import BottomSheet from '@/shared/components/bottomSheet/BottomSheet';
