@@ -7,6 +7,7 @@ export const zIndex = {
   carouselCard: 10, // ScopeCarouselItem 내부 cardContent
   carouselBar: 20, // ScopeCarouselItem 내부 ideologyBar
   header: 100,
+  toast: 200,
   overlay: 1000,
   dialogContent: 1001,
 } as const;

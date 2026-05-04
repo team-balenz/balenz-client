@@ -3,7 +3,7 @@ import { type IdeologyIndicatorValueTypes } from '@/common/components/indicator/
 export interface HotIssueArticleItemTypes {
   articleId: number;
   articleThumbnail: string;
-  ideologyIndicatorValue: IdeologyIndicatorValueTypes;
+  frameType: IdeologyIndicatorValueTypes;
   articleTitle: string;
   mediaName: string;
 }

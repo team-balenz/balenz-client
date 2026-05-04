@@ -10,7 +10,7 @@ export const content = style({
   transform: 'translate(-50%, -50%)',
   backgroundColor: color.brand.background,
   borderRadius: '0.3125rem',
-  boxShadow: ' 0 0 10px 0 rgba(28, 35, 43, 0.20)',
+  boxShadow: '0 0 10px 0 rgba(28, 35, 43, 0.20)',
   maxHeight: '90vh',
   overflowY: 'auto',
   zIndex: zIndex.dialogContent,

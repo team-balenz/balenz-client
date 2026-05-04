@@ -31,11 +31,11 @@ export const item = recipe({
     },
 
     tone: {
-      SL: {},
-      L: {},
-      C: {},
-      R: {},
-      SR: {},
+      STRONG_VALUE: {},
+      VALUE: {},
+      NEUTRAL: {},
+      NORM: {},
+      STRONG_NORM: {},
     },
   },
 
@@ -46,53 +46,53 @@ export const item = recipe({
     {
       variants: {
         active: true,
-        tone: 'SL',
+        tone: 'STRONG_VALUE',
       },
       style: {
-        backgroundColor: IDEOLOGY_COLOR_THEME.SL,
+        backgroundColor: IDEOLOGY_COLOR_THEME.STRONG_VALUE,
       },
     },
     {
       variants: {
         active: true,
-        tone: 'L',
+        tone: 'VALUE',
       },
       style: {
-        backgroundColor: IDEOLOGY_COLOR_THEME.L,
+        backgroundColor: IDEOLOGY_COLOR_THEME.VALUE,
       },
     },
     {
       variants: {
         active: true,
-        tone: 'C',
+        tone: 'NEUTRAL',
       },
       style: {
-        backgroundColor: IDEOLOGY_COLOR_THEME.C,
+        backgroundColor: IDEOLOGY_COLOR_THEME.NEUTRAL,
       },
     },
     {
       variants: {
         active: true,
-        tone: 'R',
+        tone: 'NORM',
       },
       style: {
-        backgroundColor: IDEOLOGY_COLOR_THEME.R,
+        backgroundColor: IDEOLOGY_COLOR_THEME.NORM,
       },
     },
     {
       variants: {
         active: true,
-        tone: 'SR',
+        tone: 'STRONG_NORM',
       },
       style: {
-        backgroundColor: IDEOLOGY_COLOR_THEME.SR,
+        backgroundColor: IDEOLOGY_COLOR_THEME.STRONG_NORM,
       },
     },
   ],
 
   defaultVariants: {
     active: false,
-    tone: 'C',
+    tone: 'NEUTRAL',
   },
 });
 
