@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import BaseModal from '@/shared/components/baseModal/BaseModal';
 import BottomSheet from '@/shared/components/bottomSheet/BottomSheet';
 import { useMediaQuery } from '@/shared/hooks/useMediaQuery';
@@ -24,9 +25,11 @@ const ShareModal = ({
 }: ShareModalPropTypes) => {
   const [copied, setCopied] = useState(false);
   const breakpoint = useMediaQuery();
+  const pathname = usePathname();
 
   // prop으로 받은 url이 있으면 사용, 없으면 현재 페이지 URL 사용
-  const shareUrl = customShareUrl || window.location.href;
+  const shareUrl =
+    customShareUrl ?? (typeof window !== 'undefined' ? `${window.location.origin}${pathname}` : '');
 
   // prop으로 받은 title이 있으면 사용, 없으면 'balenz' 사용
   const finalTitle = shareTitle ?? 'balenz';
@@ -40,11 +43,6 @@ const ShareModal = ({
     try {
       await navigator.clipboard.writeText(shareUrl);
       setCopied(true);
-
-      // 2초 후 복사됨 메시지 사라짐
-      setTimeout(() => {
-        setCopied(false);
-      }, 2000);
     } catch (err) {
       console.error('복사 실패', err);
     }
@@ -57,7 +55,15 @@ const ShareModal = ({
   };
 
   return (
-    <ModalComponent open={open} onOpenChange={onOpenChange}>
+    <ModalComponent
+      open={open}
+      onOpenChange={(next) => {
+        if (!next) {
+          setCopied(false); // copy 상태 초기화
+        }
+        onOpenChange(next);
+      }}
+    >
       <div className={styles.container}>
         {/* 제목 */}
         <div className={styles.titleWrapper}>
@@ -84,7 +90,13 @@ const ShareModal = ({
           </div>
 
           <div className={styles.linkCopyContainer}>
-            <input type="text" value={shareUrl} readOnly className={styles.linkInput} />
+            <input
+              type="text"
+              value={shareUrl}
+              readOnly
+              className={styles.linkInput}
+              aria-label="공유 링크"
+            />
             <button
               onClick={handleCopyLink}
               className={styles.copyButton}
