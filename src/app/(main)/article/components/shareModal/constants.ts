@@ -45,7 +45,7 @@ export const SOCIAL_PLATFORMS: SocialPlatform[] = [
     label: 'Threads',
     icon: threadsSvg,
     getShareUrl: (url: string, title: string = '') =>
-      `https://www.threads.net/intent/post?text=${encodeURIComponent(title)} ${url}`,
+      `https://www.threads.net/intent/post?text=${encodeURIComponent(`${title} ${url}`)}`,
   },
   {
     id: 'telegram',
