@@ -7,6 +7,7 @@ import BottomSheet from '@/shared/components/bottomSheet/BottomSheet';
 import { useMediaQuery } from '@/shared/hooks/useMediaQuery';
 import * as styles from './shareModal.css';
 import { SOCIAL_PLATFORMS } from './constants';
+import type { SocialPlatform } from './constants';
 import Image from 'next/image';
 
 interface ShareModalPropTypes {
@@ -22,7 +23,6 @@ const ShareModal = ({
   shareUrl: customShareUrl,
   shareTitle,
 }: ShareModalPropTypes) => {
-  const linkInputRef = useRef<HTMLInputElement>(null);
   const [copied, setCopied] = useState(false);
   const [currentUrl, setCurrentUrl] = useState('');
   const breakpoint = useMediaQuery();
@@ -33,8 +33,9 @@ const ShareModal = ({
     setCurrentUrl(`${window.location.origin}${pathname}`);
   }, [pathname]);
 
-  // prop으로 받은 URL이 있으면 사용, 없으면 현재 경로 사용
-  const shareUrl = customShareUrl || currentUrl;
+  // prop으로 받은 url이 있으면 사용, 없으면 currentUrl 사용
+  const shareUrl = customShareUrl || currentUrl || '로딩 중...';
+
   // prop으로 받은 title이 있으면 사용, 없으면 'balenz' 사용
   const finalTitle = shareTitle ?? 'balenz';
 
@@ -47,14 +48,13 @@ const ShareModal = ({
     try {
       await navigator.clipboard.writeText(shareUrl);
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
     } catch (err) {
       console.error('복사 실패', err);
     }
   };
 
   // 소셜 미디어 공유
-  const handleSocialShare = (platform: (typeof SOCIAL_PLATFORMS)[0]) => {
+  const handleSocialShare = (platform: SocialPlatform) => {
     const shareLink = platform.getShareUrl(shareUrl, finalTitle);
     window.open(shareLink, '_blank');
   };
@@ -82,15 +82,12 @@ const ShareModal = ({
         {/* 링크 공유 섹션 */}
         <section className={styles.linkShareSection}>
           <h3 className={styles.sectionTitle}>링크 공유하기</h3>
-          {copied && <div className={styles.successMessage}>링크가 복사되었습니다.</div>}
+          <div aria-live="polite" aria-atomic="true" className={styles.successMessage}>
+            {copied && '링크가 복사되었습니다.'}
+          </div>
+
           <div className={styles.linkCopyContainer}>
-            <input
-              ref={linkInputRef}
-              type="text"
-              value={shareUrl}
-              readOnly
-              className={styles.linkInput}
-            />
+            <input type="text" value={shareUrl} readOnly className={styles.linkInput} />
             <button
               onClick={handleCopyLink}
               className={styles.copyButton}
@@ -114,13 +111,9 @@ const ShareModal = ({
                 title={platform.label}
                 aria-label={`${platform.label}로 공유`}
               >
-                <Image
-                  className={styles.socialIcon}
-                  src={platform.icon.src}
-                  alt={platform.label}
-                  width={60}
-                  height={60}
-                />
+                <div className={styles.socialIconWrapper}>
+                  <Image src={platform.icon.src} alt={platform.label} width={60} height={60} />
+                </div>
                 <span className={styles.socialLabel}>{platform.label}</span>
               </button>
             ))}

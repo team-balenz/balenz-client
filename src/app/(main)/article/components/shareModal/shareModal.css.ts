@@ -160,7 +160,7 @@ export const linkInput = style({
   backgroundColor: 'transparent',
   color: color.text.main,
   ...typography.desktop.body1,
-  cursor: 'text',
+  cursor: 'default',
   boxSizing: 'border-box',
 
   ':focus': {
@@ -197,7 +197,7 @@ export const copyButton = style({
 });
 
 /**
- *  복사 성공 메시지
+ * 복사 성공 메시지
  */
 export const successMessage = style({
   color: color.system.success,
@@ -262,9 +262,9 @@ export const socialLink = style({
 });
 
 /**
- * 소셜 아이콘
+ * 소셜 아이콘 래퍼
  */
-export const socialIcon = style({
+export const socialIconWrapper = style({
   width: '3.75rem',
   height: '3.75rem',
   display: 'flex',
@@ -281,7 +281,7 @@ export const socialIcon = style({
 });
 
 /**
- *  소셜 레이블
+ * 소셜 레이블
  */
 export const socialLabel = style({
   ...typography.desktop.body3,
