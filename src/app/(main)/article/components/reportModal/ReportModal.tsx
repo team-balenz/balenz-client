@@ -124,8 +124,11 @@ const ReportModal = ({ open, onOpenChange }: ReportModalPropTypes) => {
 
         {/* 추가 설명 섹션 */}
         <div className={styles.additionalSection}>
-          <label className={styles.label}>추가로 설명해주세요.</label>
+          <label htmlFor="report-description" className={styles.label}>
+            추가로 설명해주세요.
+          </label>
           <textarea
+            id="report-description"
             className={styles.textArea}
             value={description}
             onChange={(e) => setDescription(e.target.value)}
