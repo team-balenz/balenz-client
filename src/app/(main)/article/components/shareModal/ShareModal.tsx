@@ -1,7 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 import BaseModal from '@/shared/components/baseModal/BaseModal';
 import BottomSheet from '@/shared/components/bottomSheet/BottomSheet';
 import { useMediaQuery } from '@/shared/hooks/useMediaQuery';
@@ -24,24 +23,10 @@ const ShareModal = ({
   shareTitle,
 }: ShareModalPropTypes) => {
   const [copied, setCopied] = useState(false);
-  const [currentUrl, setCurrentUrl] = useState('');
   const breakpoint = useMediaQuery();
-  const pathname = usePathname();
 
-  // 클라이언트 환경에서만 currentUrl 설정
-  useEffect(() => {
-    setCurrentUrl(`${window.location.origin}${pathname}`);
-  }, [pathname]);
-
-  // 모달이 닫히면 copied 상태 리셋
-  useEffect(() => {
-    if (!open) {
-      setCopied(false);
-    }
-  }, [open]);
-
-  // prop으로 받은 url이 있으면 사용, 없으면 currentUrl 사용
-  const shareUrl = customShareUrl || currentUrl || '로딩 중...';
+  // prop으로 받은 url이 있으면 사용, 없으면 현재 페이지 URL 사용
+  const shareUrl = customShareUrl || window.location.href;
 
   // prop으로 받은 title이 있으면 사용, 없으면 'balenz' 사용
   const finalTitle = shareTitle ?? 'balenz';
@@ -55,6 +40,11 @@ const ShareModal = ({
     try {
       await navigator.clipboard.writeText(shareUrl);
       setCopied(true);
+
+      // 2초 후 복사됨 메시지 사라짐
+      setTimeout(() => {
+        setCopied(false);
+      }, 2000);
     } catch (err) {
       console.error('복사 실패', err);
     }
