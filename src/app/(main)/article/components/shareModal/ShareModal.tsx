@@ -6,67 +6,22 @@ import BaseModal from '@/shared/components/baseModal/BaseModal';
 import BottomSheet from '@/shared/components/bottomSheet/BottomSheet';
 import { useMediaQuery } from '@/shared/hooks/useMediaQuery';
 import * as styles from './shareModal.css';
-import kakaoSvg from './assets/kakaotalk.svg';
-import xSvg from './assets/x.svg';
-import instagramSvg from './assets/instagram.svg';
-import threadsSvg from './assets/threads.svg';
-import telegramSvg from './assets/telegram.svg';
+import { SOCIAL_PLATFORMS } from './constants';
 import Image from 'next/image';
 
-/**
- * 소셜 미디어 정보
- */
-const SOCIAL_PLATFORMS = [
-  {
-    id: 'kakao',
-    label: '카카오톡',
-    icon: kakaoSvg,
-    getShareUrl: (url: string) => `https://story.kakao.com/s/share?url=${encodeURIComponent(url)}`,
-  },
-  {
-    id: 'x',
-    label: 'X',
-    icon: xSvg,
-    getShareUrl: (url: string) =>
-      `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=balenz`,
-  },
-  {
-    id: 'instagram',
-    label: '인스타그램',
-    icon: instagramSvg,
-    getShareUrl: (url: string) => `https://www.instagram.com/?url=${encodeURIComponent(url)}`,
-  },
-  {
-    id: 'threads',
-    label: 'Threads',
-    icon: threadsSvg,
-    getShareUrl: (url: string) =>
-      `https://www.threads.net/intent/post?text=${encodeURIComponent(`balenz ${url}`)}`,
-  },
-  {
-    id: 'telegram',
-    label: '텔레그램',
-    icon: telegramSvg,
-    getShareUrl: (url: string) =>
-      `https://t.me/share/url?url=${encodeURIComponent(url)}&text=balenz`,
-  },
-];
-
 interface ShareModalPropTypes {
-  /** 모달 열림/닫힘 상태 */
   open: boolean;
-
-  /** 모달 상태 변경 핸들러 */
   onOpenChange: (open: boolean) => void;
-
-  /** 공유할 링크 URL (미제공 시 현재 경로 사용) */
-  shareUrl?: string;
-
-  /** 공유할 제목 (선택사항) */
-  shareTitle?: string;
+  shareUrl?: string; // 공유할 링크 URL (미제공 시 현재 경로 사용)
+  shareTitle?: string; // 공유 제목
 }
 
-const ShareModal = ({ open, onOpenChange, shareUrl: customShareUrl }: ShareModalPropTypes) => {
+const ShareModal = ({
+  open,
+  onOpenChange,
+  shareUrl: customShareUrl,
+  shareTitle,
+}: ShareModalPropTypes) => {
   const linkInputRef = useRef<HTMLInputElement>(null);
   const [copied, setCopied] = useState(false);
   const [currentUrl, setCurrentUrl] = useState('');
@@ -80,14 +35,14 @@ const ShareModal = ({ open, onOpenChange, shareUrl: customShareUrl }: ShareModal
 
   // prop으로 받은 URL이 있으면 사용, 없으면 현재 경로 사용
   const shareUrl = customShareUrl || currentUrl;
+  // prop으로 받은 title이 있으면 사용, 없으면 'balenz' 사용
+  const finalTitle = shareTitle ?? 'balenz';
 
   // 모바일일 때는 BottomSheet, 그 외에는 BaseModal 사용
   const isMobile = breakpoint === 'mobile';
   const ModalComponent = isMobile ? BottomSheet : BaseModal;
 
-  /**
-   * 링크 복사하기
-   */
+  // 링크 복사하기
   const handleCopyLink = () => {
     if (linkInputRef.current) {
       linkInputRef.current.select();
@@ -99,12 +54,10 @@ const ShareModal = ({ open, onOpenChange, shareUrl: customShareUrl }: ShareModal
     }
   };
 
-  /**
-   * 소셜 미디어 공유
-   */
+  // 소셜 미디어 공유
   const handleSocialShare = (platform: (typeof SOCIAL_PLATFORMS)[0]) => {
-    const shareLink = platform.getShareUrl(shareUrl);
-    window.open(shareLink, '_blank', 'width=600,height=400');
+    const shareLink = platform.getShareUrl(shareUrl, finalTitle);
+    window.open(shareLink, '_blank');
   };
 
   return (
@@ -150,7 +103,7 @@ const ShareModal = ({ open, onOpenChange, shareUrl: customShareUrl }: ShareModal
           </div>
         </section>
 
-        {/* 🌍 소셜 공유 섹션 */}
+        {/* 소셜 공유 섹션 */}
         <section className={styles.socialShareSection}>
           <h3 className={styles.sectionTitle}>다른 앱에 공유하기</h3>
           <div className={styles.socialIconsContainer}>
