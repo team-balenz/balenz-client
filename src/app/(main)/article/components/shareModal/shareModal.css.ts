@@ -70,7 +70,8 @@ export const closeButton = style({
  */
 export const description = style({
   ...typography.desktop.body2,
-  color: color.text.secondary,
+  ...typography.correction,
+  color: color.text.tertiary,
   marginTop: '0.3125rem',
 
   '@media': {
