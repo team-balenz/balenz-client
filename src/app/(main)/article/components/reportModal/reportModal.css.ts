@@ -133,8 +133,7 @@ export const radioInput = style({
   margin: 0,
   selectors: {
     '&:checked': {
-      borderColor: color.brand.main,
-      boxShadow: `inset 0 0 0 0.3125rem ${color.brand.main}`,
+      border: `0.375rem solid ${color.brand.main}`,
     },
   },
 });
