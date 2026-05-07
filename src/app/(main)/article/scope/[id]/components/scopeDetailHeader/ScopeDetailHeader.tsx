@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 import Title from '@/common/components/title/Title';
 import ArticleDetailActions from '@/app/(main)/article/components/articleDetailActions/ArticleDetailActions';
+import ShareModal from '@/app/(main)/article/components/shareModal/ShareModal';
 import * as styles from './scopeDetailHeader.css';
 
 interface ScopeDetailHeaderPropTypes {
@@ -22,8 +23,9 @@ const ScopeDetailHeader = ({
   isScraped,
 }: ScopeDetailHeaderPropTypes) => {
   const [localIsScraped, setIsScraped] = useState(isScraped);
+  const [shareModalOpen, setShareModalOpen] = useState(false);
   const handleShareClick = () => {
-    console.log('share');
+    setShareModalOpen(true);
   };
   const handleScrapClick = () => {
     setIsScraped((prev) => !prev);
@@ -46,6 +48,9 @@ const ScopeDetailHeader = ({
           />
         </div>
       </div>
+
+      {/* 공유하기 모달 */}
+      <ShareModal open={shareModalOpen} onOpenChange={setShareModalOpen} />
     </div>
   );
 };
