@@ -92,10 +92,10 @@ const ReportModal = ({ open, onOpenChange }: ReportModalPropTypes) => {
 
         {/* 문제 선택 섹션 */}
         <fieldset className={styles.selectSection}>
-          <div className={styles.labelWrapper}>
-            <legend className={styles.label}>어떤 문제가 있나요?</legend>
+          <legend className={styles.labelWrapper}>
+            <span className={styles.label}>어떤 문제가 있나요?</span>
             <span className={styles.required}>*</span>
-          </div>
+          </legend>
           {step === 'error' && (
             <div className={styles.errorMessage}>제보 사유를 필수로 선택해야합니다.</div>
           )}
