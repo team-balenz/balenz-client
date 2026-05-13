@@ -7,37 +7,50 @@ import * as styles from './reportSummarySection.css';
 import { IDEOLOGY_LABELS, ITEM_LABELS } from './constants';
 
 /**
- * @property totalNewsCount       - 총 뉴스 수 (선택적, desktop 전용)
- * @property progressiveCount     - 진보성향 기사 수
- * @property conservativeCount    - 보수성향 기사 수
- * @property centerCount          - 중도성향 기사 수
- * @property biasIdeology         - 편향 이념
- * @property biasPercentage       - 편향 퍼센트 (0–100)
- * @property relatedArticleCount  - 연관 기사 수 (선택적, tablet/mobile 전용)
+ * @property articleCount - 이념별 기사 수 데이터
+ * @property bias - 편향 퍼센트 (0–100)
+ * @property dominantFrameType - 편향 이념 (VALUE, NORM, NEUTRAL)
+ * @property relatedArticleCount - 연관 기사 수 (선택적, tablet/mobile 전용)
  */
 interface ReportSummarySectionPropTypes {
-  totalNewsCount?: number;
-  progressiveCount: number;
-  conservativeCount: number;
-  centerCount: number;
-  biasIdeology: IdeologyType;
-  biasPercentage: number;
+  articleCount: {
+    neutral: number;
+    neutralRatio: number;
+    norm: number;
+    normRatio: number;
+    value: number;
+    valueRatio: number;
+  };
+  bias: number;
+  dominantFrameType: string;
   relatedArticleCount?: number;
 }
 
 const ReportSummarySection = ({
-  totalNewsCount,
-  progressiveCount,
-  conservativeCount,
-  centerCount,
-  biasIdeology,
-  biasPercentage,
+  articleCount,
+  bias,
+  dominantFrameType,
   relatedArticleCount,
 }: ReportSummarySectionPropTypes) => {
   const breakpoint = useMediaQuery();
   const isMobile = breakpoint === 'mobile';
 
   const label = ITEM_LABELS[breakpoint];
+
+  // 데이터 매핑
+  const valueCount = articleCount.value;
+  const normCount = articleCount.norm;
+  const neutralCount = articleCount.neutral;
+  const totalNewsCount = articleCount.value + articleCount.norm + articleCount.neutral;
+  const biasPercentage = bias;
+
+  // dominantFrameType을 IdeologyType으로 변환 (추후 통일)
+  const biasIdeologyMap: Record<string, IdeologyType> = {
+    VALUE: 'progressive',
+    NORM: 'conservative',
+    NEUTRAL: 'center',
+  };
+  const biasIdeology: IdeologyType = biasIdeologyMap[dominantFrameType] || 'center';
 
   // 숫자 값에 '건' 단위를 붙여 반환 — mobile 전용
   const countValue = (count: number) =>
@@ -62,9 +75,9 @@ const ReportSummarySection = ({
       : []),
 
     // 이념 관점 기사 수
-    { label: label.progressive, value: countValue(progressiveCount) },
-    { label: label.conservative, value: countValue(conservativeCount) },
-    { label: label.center, value: countValue(centerCount) },
+    { label: label.progressive, value: countValue(valueCount) },
+    { label: label.conservative, value: countValue(normCount) },
+    { label: label.center, value: countValue(neutralCount) },
 
     // 편향 분포
     {
