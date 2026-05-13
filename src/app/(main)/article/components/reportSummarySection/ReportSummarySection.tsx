@@ -10,7 +10,6 @@ import { IDEOLOGY_LABELS, ITEM_LABELS } from './constants';
  * @property articleCount - 이념별 기사 수 데이터
  * @property bias - 편향 퍼센트 (0–100)
  * @property dominantFrameType - 편향 이념 (VALUE, NORM, NEUTRAL)
- * @property relatedArticleCount - 연관 기사 수 (선택적, tablet/mobile 전용)
  */
 interface ReportSummarySectionPropTypes {
   articleCount: {
@@ -23,14 +22,12 @@ interface ReportSummarySectionPropTypes {
   };
   bias: number;
   dominantFrameType: string;
-  relatedArticleCount?: number;
 }
 
 const ReportSummarySection = ({
   articleCount,
   bias,
   dominantFrameType,
-  relatedArticleCount,
 }: ReportSummarySectionPropTypes) => {
   const breakpoint = useMediaQuery();
   const isMobile = breakpoint === 'mobile';
@@ -63,16 +60,12 @@ const ReportSummarySection = ({
       count
     );
 
-  const items: { label: string; value: React.ReactNode }[] = [
-    // 연관 기사 수 — tablet/mobile 전용
-    ...('relatedArticle' in label && relatedArticleCount !== undefined
-      ? [{ label: label.relatedArticle, value: countValue(relatedArticleCount) }]
-      : []),
+  // 총 뉴스/연관 기사 수 라벨 선택 (모두 같은 totalNewsCount 값 사용)
+  const newsCountLabel = label.totalNews;
 
-    // 총 뉴스 수 — desktop 전용
-    ...('totalNews' in label && totalNewsCount !== undefined
-      ? [{ label: label.totalNews, value: totalNewsCount }]
-      : []),
+  const items: { label: string; value: React.ReactNode }[] = [
+    // 총 뉴스/연관 기사 수 — desktop: 총 뉴스 수, tablet/mobile: 연관 기사 수
+    { label: newsCountLabel, value: countValue(totalNewsCount) },
 
     // 이념 관점 기사 수
     { label: label.progressive, value: countValue(valueCount) },
