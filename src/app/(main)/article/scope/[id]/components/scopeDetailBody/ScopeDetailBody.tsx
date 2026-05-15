@@ -10,12 +10,12 @@ interface ScopeDetailBodyArticleCountTypes {
   valueRatio: number;
 }
 
-interface ScopeDetailBodyPropTypes {
+export interface ScopeDetailBodyPropTypes {
   keywordName: string;
   keywordSummary: string;
   articleCount: ScopeDetailBodyArticleCountTypes;
   bias: number;
-  dominantFrameType: string;
+  dominantFrameType: 'VALUE' | 'NEUTRAL' | 'NORM' | 'BALANCED';
 }
 
 const ScopeDetailBody = ({

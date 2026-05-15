@@ -1,4 +1,4 @@
-import { type ArticleSummarySectionTypes } from '@/app/(main)/article/scope/[id]/types/articleSummarySection';
+import type { ScopeDetailTypes } from '@/app/(main)/article/scope/[id]/types/scopeDetailSection';
 
 export const SCOPE_DETAIL_MOCK = {
   id: 19,
@@ -43,5 +43,5 @@ export const SCOPE_DETAIL_MOCK = {
       summary: '요약요약',
       title: '기사 제목',
     },
-  } satisfies ArticleSummarySectionTypes,
-};
+  },
+} satisfies ScopeDetailTypes;
