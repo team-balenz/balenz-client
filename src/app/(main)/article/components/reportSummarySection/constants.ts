@@ -18,14 +18,14 @@ export const ITEM_LABELS = {
     biasDist: '편향 분포',
   },
   tablet: {
-    relatedArticle: '연관 기사 수',
+    totalNews: '연관 기사 수',
     progressive: '진보 관점 기사 수',
     conservative: '보수 관점 기사 수',
     center: '중도 관점 기사 수',
     biasDist: '편향 분포',
   },
   mobile: {
-    relatedArticle: '연관 기사',
+    totalNews: '연관 기사',
     progressive: '진보 관점',
     conservative: '보수 관점',
     center: '중도 관점',
