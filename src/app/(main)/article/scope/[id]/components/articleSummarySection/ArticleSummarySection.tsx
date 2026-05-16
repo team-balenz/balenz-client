@@ -7,14 +7,16 @@ import IdeologyIndicator from '@/common/components/indicator/IdeologyIndicator';
 
 import { SUMMARY_CATEGORY_TABS } from '@/app/(main)/(home)/constants';
 import { type ArticleSummarySectionTypes } from '@/app/(main)/article/scope/[id]/types/articleSummarySection';
-import { ARTICLE_SUMMARY_SECTION_DATA } from '@/mocks/data/scopeDetail';
 
 import * as styles from './articleSummarySection.css';
 
-const ArticleSummarySection = () => {
+interface ArticleSummarySectionPropTypes {
+  mainArticles: ArticleSummarySectionTypes;
+}
+
+const ArticleSummarySection = ({ mainArticles }: ArticleSummarySectionPropTypes) => {
   const [summaryActiveKey, setSummaryActiveKey] = useState<string>('progressive');
-  const summaryItem =
-    ARTICLE_SUMMARY_SECTION_DATA[summaryActiveKey as keyof ArticleSummarySectionTypes];
+  const summaryItem = mainArticles[summaryActiveKey as keyof ArticleSummarySectionTypes];
 
   return (
     <div className={styles.container}>
