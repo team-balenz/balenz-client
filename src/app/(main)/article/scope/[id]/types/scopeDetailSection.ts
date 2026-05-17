@@ -17,6 +17,7 @@ export interface ScopeDetailTypes {
   imageUrl: string;
   date: string;
   viewCount: number;
+  isScraped: boolean;
   keywordSummary: string;
   articleCount: ScopeDetailArticleCountTypes;
   bias: number;

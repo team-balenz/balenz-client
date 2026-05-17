@@ -23,7 +23,7 @@ const ScopeDetailSection = () => {
             name={SCOPE_DETAIL_MOCK.name}
             date={SCOPE_DETAIL_MOCK.date}
             viewCount={SCOPE_DETAIL_MOCK.viewCount}
-            isScraped={false}
+            isScraped={SCOPE_DETAIL_MOCK.isScraped}
             id={SCOPE_DETAIL_MOCK.id}
           />
         </div>
