@@ -162,7 +162,7 @@ export const bottomSection = style({
     [media.mobile]: {
       padding: '3.125rem 1.25rem',
       marginLeft: '-1.25rem',
-      width: 'calc(100% + 3rem)',
+      width: 'calc(100% + 2.5rem)',
     },
   },
 });
