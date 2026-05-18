@@ -1,13 +1,12 @@
 import { style } from '@vanilla-extract/css';
-import { color, media, typography } from '@/shared/styles';
+import { boxStyle, color, media, typography } from '@/shared/styles';
 
 export const container = style({
+  ...boxStyle,
   display: 'flex',
   flexDirection: 'column',
   gap: '1.25rem',
   padding: '1.25rem',
-  borderRadius: '0.3125rem',
-  boxShadow: '0 0 2px 0 rgba(17, 17, 17, 0.20)',
 
   '@media': {
     [media.tablet]: {

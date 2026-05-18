@@ -8,3 +8,4 @@ export * from './media';
 export { color } from './color.css';
 export { typography } from './typography.css';
 export { zIndex } from './zIndex.css';
+export { boxStyle } from './commonStyles.css';
