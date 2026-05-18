@@ -133,7 +133,7 @@ export const hotIssueSection = style({
   },
 });
 
-export const ideologyTestCTA = style({
+export const ideologyTestSection = style({
   width: '100%',
   height: '9.9375rem',
   ...boxStyle,

@@ -21,7 +21,7 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.rightColumn}>
-          <div className={styles.ideologyTestCTA}></div>
+          <div className={styles.ideologyTestSection}></div>
           <div className={styles.ad2Section}>ad</div>
           <div className={styles.hotArticleSection}>
             <HotArticleSection />
