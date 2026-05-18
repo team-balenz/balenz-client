@@ -9,7 +9,6 @@ export const container = recipe({
     flexDirection: 'column',
     padding: '0.625rem 0',
     width: '100%',
-    minWidth: '21.875rem',
 
     '@media': {
       [media.tablet]: {
@@ -58,11 +57,7 @@ export const imageWrapper = recipe({
     backgroundColor: color.brand.gray2,
 
     '@media': {
-      [media.tablet]: {
-        width: '6.25rem',
-        height: '5rem',
-      },
-      [media.mobile]: {
+      [media.belowDesktop]: {
         width: '6.25rem',
         height: '5rem',
       },
@@ -95,7 +90,6 @@ export const textContent = recipe({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    gap: '0.625rem',
   },
   variants: {
     size: {
