@@ -67,6 +67,7 @@ export const adDailyColumn = style({
   },
 });
 
+// desktop + tablet 뷰에 노출
 export const ad1Section = style({
   height: '7.375rem',
   background: color.brand.gray1,
@@ -102,6 +103,7 @@ export const rightColumn = style({
   },
 });
 
+// desktop 뷰에만 노출
 export const ad2Section = style({
   ...boxStyle,
   height: '16.25rem',
@@ -110,10 +112,7 @@ export const ad2Section = style({
   justifyContent: 'center',
 
   '@media': {
-    [media.tablet]: {
-      display: 'none',
-    },
-    [media.mobile]: {
+    [media.belowDesktop]: {
       display: 'none',
     },
   },
