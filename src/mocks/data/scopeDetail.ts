@@ -6,6 +6,7 @@ export const SCOPE_DETAIL_MOCK = {
   imageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
   date: '2026-05-02',
   viewCount: 14,
+  isScraped: false,
   keywordSummary:
     '다음은 주제 키워드에 대해 각 성향의 기사들이 어떤 식으로 서술하고 있는지 기사 성향을 설명하는 내용입니다. 예를 들어 “진보 성향으로 서술된 기사의 경우, 주제 키워드에 대해 ~식으로 묘사하고 있는 반면 보수 성향 기사는 ~식으로 표현하고 있습니다. 독자는 각기 다른 주제 키워드에 대한 책임 소재에 유의하길 바랍니다.”와 같이 주제 키워드에 대해 각 기사들이 어떻게 표현하고 있는지 묘사합니다.',
   articleCount: {
