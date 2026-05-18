@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { color, media, typography } from '@/shared/styles';
+import { boxStyle, color, media, typography } from '@/shared/styles';
 import backgroundSvg from './assets/background.svg';
 
 /**
@@ -10,16 +10,15 @@ import backgroundSvg from './assets/background.svg';
  */
 
 export const container = style({
+  ...boxStyle,
   position: 'relative',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  borderRadius: '0.75rem',
   overflow: 'hidden',
   width: '100%',
   minHeight: '21.375rem',
-  boxShadow: '0 0 2px 0 rgba(17, 17, 17, 0.20)',
   background: `url(${backgroundSvg.src}) center 20% / 65% no-repeat`,
 
   '@media': {

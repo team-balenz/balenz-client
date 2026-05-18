@@ -1,12 +1,11 @@
 import { style } from '@vanilla-extract/css';
-import { color, media, typography } from '@/shared/styles';
+import { boxStyle, color, media, typography } from '@/shared/styles';
 
 export const container = style({
+  ...boxStyle,
   display: 'flex',
   flexDirection: 'column',
   gap: '0.625rem',
-  borderRadius: '5px',
-  boxShadow: '0 0 2px 0 rgba(17, 17, 17, 0.20)',
   padding: '1.25rem 0.9375rem 0.625rem 0.9375rem',
 
   '@media': {

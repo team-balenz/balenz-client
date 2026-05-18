@@ -3,13 +3,14 @@ import { color } from '@/shared/styles/color.css';
 import { media, typography } from '@/shared/styles';
 import { recipe } from '@vanilla-extract/recipes';
 
+const tabGap = '0.375rem';
+
 export const container = recipe({
   base: {
     display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    alignItems: 'stretch',
+    gap: tabGap,
     borderRadius: '0.5rem',
-    // overflow: 'scroll',
     backgroundColor: color.brand.gray1,
     padding: '0.3125rem',
     width: '100%',
@@ -37,6 +38,10 @@ export const tab = recipe({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    flexGrow: 1,
+    flexShrink: 1,
+    flexBasis: 0,
+    minWidth: 0,
     height: '3.125rem',
     padding: '0.625rem 1.25rem',
     cursor: 'pointer',
@@ -61,14 +66,10 @@ export const tab = recipe({
   variants: {
     variant: {
       scope: {
-        width: '6.5625rem',
         '@media': {
-          [media.tablet]: {
-            width: '5.625rem',
-          },
           [media.mobile]: {
-            width: '3.0625rem',
             height: '2.1875rem',
+            padding: '0.5rem 0.375rem',
           },
         },
       },
