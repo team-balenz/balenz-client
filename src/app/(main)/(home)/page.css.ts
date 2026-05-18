@@ -33,17 +33,15 @@ export const topSection = style({
   rowGap: '6.25rem',
 
   '@media': {
-    [media.tablet]: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '6.25rem',
-      gridTemplateAreas: 'unset',
-    },
-    [media.mobile]: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '5rem',
-      gridTemplateAreas: 'unset',
+    [media.belowDesktop]: {
+      gridTemplateColumns: '1fr',
+      gridTemplateAreas: `
+          "scope"
+          "right"
+          "adDaily"
+          "hot"
+      `,
+      rowGap: 0,
     },
   },
 });
@@ -61,6 +59,10 @@ export const adDailyColumn = style({
   '@media': {
     [media.tablet]: {
       gap: '5.4375rem',
+      marginTop: '4.5625rem',
+    },
+    [media.mobile]: {
+      marginTop: '5.25rem',
     },
   },
 });
@@ -91,9 +93,11 @@ export const rightColumn = style({
     [media.tablet]: {
       flexDirection: 'row',
       gap: '1.5625rem',
+      marginTop: '6.125rem',
     },
     [media.mobile]: {
       gap: '5rem',
+      marginTop: '3.125rem',
     },
   },
 });
@@ -119,6 +123,15 @@ export const dailyFocusSection = style({});
 
 export const hotIssueSection = style({
   gridArea: 'hot',
+
+  '@media': {
+    [media.tablet]: {
+      marginTop: '8.125rem',
+    },
+    [media.mobile]: {
+      marginTop: '5rem',
+    },
+  },
 });
 
 export const ideologyTestCTA = style({
