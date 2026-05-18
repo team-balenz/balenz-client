@@ -11,6 +11,7 @@ export const card = style({
   width: '50%',
   height: '22.5625rem',
   position: 'relative',
+  cursor: 'pointer',
 
   '@media': {
     [media.tablet]: {

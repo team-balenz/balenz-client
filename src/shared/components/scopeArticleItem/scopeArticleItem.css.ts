@@ -9,6 +9,7 @@ export const container = recipe({
     flexDirection: 'column',
     padding: '0.625rem 0',
     width: '100%',
+    cursor: 'pointer',
 
     '@media': {
       [media.tablet]: {
