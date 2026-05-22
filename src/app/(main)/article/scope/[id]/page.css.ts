@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css';
 
 import { boxStyle, media } from '@/shared/styles';
 
-export const container = style({
+export const scopeDetailLayout = style({
   width: '100%',
   padding: '5rem 5rem 8.25rem 5rem',
   '@media': {
