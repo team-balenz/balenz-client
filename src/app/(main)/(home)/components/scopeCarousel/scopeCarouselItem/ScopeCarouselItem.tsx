@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import * as styles from './scopeCarouselItem.css';
-import { ArticleType, IdeologyType } from '../types';
+import { ArticleType } from '../../../types/scopeCarousel';
+import { IdeologyType } from '@/shared/components/scopeArticleItem/types';
 
 interface ScopeCarouselItemPropTypes {
   item: ArticleType;
