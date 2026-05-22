@@ -58,7 +58,7 @@ export const imageWrapper = recipe({
     backgroundColor: color.brand.gray2,
 
     '@media': {
-      [media.belowDesktop]: {
+      [media.mobile]: {
         width: '6.25rem',
         height: '5rem',
       },
@@ -66,7 +66,14 @@ export const imageWrapper = recipe({
   },
   variants: {
     size: {
-      small: {}, // base 그대로
+      small: {
+        '@media': {
+          [media.tablet]: {
+            width: '6.25rem',
+            height: '5rem',
+          },
+        },
+      }, // base 그대로
       large: {
         '@media': {
           [media.tablet]: {
