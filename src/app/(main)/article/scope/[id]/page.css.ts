@@ -16,7 +16,7 @@ export const scopeDetailLayout = style({
   },
 });
 
-export const topSection = style({
+export const container = style({
   width: '100%',
   display: 'grid',
   gridTemplateColumns: '66.666% 33.333%',

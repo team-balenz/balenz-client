@@ -11,7 +11,7 @@ import { SCOPE_DETAIL_MOCK } from '@/mocks/data/scopeDetail';
 export default function ScopeArticlePage() {
   return (
     <div className={styles.scopeDetailLayout}>
-      <div className={styles.topSection}>
+      <div className={styles.container}>
         <div className={styles.leftSection}>
           <ScopeDetailSection />
 
