@@ -11,7 +11,7 @@ interface BaseTooltipPropTypes {
   content: React.ReactNode;
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  collisionBoundary: Element;
+  collisionBoundary?: Element | null;
 }
 
 const BaseTooltip = ({
@@ -30,7 +30,7 @@ const BaseTooltip = ({
       side="top"
       sideOffset={7}
       // 툴팁 위치가 지정한 영역 밖으로 벗어나지 않도록 보정
-      collisionBoundary={collisionBoundary}
+      collisionBoundary={collisionBoundary ?? undefined}
       onPointerDownOutside={() => onOpenChange(false)}
       onEscapeKeyDown={() => onOpenChange(false)}
     >
@@ -64,7 +64,7 @@ const BaseTooltip = ({
         </Tooltip.Trigger>
 
         {/* Tooltip.Content를 body가 아닌 지정한 부모 영역 내부에 렌더링 */}
-        <Tooltip.Portal container={collisionBoundary}>{tooltipContent}</Tooltip.Portal>
+        <Tooltip.Portal container={collisionBoundary ?? undefined}>{tooltipContent}</Tooltip.Portal>
       </Tooltip.Root>
     </Tooltip.Provider>
   );

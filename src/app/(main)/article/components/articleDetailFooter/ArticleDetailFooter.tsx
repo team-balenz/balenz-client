@@ -26,13 +26,6 @@ const ArticleDetailFooter = () => {
 
   const canHover = useCanHover();
 
-  const insightsTrigger = (
-    <div className={`${styles.tooltipContainer} ${styles.insightsTrigger}`}>
-      <Image src="/icons/ic_info.svg" alt="info" width={20} height={20} />
-      <p className={styles.tooltipText}>{TOOLTIP_TEXT.insights}</p>
-    </div>
-  );
-
   const reportTrigger = (
     <div
       className={`${styles.tooltipContainer} ${styles.reportTrigger}`}
@@ -49,29 +42,28 @@ const ArticleDetailFooter = () => {
 
   return (
     <div ref={containerRef} className={styles.container}>
-      {/* boundary가 준비된 뒤에만 Tooltip 적용 */}
-      {tooltipBoundary ? (
-        <BaseTooltip
-          open={openedTooltip === 'insights'}
-          onOpenChange={(open) => setOpenedTooltip(open ? 'insights' : null)}
-          collisionBoundary={tooltipBoundary}
-          content={
-            <>
-              <span className={styles.insightsTooltipEmphasis}>
-                {TOOLTIP_CONTENT.insights.emphasizedWord}
-              </span>
-              {TOOLTIP_CONTENT.insights.body}
-            </>
-          }
-        >
-          {insightsTrigger}
-        </BaseTooltip>
-      ) : (
-        insightsTrigger
-      )}
+      {/* collisionBoundary optional 처리로 boundary 없이도 BaseTooltip 바로 렌더링 가능 */}
+      <BaseTooltip
+        open={openedTooltip === 'insights'}
+        onOpenChange={(open) => setOpenedTooltip(open ? 'insights' : null)}
+        collisionBoundary={tooltipBoundary}
+        content={
+          <>
+            <span className={styles.insightsTooltipEmphasis}>
+              {TOOLTIP_CONTENT.insights.emphasizedWord}
+            </span>
+            {TOOLTIP_CONTENT.insights.body}
+          </>
+        }
+      >
+        <div className={`${styles.tooltipContainer} ${styles.insightsTrigger}`}>
+          <Image src="/icons/ic_info.svg" alt="info" width={20} height={20} />
+          <p className={styles.tooltipText}>{TOOLTIP_TEXT.insights}</p>
+        </div>
+      </BaseTooltip>
 
       {/* hover 가능한 환경에서만 problem tooltip 제공 */}
-      {canHover && tooltipBoundary ? (
+      {canHover ? (
         <BaseTooltip
           open={openedTooltip === 'problem'}
           onOpenChange={(open) => setOpenedTooltip(open ? 'problem' : null)}
