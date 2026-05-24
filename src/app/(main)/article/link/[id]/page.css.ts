@@ -19,7 +19,7 @@ export const linkDetailLayout = style({
 export const container = style({
   width: '100%',
   display: 'grid',
-  gridTemplateColumns: '66.666% 33.333%',
+  gridTemplateColumns: '2fr 1fr',
   columnGap: '1.5rem',
   '@media': {
     [media.belowDesktop]: {
