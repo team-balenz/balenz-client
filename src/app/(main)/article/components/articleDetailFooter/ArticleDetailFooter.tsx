@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import Image from 'next/image';
 
 import BaseTooltip from '@/shared/components/baseTooltip/BaseTooltip';
@@ -16,7 +16,22 @@ const ArticleDetailFooter = () => {
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
   const [openedTooltip, setOpenedTooltip] = useState<TooltipKey>(null);
 
+  // 툴팁을 부모 영역 기준으로 렌더링/위치 보정하기 위한 DOM 요소
+  const [tooltipBoundary, setTooltipBoundary] = useState<HTMLElement | null>(null);
+
+  // ArticleDetailFooter의 실제 부모 DOM을 boundary로 저장
+  const containerRef = useCallback((node: HTMLDivElement | null) => {
+    setTooltipBoundary(node?.parentElement ?? null);
+  }, []);
+
   const canHover = useCanHover();
+
+  const insightsTrigger = (
+    <div className={`${styles.tooltipContainer} ${styles.insightsTrigger}`}>
+      <Image src="/icons/ic_info.svg" alt="info" width={20} height={20} />
+      <p className={styles.tooltipText}>{TOOLTIP_TEXT.insights}</p>
+    </div>
+  );
 
   const reportTrigger = (
     <div
@@ -33,31 +48,34 @@ const ArticleDetailFooter = () => {
   );
 
   return (
-    <div className={styles.container}>
-      {/* insights tooltip (모바일에서도 터치로 열리게 유지) */}
-      <BaseTooltip
-        open={openedTooltip === 'insights'}
-        onOpenChange={(open) => setOpenedTooltip(open ? 'insights' : null)}
-        content={
-          <>
-            <span className={styles.insightsTooltipEmphasis}>
-              {TOOLTIP_CONTENT.insights.emphasizedWord}
-            </span>
-            {TOOLTIP_CONTENT.insights.body}
-          </>
-        }
-      >
-        <div className={`${styles.tooltipContainer} ${styles.insightsTrigger}`}>
-          <Image src="/icons/ic_info.svg" alt="info" width={20} height={20} />
-          <p className={styles.tooltipText}>{TOOLTIP_TEXT.insights}</p>
-        </div>
-      </BaseTooltip>
+    <div ref={containerRef} className={styles.container}>
+      {/* boundary가 준비된 뒤에만 Tooltip 적용 */}
+      {tooltipBoundary ? (
+        <BaseTooltip
+          open={openedTooltip === 'insights'}
+          onOpenChange={(open) => setOpenedTooltip(open ? 'insights' : null)}
+          collisionBoundary={tooltipBoundary}
+          content={
+            <>
+              <span className={styles.insightsTooltipEmphasis}>
+                {TOOLTIP_CONTENT.insights.emphasizedWord}
+              </span>
+              {TOOLTIP_CONTENT.insights.body}
+            </>
+          }
+        >
+          {insightsTrigger}
+        </BaseTooltip>
+      ) : (
+        insightsTrigger
+      )}
 
-      {/* problem tooltip (hover 가능한 환경에서만 tooltip 제공) */}
-      {canHover ? (
+      {/* hover 가능한 환경에서만 problem tooltip 제공 */}
+      {canHover && tooltipBoundary ? (
         <BaseTooltip
           open={openedTooltip === 'problem'}
           onOpenChange={(open) => setOpenedTooltip(open ? 'problem' : null)}
+          collisionBoundary={tooltipBoundary}
           content={TOOLTIP_CONTENT.problem}
         >
           {reportTrigger}
