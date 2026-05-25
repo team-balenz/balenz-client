@@ -2,16 +2,16 @@ import { style } from '@vanilla-extract/css';
 
 import { boxStyle, media } from '@/shared/styles';
 
-export const scopeDetailLayout = style({
+export const linkDetailLayout = style({
   width: '100%',
-  padding: '5rem 5rem 8.25rem 5rem',
+  padding: '5rem 5rem 5.81rem 5rem',
   '@media': {
     [media.tablet]: {
-      padding: '2.5rem 2.5rem 11.75rem 2.5rem',
+      padding: '2.5rem 2.5rem 8.75rem 2.5rem',
     },
 
     [media.mobile]: {
-      padding: '1.25rem 1.25rem 17rem 1.25rem',
+      padding: '1.25rem 1.25rem 5.62rem 1.25rem',
     },
   },
 });
@@ -32,28 +32,14 @@ export const container = style({
 export const leftSection = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: '6.06rem',
+  gap: '6.25rem',
   minWidth: 0,
-
-  '@media': {
-    [media.belowDesktop]: {
-      gap: '6.25rem',
-    },
-  },
 });
 
 export const rightSection = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: '1.5rem',
-});
-
-export const reportSummaryWrapper = style({
-  '@media': {
-    [media.belowDesktop]: {
-      display: 'none',
-    },
-  },
+  gap: '1.31rem',
 });
 
 export const adSection = style({

@@ -23,7 +23,7 @@ export const homeLayout = style({
 export const topSection = style({
   width: '100%',
   display: 'grid',
-  gridTemplateColumns: '66.666% 33.333%',
+  gridTemplateColumns: '2fr 1fr',
   gridTemplateAreas: `
     "scope right"
     "adDaily right"
