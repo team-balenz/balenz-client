@@ -9,6 +9,13 @@ interface ShareKakaoParams {
 export const shareKakao = ({ type, title, summary, url, imageUrl }: ShareKakaoParams) => {
   if (typeof window === 'undefined') return;
 
+  // Kakao API 키 확인
+  const kakaoJsKey = process.env.NEXT_PUBLIC_KAKAO_JS_KEY;
+  if (!kakaoJsKey) {
+    console.error('NEXT_PUBLIC_KAKAO_JS_KEY가 설정되지 않았습니다.');
+    return;
+  }
+
   // Kakao SDK 로드 확인
   if (!window.Kakao) {
     console.error('Kakao SDK가 로드되지 않았습니다.');
@@ -17,7 +24,7 @@ export const shareKakao = ({ type, title, summary, url, imageUrl }: ShareKakaoPa
 
   try {
     if (!window.Kakao.isInitialized()) {
-      window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_JS_KEY!);
+      window.Kakao.init(kakaoJsKey);
     }
   } catch (error) {
     console.error('Kakao 초기화 실패:', error);
