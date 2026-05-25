@@ -41,6 +41,9 @@ const shareToKakao = ({ type, title, description, imageUrl, url }: SharePayload)
   });
 };
 
+// Scope 기사 공유 시 사용되는 문구
+const getScopeShareText = (title: string) => `balenz가 알려주는 "${title}"`;
+
 /**
  * X 공유
  */
@@ -49,7 +52,7 @@ const shareToX = ({ url, title, type }: SharePayload) => {
 
   if (type === 'scope') {
     // scope: "balenz가 알려주는 [키워드명]"
-    shareText = `balenz가 알려주는 "${title}"`;
+    shareText = getScopeShareText(title);
   }
   // link: 기사 제목 그대로
 
@@ -68,7 +71,7 @@ const shareToThreads = ({ url, title, type }: SharePayload) => {
 
   if (type === 'scope') {
     // scope: "balenz가 알려주는 [키워드명]"
-    shareText = `balenz가 알려주는 "${title}"`;
+    shareText = getScopeShareText(title);
   }
   // link: 기사 제목 그대로
 
@@ -87,7 +90,7 @@ const shareToTelegram = ({ url, title, type }: SharePayload) => {
 
   if (type === 'scope') {
     // scope: "balenz가 알려주는 [키워드명]"
-    shareText = `balenz가 알려주는 "${title}"`;
+    shareText = getScopeShareText(title);
   }
   // link: 기사 제목 그대로
 
