@@ -15,9 +15,9 @@ interface ShareModalPropTypes {
   onOpenChange: (open: boolean) => void;
   shareUrl?: string; // 공유할 링크 URL (미제공 시 현재 경로 사용)
   shareTitle: string; // 공유 제목
-  shareSummary?: string; // 공유 요약문
+  shareSummary: string; // 공유 요약문
   shareImage?: string; // 공유 이미지 (선택) - scope에서만 사용
-  shareType?: 'scope' | 'link'; // 공유 타입 (기본값: 'link')
+  shareType: 'scope' | 'link'; // 공유 타입 (기본값: 'link')
 }
 
 const ShareModal = ({
