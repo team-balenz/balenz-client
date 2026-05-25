@@ -2,7 +2,7 @@ export {};
 
 declare global {
   interface Window {
-    Kakao: KakaoSDK;
+    Kakao?: KakaoSDK;
   }
 }
 
