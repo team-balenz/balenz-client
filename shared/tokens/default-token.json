@@ -295,7 +295,7 @@
         "$type": "typography",
         "$value": {
           "fontWeight": "600",
-          "fontSize": "12",
+          "fontSize": "13",
           "lineHeight": "140%"
         }
       },
