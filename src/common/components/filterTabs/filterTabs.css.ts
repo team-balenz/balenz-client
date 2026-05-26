@@ -10,7 +10,7 @@ export const container = recipe({
     display: 'flex',
     alignItems: 'stretch',
     gap: tabGap,
-    borderRadius: '0.5rem',
+    borderRadius: '5px',
     backgroundColor: color.brand.gray1,
     padding: '0.3125rem',
     width: '100%',
