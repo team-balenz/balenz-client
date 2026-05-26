@@ -14,7 +14,10 @@ interface ShareModalPropTypes {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   shareUrl?: string; // 공유할 링크 URL (미제공 시 현재 경로 사용)
-  shareTitle?: string; // 공유 제목
+  shareTitle: string; // 공유 제목
+  shareSummary: string; // 공유 요약문
+  shareImage?: string; // 공유 이미지 (선택) - scope에서만 사용
+  shareType: 'scope' | 'link'; // 공유 타입 (기본값: 'link')
 }
 
 const ShareModal = ({
@@ -22,6 +25,9 @@ const ShareModal = ({
   onOpenChange,
   shareUrl: customShareUrl,
   shareTitle,
+  shareSummary = '',
+  shareImage,
+  shareType = 'link',
 }: ShareModalPropTypes) => {
   const [copied, setCopied] = useState(false);
   const breakpoint = useMediaQuery();
@@ -30,9 +36,6 @@ const ShareModal = ({
   // prop으로 받은 url이 있으면 사용, 없으면 현재 페이지 URL 사용
   const shareUrl =
     customShareUrl ?? (typeof window !== 'undefined' ? `${window.location.origin}${pathname}` : '');
-
-  // prop으로 받은 title이 있으면 사용, 없으면 'balenz' 사용
-  const finalTitle = shareTitle ?? 'balenz';
 
   // 모바일일 때는 BottomSheet, 그 외에는 BaseModal 사용
   const isMobile = breakpoint === 'mobile';
@@ -50,8 +53,13 @@ const ShareModal = ({
 
   // 소셜 미디어 공유
   const handleSocialShare = (platform: SocialPlatform) => {
-    const shareLink = platform.getShareUrl(shareUrl, finalTitle);
-    window.open(shareLink, '_blank', 'noopener,noreferrer');
+    platform.share({
+      type: shareType,
+      title: shareTitle,
+      description: shareSummary,
+      imageUrl: shareImage,
+      url: shareUrl,
+    });
   };
 
   return (

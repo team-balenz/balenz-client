@@ -11,6 +11,7 @@ const LinkDetailSection = () => {
       <LinkDetailHeader
         id={LINK_DETAIL_MOCK.id}
         title={LINK_DETAIL_MOCK.title}
+        summary={LINK_DETAIL_MOCK.summary}
         newsAgencyName={LINK_DETAIL_MOCK.newsAgencyName}
         publishedAt={LINK_DETAIL_MOCK.publishedAt}
         frameType={LINK_DETAIL_MOCK.frameType}

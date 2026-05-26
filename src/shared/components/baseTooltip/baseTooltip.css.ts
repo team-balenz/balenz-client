@@ -16,6 +16,7 @@ export const content = style({
     },
     [media.mobile]: {
       ...typography.phone.body2,
+      padding: '1.12rem 1.56rem',
     },
   },
 });

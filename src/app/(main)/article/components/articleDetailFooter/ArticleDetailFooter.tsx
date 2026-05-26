@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import Image from 'next/image';
 
 import BaseTooltip from '@/shared/components/baseTooltip/BaseTooltip';
@@ -15,6 +15,14 @@ type TooltipKey = 'insights' | 'problem' | null;
 const ArticleDetailFooter = () => {
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
   const [openedTooltip, setOpenedTooltip] = useState<TooltipKey>(null);
+
+  // 툴팁을 부모 영역 기준으로 렌더링/위치 보정하기 위한 DOM 요소
+  const [tooltipBoundary, setTooltipBoundary] = useState<HTMLElement | null>(null);
+
+  // ArticleDetailFooter의 실제 부모 DOM을 boundary로 저장
+  const containerRef = useCallback((node: HTMLDivElement | null) => {
+    setTooltipBoundary(node?.parentElement ?? null);
+  }, []);
 
   const canHover = useCanHover();
 
@@ -33,11 +41,12 @@ const ArticleDetailFooter = () => {
   );
 
   return (
-    <div className={styles.container}>
-      {/* insights tooltip (모바일에서도 터치로 열리게 유지) */}
+    <div ref={containerRef} className={styles.container}>
+      {/* collisionBoundary optional 처리로 boundary 없이도 BaseTooltip 바로 렌더링 가능 */}
       <BaseTooltip
         open={openedTooltip === 'insights'}
         onOpenChange={(open) => setOpenedTooltip(open ? 'insights' : null)}
+        collisionBoundary={tooltipBoundary}
         content={
           <>
             <span className={styles.insightsTooltipEmphasis}>
@@ -53,11 +62,12 @@ const ArticleDetailFooter = () => {
         </div>
       </BaseTooltip>
 
-      {/* problem tooltip (hover 가능한 환경에서만 tooltip 제공) */}
+      {/* hover 가능한 환경에서만 problem tooltip 제공 */}
       {canHover ? (
         <BaseTooltip
           open={openedTooltip === 'problem'}
           onOpenChange={(open) => setOpenedTooltip(open ? 'problem' : null)}
+          collisionBoundary={tooltipBoundary}
           content={TOOLTIP_CONTENT.problem}
         >
           {reportTrigger}
