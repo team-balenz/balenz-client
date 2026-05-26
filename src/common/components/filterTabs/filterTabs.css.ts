@@ -10,10 +10,16 @@ export const container = recipe({
     display: 'flex',
     alignItems: 'stretch',
     gap: tabGap,
-    borderRadius: '5px',
+    borderRadius: '0.3125rem',
     backgroundColor: color.brand.gray1,
     padding: '0.3125rem',
     width: '100%',
+
+    '@media': {
+      [media.mobile]: {
+        padding: '0.1875rem',
+      },
+    },
   },
   variants: {
     variant: {
@@ -24,7 +30,7 @@ export const container = recipe({
         '@media': {
           [media.mobile]: {
             display: 'flex',
-            padding: '0.125rem',
+            padding: '0.1875rem',
             backgroundColor: color.brand.gray2, // 모바일에서만 렌더링
           },
         },
