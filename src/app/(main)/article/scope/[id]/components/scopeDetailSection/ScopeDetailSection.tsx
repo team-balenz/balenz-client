@@ -21,6 +21,8 @@ const ScopeDetailSection = () => {
           />
           <ScopeDetailHeader
             name={SCOPE_DETAIL_MOCK.name}
+            keywordSummary={SCOPE_DETAIL_MOCK.keywordSummary}
+            imageUrl={SCOPE_DETAIL_MOCK.imageUrl}
             date={SCOPE_DETAIL_MOCK.date}
             viewCount={SCOPE_DETAIL_MOCK.viewCount}
             isScraped={SCOPE_DETAIL_MOCK.isScraped}

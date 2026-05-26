@@ -12,6 +12,7 @@ import * as styles from './linkDetailHeader.css';
 interface LinkDetailHeaderPropTypes {
   id: number;
   title: string;
+  summary: string;
   newsAgencyName: string;
   publishedAt: string;
   frameType: IdeologyIndicatorValueTypes;
@@ -21,6 +22,7 @@ interface LinkDetailHeaderPropTypes {
 const LinkDetailHeader = ({
   id,
   title,
+  summary,
   newsAgencyName,
   publishedAt,
   frameType,
@@ -59,7 +61,13 @@ const LinkDetailHeader = ({
       </div>
 
       {/* 공유하기 모달 */}
-      <ShareModal open={shareModalOpen} onOpenChange={setShareModalOpen} shareTitle={title} />
+      <ShareModal
+        open={shareModalOpen}
+        onOpenChange={setShareModalOpen}
+        shareTitle={title}
+        shareSummary={summary}
+        shareType="link"
+      />
     </div>
   );
 };

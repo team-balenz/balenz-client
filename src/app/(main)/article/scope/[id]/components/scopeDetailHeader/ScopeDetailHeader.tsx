@@ -10,6 +10,8 @@ import * as styles from './scopeDetailHeader.css';
 interface ScopeDetailHeaderPropTypes {
   id: number;
   name: string;
+  keywordSummary: string;
+  imageUrl: string;
   date: string;
   viewCount: number;
   isScraped: boolean;
@@ -18,6 +20,8 @@ interface ScopeDetailHeaderPropTypes {
 const ScopeDetailHeader = ({
   id,
   name,
+  keywordSummary,
+  imageUrl,
   date,
   viewCount,
   isScraped,
@@ -50,7 +54,14 @@ const ScopeDetailHeader = ({
       </div>
 
       {/* 공유하기 모달 */}
-      <ShareModal open={shareModalOpen} onOpenChange={setShareModalOpen} />
+      <ShareModal
+        open={shareModalOpen}
+        onOpenChange={setShareModalOpen}
+        shareTitle={name}
+        shareSummary={keywordSummary}
+        shareType="scope"
+        shareImage={imageUrl}
+      />
     </div>
   );
 };
