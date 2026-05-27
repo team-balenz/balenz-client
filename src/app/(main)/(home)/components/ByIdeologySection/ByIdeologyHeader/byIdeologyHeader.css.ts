@@ -4,6 +4,11 @@ import { color, typography, media } from '@/shared/styles';
 export const container = style({
   width: '100%',
   padding: '0.625rem 0 0.625rem 0.9375rem',
+  '@media': {
+    [media.mobile]: {
+      display: 'none',
+    },
+  },
 });
 
 export const title = style({
