@@ -5,7 +5,7 @@ import { IDEOLOGY_COLOR_THEME, IDEOLOGY_SIZE_STYLE } from './constants';
 
 export const container = style({
   width: '100%',
-  padding: '0 0.12rem',
+  // padding: '0 0.12rem',
   display: 'flex',
   minWidth: 0,
   alignItems: 'center',
