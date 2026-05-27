@@ -4,10 +4,10 @@ import { boxStyle, media } from '@/shared/styles';
 
 export const scopeDetailLayout = style({
   width: '100%',
-  padding: '5rem 5rem 8.25rem 5rem',
+  padding: '2.188rem 5rem 8.25rem 5rem',
   '@media': {
     [media.tablet]: {
-      padding: '2.5rem 2.5rem 11.75rem 2.5rem',
+      padding: '2.188rem 2.5rem 11.75rem 2.5rem',
     },
 
     [media.mobile]: {
