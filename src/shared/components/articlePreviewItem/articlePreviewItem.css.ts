@@ -123,6 +123,7 @@ export const articleTitle = recipe({
         },
       },
       compact: {
+        ...typography.correction,
         ...typography.desktop.h4,
         '@media': {
           [media.tablet]: {
