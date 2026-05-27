@@ -22,6 +22,7 @@ const toastFadeInOut = keyframes({
 
 export const container = style({
   width: '100%',
+  padding: '0 0.25rem',
   display: 'flex',
   alignItems: 'center',
   gap: '2.19rem',
