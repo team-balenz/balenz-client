@@ -135,6 +135,21 @@ export const radioInput = style({
     '&:checked': {
       border: `0.375rem solid ${color.brand.main}`,
     },
+    '&:focus-visible': {
+      outline: 'none',
+    },
+  },
+  '@media': {
+    '(pointer: coarse)': {
+      selectors: {
+        '&:focus': {
+          outline: 'none',
+        },
+        '&:focus-visible': {
+          outline: 'none',
+        },
+      },
+    },
   },
 });
 
