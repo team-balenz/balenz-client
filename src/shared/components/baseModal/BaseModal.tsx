@@ -14,7 +14,7 @@ const BaseModal = ({ children, open, onOpenChange }: BaseModalPropTypes) => {
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Portal>
         <Dialog.Overlay className={styles.overlay} />
-        <Dialog.Content className={styles.content}>
+        <Dialog.Content className={styles.content} autoFocus={false}>
           <Dialog.Title className={styles.hiddenTitle}>Modal</Dialog.Title>
           {children}
         </Dialog.Content>
