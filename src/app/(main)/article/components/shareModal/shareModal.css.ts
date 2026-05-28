@@ -97,7 +97,6 @@ export const divider = style({
 export const linkShareSection = style({
   display: 'flex',
   flexDirection: 'column',
-  padding: '0 0.625rem',
   marginTop: '1.875rem',
   width: '100%',
 
@@ -214,7 +213,6 @@ export const socialShareSection = style({
   flexDirection: 'column',
   gap: '0.75rem',
   marginTop: '4.1875rem',
-  padding: '0 0.625rem',
 
   '@media': {
     [media.tablet]: {
