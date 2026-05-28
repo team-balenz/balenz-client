@@ -164,6 +164,11 @@ export const description = recipe({
   base: {
     ...typography.desktop.caption,
     color: color.text.tertiary,
+    display: '-webkit-box',
+    WebkitLineClamp: 1,
+    WebkitBoxOrient: 'vertical',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
 
     '@media': {
       [media.tablet]: {
