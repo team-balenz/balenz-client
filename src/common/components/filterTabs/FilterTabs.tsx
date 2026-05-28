@@ -16,7 +16,20 @@ const FilterTabs = ({ tabs, activeKey, onChange, variant = 'scope' }: FilterTabs
           type="button"
           key={tab.key}
           aria-pressed={tab.key === activeKey}
-          className={`${styles.tab({ variant })} ${tab.key === activeKey ? styles.activeTab : ''}`}
+          className={`
+            ${styles.tab({ variant })}
+            ${
+              tab.key === activeKey
+                ? styles.activeTab({
+                    tone: (variant === 'byIdeology' ? tab.key : 'default') as
+                      | 'progressive'
+                      | 'center'
+                      | 'conservative'
+                      | 'default',
+                  })
+                : ''
+            }
+          `}
           onClick={() => onChange(tab.key)}
         >
           {tab.mobileLabel && (

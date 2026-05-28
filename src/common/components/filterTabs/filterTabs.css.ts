@@ -91,6 +91,7 @@ export const tab = recipe({
         padding: '0.625rem 1.875rem',
         '@media': {
           [media.mobile]: {
+            ...typography.phone.h3,
             height: '2.1875rem',
           },
         },
@@ -99,10 +100,35 @@ export const tab = recipe({
   },
 });
 
-export const activeTab = style({
-  backgroundColor: color.brand.background,
-  color: color.text.main,
-  ...typography.desktop.h4,
+export const activeTab = recipe({
+  base: {
+    backgroundColor: color.brand.background,
+    ...typography.desktop.h4,
+  },
+
+  variants: {
+    tone: {
+      default: {
+        color: color.text.main,
+      },
+
+      progressive: {
+        color: color.brand.progressive,
+      },
+
+      center: {
+        color: color.brand.center,
+      },
+
+      conservative: {
+        color: color.brand.conservative,
+      },
+    },
+  },
+
+  defaultVariants: {
+    tone: 'default',
+  },
 });
 
 export const desktopLabel = style({
