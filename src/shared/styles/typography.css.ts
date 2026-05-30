@@ -146,7 +146,7 @@ export const typography = createGlobalTheme(':root', {
       fontWeight: '500',
     },
     button: {
-      fontSize: '12px',
+      fontSize: '13px',
       lineHeight: '140%',
       fontWeight: '600',
     },

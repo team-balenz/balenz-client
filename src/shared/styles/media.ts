@@ -1,5 +1,5 @@
 export const breakpoints = {
-  mobile: 767,
+  mobile: 719,
   tablet: 1023,
 } as const;
 

@@ -3,14 +3,14 @@ import { style } from '@vanilla-extract/css';
 
 export const homeLayout = style({
   width: '100%',
-  padding: '5rem 5rem 14.125rem 5rem',
+  padding: '2.188rem 5rem 14.125rem 5rem',
   display: 'flex',
   flexDirection: 'column',
   gap: '4.5625rem',
 
   '@media': {
     [media.tablet]: {
-      padding: '2.5rem 2.5rem 0 2.5rem',
+      padding: '2.188rem 2.5rem 0 2.5rem',
       gap: '8.125rem',
     },
     [media.mobile]: {

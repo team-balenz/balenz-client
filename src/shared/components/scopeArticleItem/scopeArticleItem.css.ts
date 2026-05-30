@@ -147,6 +147,7 @@ export const category = recipe({
 });
 
 export const title = style({
+  ...typography.correction,
   ...typography.desktop.h4,
   color: color.text.main,
 
