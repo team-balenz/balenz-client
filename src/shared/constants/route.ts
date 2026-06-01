@@ -13,6 +13,8 @@ export const ROUTES = {
   JOIN: '/join',
   SEARCH: '/search',
   DAILY_FOCUS: '/daily-focus',
+  SCOPE_DETAIL: (id: number | string) => `/article/scope/${id}`,
+  LINK_DETAIL: (id: number | string) => `/article/link/${id}`,
 } as const;
 
 /**
