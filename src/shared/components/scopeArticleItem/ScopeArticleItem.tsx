@@ -1,10 +1,14 @@
 'use client';
 
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+
 import ScopePercentBar from '@/common/components/percentBar/ScopePercentBar';
+import { ROUTES } from '@/shared/constants/route';
 import { useMediaQuery } from '@/shared/hooks/useMediaQuery';
-import { IDEOLOGY_LABELS, PERCENT_BAR_SIZE_BY_ITEM_SIZE } from './constants';
 import type { ScopeArticleItemData } from '@/shared/components/scopeArticleItem/types';
+
+import { IDEOLOGY_LABELS, PERCENT_BAR_SIZE_BY_ITEM_SIZE } from './constants';
 import * as styles from './scopeArticleItem.css';
 
 interface ScopeArticleItemPropTypes extends ScopeArticleItemData {
@@ -12,6 +16,7 @@ interface ScopeArticleItemPropTypes extends ScopeArticleItemData {
 }
 
 const ScopeArticleItem = ({
+  keywordId,
   imageUrl,
   imageAlt,
   keyword,
@@ -21,6 +26,7 @@ const ScopeArticleItem = ({
   conservativeCount,
   size = 'small',
 }: ScopeArticleItemPropTypes) => {
+  const router = useRouter();
   const percentBarSize = PERCENT_BAR_SIZE_BY_ITEM_SIZE[size];
   const breakpoint = useMediaQuery();
 
@@ -33,7 +39,10 @@ const ScopeArticleItem = ({
     : `에 대해 ${IDEOLOGY_LABELS[ideology]} 관점으로 보도된 기사가 더 많습니다.`;
 
   return (
-    <div className={styles.container({ size })}>
+    <div
+      className={styles.container({ size })}
+      onClick={() => router.push(ROUTES.SCOPE_DETAIL(keywordId))}
+    >
       <div className={styles.contentWrapper}>
         {/* 이미지 */}
         <div className={styles.imageWrapper({ size })}>
