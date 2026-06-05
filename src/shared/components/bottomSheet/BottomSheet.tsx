@@ -88,7 +88,7 @@ const BottomSheet = ({ children, open, onOpenChange }: BottomSheetPropTypes) => 
 
         <Dialog.Content
           className={styles.bottomSheet}
-          autoFocus={false}
+          onOpenAutoFocus={(event) => event.preventDefault()}
           style={
             dragOffset > 0
               ? ({
