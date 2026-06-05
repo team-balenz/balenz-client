@@ -20,7 +20,7 @@ export const fadeIn = keyframes({
 export const overlay = style({
   position: 'fixed',
   inset: 0,
-  backgroundColor: 'rgba(17, 17, 17, 0.5)',
+  backgroundColor: 'rgba(28, 35, 43, 0.80)',
   zIndex: zIndex.overlay,
   animation: `${fadeIn} 0.2s ease-out`,
 });
