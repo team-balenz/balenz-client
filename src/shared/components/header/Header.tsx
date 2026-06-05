@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation';
 import DefaultButton from '@/common/components/defaultButton/DefaultButton';
 import { NAV_ITEMS, ICONS } from './constants';
 import { ROUTES } from '@/shared/constants/route';
-import NavigationDrawer from '@/shared/components/navigationDrawer/NavigationDrawer';
+import NavigationDrawer from '@/shared/components/header/navigationDrawer/NavigationDrawer';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
