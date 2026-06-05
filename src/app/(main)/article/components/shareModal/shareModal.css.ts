@@ -98,15 +98,18 @@ export const linkShareSection = style({
   display: 'flex',
   flexDirection: 'column',
   marginTop: '1.875rem',
+  height: '10.125rem',
   width: '100%',
 
   '@media': {
     [media.tablet]: {
       marginTop: '1.5625rem',
+      height: '8.75rem',
     },
     [media.mobile]: {
       marginTop: '1.25rem',
       padding: '0',
+      height: '7.625rem',
     },
   },
 });
@@ -212,16 +215,6 @@ export const socialShareSection = style({
   display: 'flex',
   flexDirection: 'column',
   gap: '0.75rem',
-  marginTop: '4.1875rem',
-
-  '@media': {
-    [media.tablet]: {
-      marginTop: '3.3125rem',
-    },
-    [media.mobile]: {
-      marginTop: '46px',
-    },
-  },
 });
 
 /**
