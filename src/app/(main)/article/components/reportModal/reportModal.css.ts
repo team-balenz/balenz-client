@@ -61,13 +61,16 @@ export const selectSection = style({
   display: 'flex',
   flexDirection: 'column',
   marginTop: '1.625rem',
+  height: '12.4375rem',
 
   '@media': {
     [media.tablet]: {
       marginTop: '1.6875rem',
+      height: '12.75rem',
     },
     [media.mobile]: {
       marginTop: '1.1875rem',
+      height: '12.125rem',
     },
   },
 });
@@ -168,16 +171,6 @@ export const errorMessage = style({
 export const additionalSection = style({
   display: 'flex',
   flexDirection: 'column',
-  marginTop: '1.875rem',
-
-  '@media': {
-    [media.tablet]: {
-      marginTop: '3.25rem',
-    },
-    [media.mobile]: {
-      marginTop: '2.3125rem',
-    },
-  },
 });
 
 // textarea 스타일
