@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation';
 import DefaultButton from '@/common/components/defaultButton/DefaultButton';
 import { NAV_ITEMS, ICONS } from './constants';
 import { ROUTES } from '@/shared/constants/route';
+import NavigationDrawer from '@/shared/components/navigationDrawer/NavigationDrawer';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -68,10 +69,10 @@ const Header = () => {
           {/* 메뉴 버튼 */}
           <button
             className={styles.menuButton}
-            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+            onClick={() => setIsMobileMenuOpen(true)}
             aria-label="모바일 메뉴 토글"
             aria-expanded={isMobileMenuOpen}
-            // 모바일 메뉴 구현 시 aria-controls="mobile-menu" 추가
+            aria-controls="mobile-menu"
           >
             <Image src={ICONS.menu} alt="메뉴 열기" width={40} height={40} />
           </button>
@@ -92,13 +93,7 @@ const Header = () => {
         </Link>
       </div>
 
-      {/* 추후 모바일 메뉴 패널 구현 필요 */}
-      {/* 
-        다음과 같은 구조로 구현 예정:
-        - id="mobile-menu" 추가
-        - isMobileMenuOpen 상태에 따라 렌더링
-        - 메뉴 버튼의 aria-controls="mobile-menu" 복구
-      */}
+      <NavigationDrawer open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen} />
     </header>
   );
 };
