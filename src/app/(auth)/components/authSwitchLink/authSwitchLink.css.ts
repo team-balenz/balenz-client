@@ -3,7 +3,6 @@ import { style } from '@vanilla-extract/css';
 import { color, typography, media } from '@/shared/styles';
 
 export const container = style({
-  ...typography.correction,
   ...typography.desktop.body3,
   color: color.text.disabled,
   display: 'flex',
@@ -21,7 +20,6 @@ export const container = style({
 });
 
 export const link = style({
-  ...typography.correction,
   ...typography.desktop.body3,
   color: color.text.main,
   textDecoration: 'underline',
