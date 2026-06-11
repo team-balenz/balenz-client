@@ -23,6 +23,7 @@ const SearchInput = ({
 
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter' && !isSearchDisabled) {
+      e.preventDefault();
       onSearch();
     }
   };
