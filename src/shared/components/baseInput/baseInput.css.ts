@@ -19,7 +19,6 @@ export const input = style({
     '&::placeholder': {
       color: color.text.disabled,
     },
-
     '&:focus': {
       color: color.text.main,
       borderColor: color.text.main,
@@ -39,7 +38,13 @@ export const input = style({
 });
 
 export const inputWithRightElement = style({
-  paddingRight: '3rem',
+  paddingRight: '3.75rem',
+
+  '@media': {
+    [media.mobile]: {
+      paddingRight: '3.25rem',
+    },
+  },
 });
 
 export const errorInput = style({
@@ -54,7 +59,7 @@ export const errorInput = style({
 
 export const rightElementWrapper = style({
   position: 'absolute',
-  right: '0.31rem',
+  right: '0.94rem',
   top: '50%',
   transform: 'translateY(-50%)',
   display: 'flex',
