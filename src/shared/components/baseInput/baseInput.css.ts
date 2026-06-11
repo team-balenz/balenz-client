@@ -9,6 +9,9 @@ export const inputContainer = style({
 export const input = style({
   ...typography.correction,
   ...typography.desktop.body1,
+
+  fontFamily: 'pretendard',
+
   width: '100%',
   height: '3.125rem',
   border: `1px solid ${color.brand.gray2}`,
