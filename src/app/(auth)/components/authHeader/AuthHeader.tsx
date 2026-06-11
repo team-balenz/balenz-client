@@ -2,12 +2,12 @@ import Image from 'next/image';
 
 import * as styles from './authHeader.css';
 
-interface AuthHeaderProps {
+interface AuthHeaderPropTypes {
   title: string;
   description: string;
 }
 
-const AuthHeader = ({ title, description }: AuthHeaderProps) => {
+const AuthHeader = ({ title, description }: AuthHeaderPropTypes) => {
   return (
     <div className={styles.container}>
       <Image
