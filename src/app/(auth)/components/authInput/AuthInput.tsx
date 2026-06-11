@@ -1,4 +1,4 @@
-import { InputHTMLAttributes } from 'react';
+import { InputHTMLAttributes, useId } from 'react';
 
 import BaseInput from '@/shared/components/baseInput/BaseInput';
 import * as styles from './authInput.css';
@@ -19,14 +19,16 @@ const AuthInput = ({
   type = 'text',
   ...props
 }: AuthInputPropTypes) => {
+  const fallbackId = useId();
+  const inputId = id ?? fallbackId;
   return (
     <div className={styles.container}>
-      <label htmlFor={id} className={styles.label}>
+      <label htmlFor={inputId} className={styles.label}>
         {label}
       </label>
 
       <div className={styles.inputRow}>
-        <BaseInput id={id} type={type} isError={!!errorMessage} {...props} />
+        <BaseInput id={inputId} type={type} isError={!!errorMessage} {...props} />
 
         {showDuplicateCheck && (
           <button type="button" className={styles.duplicateButton} onClick={onDuplicateCheck}>
