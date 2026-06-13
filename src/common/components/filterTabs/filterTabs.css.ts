@@ -10,10 +10,16 @@ export const container = recipe({
     display: 'flex',
     alignItems: 'stretch',
     gap: tabGap,
-    borderRadius: '0.5rem',
+    borderRadius: '0.3125rem',
     backgroundColor: color.brand.gray1,
     padding: '0.3125rem',
     width: '100%',
+
+    '@media': {
+      [media.mobile]: {
+        padding: '0.1875rem',
+      },
+    },
   },
   variants: {
     variant: {
@@ -24,7 +30,7 @@ export const container = recipe({
         '@media': {
           [media.mobile]: {
             display: 'flex',
-            padding: '0.125rem',
+            padding: '0.1875rem',
             backgroundColor: color.brand.gray2, // 모바일에서만 렌더링
           },
         },
@@ -85,6 +91,7 @@ export const tab = recipe({
         padding: '0.625rem 1.875rem',
         '@media': {
           [media.mobile]: {
+            ...typography.phone.h3,
             height: '2.1875rem',
           },
         },
@@ -93,10 +100,35 @@ export const tab = recipe({
   },
 });
 
-export const activeTab = style({
-  backgroundColor: color.brand.background,
-  color: color.text.main,
-  ...typography.desktop.h4,
+export const activeTab = recipe({
+  base: {
+    backgroundColor: color.brand.background,
+    ...typography.desktop.h4,
+  },
+
+  variants: {
+    tone: {
+      default: {
+        color: color.text.main,
+      },
+
+      progressive: {
+        color: color.brand.progressive,
+      },
+
+      center: {
+        color: color.brand.center,
+      },
+
+      conservative: {
+        color: color.brand.conservative,
+      },
+    },
+  },
+
+  defaultVariants: {
+    tone: 'default',
+  },
 });
 
 export const desktopLabel = style({

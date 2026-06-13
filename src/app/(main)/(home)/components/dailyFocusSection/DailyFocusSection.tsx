@@ -5,10 +5,10 @@ import Image from 'next/image';
 import DefaultButton from '@/common/components/defaultButton/DefaultButton';
 import { ROUTES } from '@/shared/constants/route';
 import * as styles from './dailyFocusSection.css';
-import noteIcon from './assets/note.svg';
-import listIcon from './assets/list.svg';
-import folderIcon from './assets/folder.svg';
-import calendarIcon from './assets/calendar.svg';
+import noteIcon from './assets/note.png';
+import listIcon from './assets/list.png';
+import folderIcon from './assets/folder.png';
+import calendarIcon from './assets/calendar.png';
 
 const DailyFocusSection = () => {
   const icons = [

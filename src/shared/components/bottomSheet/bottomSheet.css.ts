@@ -49,15 +49,21 @@ export const handle = style({
   userSelect: 'none',
   WebkitUserSelect: 'none',
   touchAction: 'none',
-  willChange: 'transform', // 드래그 중 transform 변경이 빈번하므로 GPU 레이어 사전 예약
+  willChange: 'transform',
 
   ':active': {
     cursor: 'grabbing',
   },
-  // 키보드 포커스 스타일
   ':focus-visible': {
     outline: `2px solid ${color.brand.gray2}`,
     outlineOffset: '4px',
     borderRadius: '3.125rem',
+  },
+  '@media': {
+    '(pointer: coarse)': {
+      ':focus-visible': {
+        outline: 'none',
+      },
+    },
   },
 });
