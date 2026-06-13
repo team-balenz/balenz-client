@@ -43,7 +43,7 @@ export const HEADER_LAYOUT = {
     height: '70px',
   },
   mobile: {
-    padding: '70px 20px 15px 20px',
+    padding: '15px 20px',
     height: 'fit-content',
   },
 };

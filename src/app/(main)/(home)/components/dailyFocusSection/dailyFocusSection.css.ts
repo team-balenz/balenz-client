@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 import { boxStyle, color, media, typography } from '@/shared/styles';
-import backgroundSvg from './assets/background.svg';
+import backgroundSvg from './assets/background.png';
 
 /**
  * 개선 포인트:
