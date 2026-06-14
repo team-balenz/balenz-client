@@ -2,17 +2,24 @@
 
 import * as styles from './articleTabs.css';
 
-import { RELATED_ARTICLE_TAB_LIST, type ArticleTabValue } from './constants';
+import { type ArticleTabItem, type ArticleTabValue } from './constants';
 
-type ArticleTabsProps = {
-  activeTab: ArticleTabValue;
-  onTabChange: (value: ArticleTabValue) => void;
+type ArticleTabsProps<T extends ArticleTabValue> = {
+  tabs: readonly ArticleTabItem<T>[];
+  activeTab: T;
+  onTabChange: (value: T) => void;
+  ariaLabel?: string;
 };
 
-const ArticleTabs = ({ activeTab, onTabChange }: ArticleTabsProps) => {
+const ArticleTabs = <T extends ArticleTabValue>({
+  tabs,
+  activeTab,
+  onTabChange,
+  ariaLabel = '기사 필터',
+}: ArticleTabsProps<T>) => {
   return (
-    <div className={styles.tabsWrapper} role="tablist" aria-label="관련 기사 이념 필터">
-      {RELATED_ARTICLE_TAB_LIST.map((tab) => (
+    <div className={styles.tabsWrapper} role="tablist" aria-label={ariaLabel}>
+      {tabs.map((tab) => (
         <button
           key={tab.value}
           type="button"
