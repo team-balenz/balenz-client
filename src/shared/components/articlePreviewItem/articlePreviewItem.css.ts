@@ -36,6 +36,17 @@ export const articlePreviewWrapper = recipe({
         padding: '1.25rem 0 2.19rem',
         gap: '0.5rem',
       },
+      search: {
+        padding: '0.94rem 1.25rem 0.94rem 0.31rem',
+        gap: '0.5rem',
+
+        '@media': {
+          [media.belowDesktop]: {
+            padding: '0.62rem 1.25rem 0.62rem 0.31rem',
+            gap: '0.5rem',
+          },
+        },
+      },
     },
   },
 
@@ -67,6 +78,7 @@ export const articleContentWrapper = recipe({
         },
       },
       expanded: {},
+      search: {},
     },
   },
 
@@ -146,6 +158,19 @@ export const articleTitle = recipe({
           [media.mobile]: {
             ...typography.phone.h3,
             WebkitLineClamp: 2,
+          },
+        },
+      },
+      search: {
+        ...typography.correction,
+        ...typography.desktop.h4,
+        WebkitLineClamp: 1,
+        '@media': {
+          [media.tablet]: {
+            ...typography.tablet.h4,
+          },
+          [media.mobile]: {
+            ...typography.phone.h3,
           },
         },
       },
