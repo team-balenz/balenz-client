@@ -9,6 +9,7 @@ type ArticleTabsProps<T extends ArticleTabValue> = {
   activeTab: T;
   onTabChange: (value: T) => void;
   ariaLabel?: string;
+  variant?: 'default' | 'correction';
 };
 
 const ArticleTabs = <T extends ArticleTabValue>({
@@ -16,6 +17,7 @@ const ArticleTabs = <T extends ArticleTabValue>({
   activeTab,
   onTabChange,
   ariaLabel = '기사 필터',
+  variant = 'default',
 }: ArticleTabsProps<T>) => {
   return (
     <div className={styles.tabsWrapper} role="tablist" aria-label={ariaLabel}>
@@ -25,7 +27,7 @@ const ArticleTabs = <T extends ArticleTabValue>({
           type="button"
           role="tab"
           aria-selected={tab.value === activeTab}
-          className={styles.tab({ active: tab.value === activeTab })}
+          className={styles.tab({ active: tab.value === activeTab, variant })}
           onClick={() => onTabChange(tab.value)}
         >
           {tab.label}

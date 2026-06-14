@@ -43,6 +43,12 @@ export const tab = recipe({
   },
 
   variants: {
+    variant: {
+      default: {},
+      correction: {
+        ...typography.correction,
+      },
+    },
     active: {
       true: {
         borderBottom: `3px solid ${color.text.main}`,
@@ -51,5 +57,9 @@ export const tab = recipe({
         color: color.text.tertiary,
       },
     },
+  },
+
+  defaultVariants: {
+    variant: 'default',
   },
 });
