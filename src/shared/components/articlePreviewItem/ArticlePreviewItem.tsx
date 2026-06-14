@@ -19,6 +19,7 @@ const IDEOLOGY_INDICATOR_SIZE_BY_RENDER_TYPE: Record<
   default: { desktop: 'medium', tablet: 'medium', mobile: 'medium' },
   compact: { desktop: 'small', tablet: 'small', mobile: 'extraSmall' },
   expanded: { desktop: 'medium', tablet: 'medium', mobile: 'medium' },
+  search: { desktop: 'medium', tablet: 'medium', mobile: 'medium' },
 };
 
 const ArticlePreviewItem = (props: ArticlePreviewItemTypes) => {

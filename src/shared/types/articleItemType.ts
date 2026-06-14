@@ -1,7 +1,7 @@
 // articleItemType.ts
 import { type IdeologyIndicatorValueTypes } from '@/common/components/indicator/constants';
 
-// 아티클 아이템 기본 공통 타입 (default, compact, expanded 모두 사용)
+// 아티클 아이템 기본 공통 타입 (default, compact, expanded, search 모두 사용)
 export interface ArticleBaseTypes {
   articleId: number;
   mediaName: string;
@@ -32,8 +32,14 @@ export interface ExpandedArticlePreviewItemTypes
   renderType: 'expanded';
 }
 
+// search 결과 타입 아이템 타입
+export interface SearchArticlePreviewItemTypes extends ArticleBaseTypes {
+  renderType: 'search';
+}
+
 // 아이템 타입 유니온 타입
 export type ArticlePreviewItemTypes =
   | DefaultArticlePreviewItemTypes
   | CompactArticlePreviewItemTypes
-  | ExpandedArticlePreviewItemTypes;
+  | ExpandedArticlePreviewItemTypes
+  | SearchArticlePreviewItemTypes;
