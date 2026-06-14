@@ -1,15 +1,15 @@
 'use client';
 
-import * as styles from './relatedArticleTabs.css';
+import * as styles from './articleTabs.css';
 
-import { RELATED_ARTICLE_TAB_LIST, type RelatedArticleTabValue } from './constants';
+import { RELATED_ARTICLE_TAB_LIST, type ArticleTabValue } from './constants';
 
-type RelatedArticleTabsProps = {
-  activeTab: RelatedArticleTabValue;
-  onTabChange: (value: RelatedArticleTabValue) => void;
+type ArticleTabsProps = {
+  activeTab: ArticleTabValue;
+  onTabChange: (value: ArticleTabValue) => void;
 };
 
-const RelatedArticleTabs = ({ activeTab, onTabChange }: RelatedArticleTabsProps) => {
+const ArticleTabs = ({ activeTab, onTabChange }: ArticleTabsProps) => {
   return (
     <div className={styles.tabsWrapper} role="tablist" aria-label="관련 기사 이념 필터">
       {RELATED_ARTICLE_TAB_LIST.map((tab) => (
@@ -28,4 +28,4 @@ const RelatedArticleTabs = ({ activeTab, onTabChange }: RelatedArticleTabsProps)
   );
 };
 
-export default RelatedArticleTabs;
+export default ArticleTabs;

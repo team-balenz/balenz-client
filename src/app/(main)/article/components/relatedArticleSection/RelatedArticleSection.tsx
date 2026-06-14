@@ -2,16 +2,16 @@
 import { useState } from 'react';
 
 import * as styles from './relatedArticleSection.css';
-import RelatedArticleTabs from '../relatedArticleTabs/RelatedArticleTabs';
-import type { RelatedArticleTabValue } from '../relatedArticleTabs/constants';
+import RelatedArticleTabs from '@/shared/components/articleTabs/ArticleTabs';
+import type { ArticleTabValue } from '@/shared/components/articleTabs/constants';
 
 import ArticlePreviewItem from '@/shared/components/articlePreviewItem/ArticlePreviewItem';
 import { RELATED_ARTICLE_SECTION_DATA } from '@/mocks/data/home';
 
 const RelatedArticleSection = () => {
-  const [selectedIdeology, setSelectedIdeology] = useState<RelatedArticleTabValue>('all');
+  const [selectedIdeology, setSelectedIdeology] = useState<ArticleTabValue>('all');
 
-  const handleIdeologyChange = (ideology: RelatedArticleTabValue) => {
+  const handleIdeologyChange = (ideology: ArticleTabValue) => {
     setSelectedIdeology(ideology);
     console.log(ideology);
   };

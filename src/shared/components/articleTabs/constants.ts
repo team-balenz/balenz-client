@@ -5,4 +5,4 @@ export const RELATED_ARTICLE_TAB_LIST = [
   { label: '보수', value: 'conservative' },
 ] as const;
 
-export type RelatedArticleTabValue = (typeof RELATED_ARTICLE_TAB_LIST)[number]['value'];
+export type ArticleTabValue = (typeof RELATED_ARTICLE_TAB_LIST)[number]['value'];
