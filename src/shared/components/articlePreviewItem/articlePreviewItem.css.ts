@@ -36,6 +36,17 @@ export const articlePreviewWrapper = recipe({
         padding: '1.25rem 0 2.19rem',
         gap: '0.5rem',
       },
+      search: {
+        padding: '0.94rem 1.25rem 0.94rem 0.31rem',
+        gap: '0.5rem',
+
+        '@media': {
+          [media.belowDesktop]: {
+            padding: '0.62rem 1.25rem 0.62rem 0.31rem',
+            gap: '0.5rem',
+          },
+        },
+      },
     },
   },
 
@@ -67,6 +78,7 @@ export const articleContentWrapper = recipe({
         },
       },
       expanded: {},
+      search: {},
     },
   },
 
@@ -148,6 +160,9 @@ export const articleTitle = recipe({
             WebkitLineClamp: 2,
           },
         },
+      },
+      search: {
+        WebkitLineClamp: 1,
       },
     },
   },
