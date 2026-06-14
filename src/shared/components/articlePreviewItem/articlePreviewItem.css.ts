@@ -162,7 +162,17 @@ export const articleTitle = recipe({
         },
       },
       search: {
+        ...typography.correction,
+        ...typography.desktop.h4,
         WebkitLineClamp: 1,
+        '@media': {
+          [media.tablet]: {
+            ...typography.tablet.h4,
+          },
+          [media.mobile]: {
+            ...typography.phone.h3,
+          },
+        },
       },
     },
   },
