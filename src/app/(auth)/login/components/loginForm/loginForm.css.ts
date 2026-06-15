@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { media } from '@/shared/styles';
 
 export const form = style({
   display: 'flex',
@@ -9,8 +10,24 @@ export const inputGroup = style({
   display: 'flex',
   flexDirection: 'column',
   gap: '0.12rem',
+  '@media': {
+    [media.tablet]: {
+      gap: '0.44rem',
+    },
+    [media.mobile]: {
+      gap: '0.38rem',
+    },
+  },
 });
 
 export const buttonWrapper = style({
-  marginTop: '3.44rem',
+  marginTop: '2.19rem',
+  '@media': {
+    [media.tablet]: {
+      marginTop: '2.38rem',
+    },
+    [media.mobile]: {
+      marginTop: '2.31rem',
+    },
+  },
 });
