@@ -51,8 +51,16 @@ const ScopeCarousel = () => {
         <div className={styles.emblaContainer}>
           {SCOPE_CAROUSEL_DATA.map((category) => (
             <div key={category.id} className={styles.slide}>
-              <ScopeCarouselItem item={category.articles.progressive} ideology="progressive" />
-              <ScopeCarouselItem item={category.articles.conservative} ideology="conservative" />
+              <ScopeCarouselItem
+                title={category.valueArticleTitle}
+                imageUrl={category.valueImageUrl}
+                ideology="value"
+              />
+              <ScopeCarouselItem
+                title={category.normArticleTitle}
+                imageUrl={category.normImageUrl}
+                ideology="norm"
+              />
             </div>
           ))}
         </div>

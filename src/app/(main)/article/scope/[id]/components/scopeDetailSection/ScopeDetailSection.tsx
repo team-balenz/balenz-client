@@ -15,9 +15,9 @@ const ScopeDetailSection = () => {
         <div className={styles.thumbHeaderStack}>
           <ArticleDetailThumbnail
             imageUrl={SCOPE_DETAIL_MOCK.imageUrl}
-            progressiveCount={SCOPE_DETAIL_MOCK.articleCount.value}
-            centerCount={SCOPE_DETAIL_MOCK.articleCount.neutral}
-            conservativeCount={SCOPE_DETAIL_MOCK.articleCount.norm}
+            valueRatio={SCOPE_DETAIL_MOCK.articleCount.valueRatio}
+            neutralRatio={SCOPE_DETAIL_MOCK.articleCount.neutralRatio}
+            normRatio={SCOPE_DETAIL_MOCK.articleCount.normRatio}
           />
           <ScopeDetailHeader
             name={SCOPE_DETAIL_MOCK.name}
