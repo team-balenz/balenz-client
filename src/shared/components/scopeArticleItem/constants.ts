@@ -5,9 +5,9 @@ import type { IdeologyType } from './types';
  */
 
 export const IDEOLOGY_LABELS: Record<IdeologyType, string> = {
-  progressive: '진보',
-  center: '중도',
-  conservative: '보수',
+  value: '진보',
+  neutral: '중도',
+  norm: '보수',
 } as const;
 
 /**
