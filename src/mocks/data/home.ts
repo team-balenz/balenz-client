@@ -152,106 +152,100 @@ export const HOT_ISSUE_ARTICLE_GROUP: HotIssueGroupTypes[] = [
  */
 export const SCOPE_CAROUSEL_DATA: ScopeCarouselDataType[] = [
   {
-    id: '1',
-    category: 'politics',
-    categoryLabel: '정치',
-    articles: {
-      progressive: {
-        title:
-          '(정치-진보) 해당 섹션은 기사의 제목을 작성하는 섹션입니다. 두 줄을 초과할 시, 말줄임표 적용해주세요.',
-        image: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
-      },
-      conservative: {
-        title:
-          '(정치-보수) 해당 섹션은 기사의 제목을 작성하는 섹션입니다. 두 줄을 초과할 시, 말줄임표 적용해주세요.',
-        image: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
-      },
+    articleCount: {
+      neutral: 5,
+      neutralRatio: 0.33,
+      norm: 5,
+      normRatio: 0.33,
+      value: 5,
+      valueRatio: 0.33,
     },
+    id: 21,
+    name: '삼성전자',
+    normArticleTitle: '보수 기사 제목입니다 ~',
+    normImageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
+    valueArticleTitle: '진보 기사 제목입니다 ~',
+    valueImageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
   },
   {
-    id: '2',
-    category: 'economy',
-    categoryLabel: '경제',
-    articles: {
-      progressive: {
-        title:
-          '(경제-진보) 해당 섹션은 기사의 제목을 작성하는 섹션입니다. 두 줄을 초과할 시, 말줄임표 적용해주세요.',
-        image: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
-      },
-      conservative: {
-        title:
-          '(경제-보수) 해당 섹션은 기사의 제목을 작성하는 섹션입니다. 두 줄을 초과할 시, 말줄임표 적용해주세요.',
-        image: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
-      },
+    articleCount: {
+      neutral: 5,
+      neutralRatio: 0.33,
+      norm: 5,
+      normRatio: 0.33,
+      value: 5,
+      valueRatio: 0.33,
     },
+    id: 22,
+    name: '삼성전자',
+    normArticleTitle: '보수 기사 제목입니다 ~',
+    normImageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
+    valueArticleTitle: '진보 기사 제목입니다 ~',
+    valueImageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
   },
   {
-    id: '3',
-    category: 'society',
-    categoryLabel: '사회',
-    articles: {
-      progressive: {
-        title:
-          '(사회-진보) 해당 섹션은 기사의 제목을 작성하는 섹션입니다. 두 줄을 초과할 시, 말줄임표 적용해주세요.',
-        image: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
-      },
-      conservative: {
-        title:
-          '(사회-보수) 해당 섹션은 기사의 제목을 작성하는 섹션입니다. 두 줄을 초과할 시, 말줄임표 적용해주세요.',
-        image: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
-      },
+    articleCount: {
+      neutral: 5,
+      neutralRatio: 0.33,
+      norm: 5,
+      normRatio: 0.33,
+      value: 5,
+      valueRatio: 0.33,
     },
+    id: 23,
+    name: '삼성전자',
+    normArticleTitle: '보수 기사 제목입니다 ~',
+    normImageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
+    valueArticleTitle: '진보 기사 제목입니다 ~',
+    valueImageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
   },
   {
-    id: '4',
-    category: 'world',
-    categoryLabel: '세계',
-    articles: {
-      progressive: {
-        title:
-          '(세계-진보) 해당 섹션은 기사의 제목을 작성하는 섹션입니다. 두 줄을 초과할 시, 말줄임표 적용해주세요.',
-        image: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
-      },
-      conservative: {
-        title:
-          '(세계-보수) 해당 섹션은 기사의 제목을 작성하는 섹션입니다. 두 줄을 초과할 시, 말줄임표 적용해주세요.',
-        image: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
-      },
+    articleCount: {
+      neutral: 5,
+      neutralRatio: 0.33,
+      norm: 5,
+      normRatio: 0.33,
+      value: 5,
+      valueRatio: 0.33,
     },
+    id: 24,
+    name: '삼성전자',
+    normArticleTitle: '보수 기사 제목입니다 ~',
+    normImageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
+    valueArticleTitle: '진보 기사 제목입니다 ~',
+    valueImageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
   },
   {
-    id: '5',
-    category: 'culture',
-    categoryLabel: '문화',
-    articles: {
-      progressive: {
-        title:
-          '(문화-진보) 해당 섹션은 기사의 제목을 작성하는 섹션입니다. 두 줄을 초과할 시, 말줄임표 적용해주세요.',
-        image: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
-      },
-      conservative: {
-        title:
-          '(문화-보수) 해당 섹션은 기사의 제목을 작성하는 섹션입니다. 두 줄을 초과할 시, 말줄임표 적용해주세요.',
-        image: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
-      },
+    articleCount: {
+      neutral: 5,
+      neutralRatio: 0.33,
+      norm: 5,
+      normRatio: 0.33,
+      value: 5,
+      valueRatio: 0.33,
     },
+    id: 25,
+    name: '삼성전자',
+    normArticleTitle: '보수 기사 제목입니다 ~',
+    normImageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
+    valueArticleTitle: '진보 기사 제목입니다 ~',
+    valueImageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
   },
   {
-    id: '6',
-    category: 'technology',
-    categoryLabel: '기술',
-    articles: {
-      progressive: {
-        title:
-          '(기술-진보) 해당 섹션은 기사의 제목을 작성하는 섹션입니다. 두 줄을 초과할 시, 말줄임표 적용해주세요.',
-        image: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
-      },
-      conservative: {
-        title:
-          '(기술-보수) 해당 섹션은 기사의 제목을 작성하는 섹션입니다. 두 줄을 초과할 시, 말줄임표 적용해주세요.',
-        image: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
-      },
+    articleCount: {
+      neutral: 5,
+      neutralRatio: 0.33,
+      norm: 5,
+      normRatio: 0.33,
+      value: 5,
+      valueRatio: 0.33,
     },
+    id: 21,
+    name: '삼성전자',
+    normArticleTitle: '보수 기사 제목입니다 ~',
+    normImageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
+    valueArticleTitle: '진보 기사 제목입니다 ~',
+    valueImageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',
   },
 ];
 
