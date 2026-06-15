@@ -25,10 +25,8 @@ const ScopeCategorySection = () => {
       <div className={styles.itemSection}>
         <div className={styles.grid}>
           {items.map((item) => {
-            const { keywordId, ...itemProps } = item;
-            return (
-              <ScopeArticleItem key={keywordId} keywordId={keywordId} {...itemProps} size="small" />
-            );
+            const { id, ...itemProps } = item;
+            return <ScopeArticleItem key={id} id={id} {...itemProps} size="small" />;
           })}
         </div>
       </div>
