@@ -6,17 +6,17 @@ import * as styles from './articleDetailThumbnail.css';
 
 interface ArticleDetailThumbnailPropTypes {
   imageUrl: string;
-  progressiveCount: number;
-  centerCount: number;
-  conservativeCount: number;
+  valueRatio: number;
+  neutralRatio: number;
+  normRatio: number;
   imageAlt?: string;
 }
 
 const ArticleDetailThumbnail = ({
   imageUrl,
-  progressiveCount,
-  centerCount,
-  conservativeCount,
+  valueRatio,
+  neutralRatio,
+  normRatio,
   imageAlt = '아티클 썸네일',
 }: ArticleDetailThumbnailPropTypes) => {
   return (
@@ -38,9 +38,9 @@ const ArticleDetailThumbnail = ({
 
       <div className={styles.barContainer}>
         <ScopePercentBar
-          progressivePercent={progressiveCount}
-          centerPercent={centerCount}
-          conservativePercent={conservativeCount}
+          valueRatio={valueRatio}
+          neutralRatio={neutralRatio}
+          normRatio={normRatio}
           size="large"
         />
       </div>
