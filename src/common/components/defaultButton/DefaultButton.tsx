@@ -7,6 +7,7 @@ interface DefaultButtonPropTypes {
   onClick?: () => void;
   disabled?: boolean;
   type?: 'button' | 'submit' | 'reset';
+  variant?: 'default' | 'auth';
 }
 
 const DefaultButton = ({
@@ -14,9 +15,15 @@ const DefaultButton = ({
   onClick,
   disabled = false,
   type = 'button',
+  variant = 'default',
 }: DefaultButtonPropTypes) => {
   return (
-    <button className={styles.defaultButton} onClick={onClick} disabled={disabled} type={type}>
+    <button
+      className={styles.defaultButton({ variant })}
+      onClick={onClick}
+      disabled={disabled}
+      type={type}
+    >
       {label}
     </button>
   );
