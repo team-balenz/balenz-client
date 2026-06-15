@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import AuthInput from '@/app/(auth)/components/authInput/AuthInput';
 import DefaultButton from '@/common/components/defaultButton/DefaultButton';
+import { validateEmail, validateRequiredPassword } from '@/app/(auth)/utils/authValidation';
 
 import * as styles from './loginForm.css';
 
@@ -11,31 +12,8 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-
-  const emailError = (() => {
-    if (!isSubmitted) return '';
-
-    if (!email.trim()) {
-      return '이메일을 입력해주세요.';
-    }
-
-    if (!emailRegex.test(email)) {
-      return '올바른 이메일 형식이 아니에요.';
-    }
-
-    return '';
-  })();
-
-  const passwordError = (() => {
-    if (!isSubmitted) return '';
-
-    if (!password.trim()) {
-      return '비밀번호를 입력해주세요.';
-    }
-
-    return '';
-  })();
+  const emailError = isSubmitted ? validateEmail(email) : '';
+  const passwordError = isSubmitted ? validateRequiredPassword(password) : '';
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -43,7 +21,6 @@ const LoginForm = () => {
     setIsSubmitted(true);
 
     if (!email.trim()) return;
-    if (!emailRegex.test(email)) return;
     if (!password.trim()) return;
 
     // 로그인 API 호출
