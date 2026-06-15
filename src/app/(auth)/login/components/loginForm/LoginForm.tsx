@@ -50,7 +50,7 @@ const LoginForm = () => {
       </div>
 
       <div className={styles.buttonWrapper}>
-        <DefaultButton type="submit" label="로그인" />
+        <DefaultButton type="submit" label="로그인" variant="auth" />
       </div>
     </form>
   );
