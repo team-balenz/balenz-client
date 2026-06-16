@@ -14,7 +14,7 @@ const PopularScopeSection = () => {
 
       <ul className={styles.list}>
         {SCOPE_ALL_ITEMS.map((item) => (
-          <li key={item.keywordId}>
+          <li key={item.id}>
             <ScopeArticleItem {...item} size={itemSize} />
           </li>
         ))}

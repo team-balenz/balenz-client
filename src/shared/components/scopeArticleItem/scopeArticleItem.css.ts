@@ -147,6 +147,7 @@ export const category = recipe({
 });
 
 export const title = style({
+  ...typography.correction,
   ...typography.desktop.h4,
   color: color.text.main,
 
@@ -164,6 +165,11 @@ export const description = recipe({
   base: {
     ...typography.desktop.caption,
     color: color.text.tertiary,
+    display: '-webkit-box',
+    WebkitLineClamp: 1,
+    WebkitBoxOrient: 'vertical',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
 
     '@media': {
       [media.tablet]: {

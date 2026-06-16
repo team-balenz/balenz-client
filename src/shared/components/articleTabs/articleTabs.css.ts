@@ -23,7 +23,8 @@ export const tab = recipe({
   base: {
     color: color.text.main,
     ...typography.desktop.h4,
-    width: '25%',
+    flex: 1,
+    minWidth: 0,
     padding: '1.03rem 0',
     cursor: 'pointer',
     border: 'none',
@@ -42,6 +43,12 @@ export const tab = recipe({
   },
 
   variants: {
+    variant: {
+      default: {},
+      correction: {
+        ...typography.correction,
+      },
+    },
     active: {
       true: {
         borderBottom: `3px solid ${color.text.main}`,
@@ -50,5 +57,9 @@ export const tab = recipe({
         color: color.text.tertiary,
       },
     },
+  },
+
+  defaultVariants: {
+    variant: 'default',
   },
 });

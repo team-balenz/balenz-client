@@ -1,7 +1,9 @@
 'use client';
 
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
+import { ROUTES } from '@/shared/constants/route';
 import IdeologyIndicator from '@/common/components/indicator/IdeologyIndicator';
 import { type IdeologyIndicatorValueTypes } from '@/common/components/indicator/constants';
 
@@ -22,16 +24,14 @@ const HotIssueArticleItem = ({
   articleTitle,
   mediaName,
 }: HotIssueArticleItemPropTypes) => {
-  const handleClickArticle = () => {
-    console.log('[HotIssueArticleItem] 기사 상세 페이지로 이동 예정', { articleId });
-  };
+  const router = useRouter();
 
   return (
     <div
       className={styles.container}
       role="button"
       // tabIndex={0}
-      onClick={handleClickArticle}
+      onClick={() => router.push(ROUTES.LINK_DETAIL(articleId))}
       // onKeyDown={(e) => {
       //   if (e.key === 'Enter' || e.key === ' ') {
       //     e.preventDefault();

@@ -95,10 +95,10 @@ export const ideologyBar = style({
   },
 });
 
-export const progressiveBar = style({
+export const valueBar = style({
   backgroundColor: color.brand.progressive,
 });
 
-export const conservativeBar = style({
+export const normBar = style({
   backgroundColor: color.brand.conservative,
 });

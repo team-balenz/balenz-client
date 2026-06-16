@@ -13,14 +13,16 @@ export const ROUTES = {
   JOIN: '/join',
   SEARCH: '/search',
   DAILY_FOCUS: '/daily-focus',
+  SCOPE_DETAIL: (id: number | string) => `/article/scope/${id}`,
+  LINK_DETAIL: (id: number | string) => `/article/link/${id}`,
 } as const;
 
 /**
- * ROUTES의 값 중 하나가 될 수 있는 라우트 경로 타입
- * TypeScript 타입 안전성을 제공하여 잘못된 경로 값을 방지
+ * ROUTES에 정의된 정적 라우트 경로 문자열 타입
+ * 함수 형태의 동적 라우트는 제외하고 문자열 경로만 추출
  *
  * 사용 예시:
  * - 함수 파라미터: `function navigate(path: RoutePath) { ... }`
  * - 변수 선언: `const currentRoute: RoutePath = ROUTES.GLOBAL;`
  */
-export type RoutePath = (typeof ROUTES)[keyof typeof ROUTES];
+export type RoutePath = Extract<(typeof ROUTES)[keyof typeof ROUTES], string>;

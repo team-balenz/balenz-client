@@ -1,26 +1,29 @@
 /**
  * Ideology 타입
  */
-export type IdeologyType = 'progressive' | 'center' | 'conservative';
+export type IdeologyType = 'value' | 'neutral' | 'norm';
+
+export type ScopeDominantFrameType = 'VALUE' | 'NEUTRAL' | 'NORM' | 'BALANCED';
 
 /**
  * ScopeArticleItem 컴포넌트에 전달되는 기사 아이템 데이터
- * @property keywordId - 키워드 고유 식별자
+ * @property articleCount - 프레임별 기사 수/비율
+ * @property dominantFrameType - 대표 프레임 타입
+ * @property id - 키워드 고유 식별자
  * @property imageUrl - 기사 이미지 URL
- * @property imageAlt - 이미지 대체 텍스트
- * @property keyword - 키워드 (주제)
- * @property ideology - 이념 (진보/중도/보수)
- * @property progressiveCount - 진보 성향 기사 수
- * @property centerCount - 중도 성향 기사 수
- * @property conservativeCount - 보수 성향 기사 수
+ * @property name - 키워드 (주제)
  */
 export interface ScopeArticleItemData {
-  keywordId: string;
+  articleCount: {
+    neutral: number;
+    neutralRatio: number;
+    norm: number;
+    normRatio: number;
+    value: number;
+    valueRatio: number;
+  };
+  dominantFrameType: ScopeDominantFrameType;
+  id: number;
   imageUrl: string;
-  imageAlt: string;
-  keyword: string;
-  ideology: IdeologyType;
-  progressiveCount: number;
-  centerCount: number;
-  conservativeCount: number;
+  name: string;
 }

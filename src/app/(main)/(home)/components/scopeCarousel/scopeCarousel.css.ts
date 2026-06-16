@@ -22,7 +22,7 @@ export const header = style({
 
 export const viewport = style({
   overflow: 'hidden',
-  borderRadius: '1rem',
+  borderRadius: '0.3125rem',
   width: '100%',
 });
 

@@ -9,11 +9,6 @@ globalStyle('*, *::before, *::after', {
   boxSizing: 'border-box',
 });
 
-/* html 스타일 */
-globalStyle('html', {
-  scrollBehavior: 'smooth',
-});
-
 /* body 스타일 */
 globalStyle('body', {
   backgroundColor: color.brand.background,
