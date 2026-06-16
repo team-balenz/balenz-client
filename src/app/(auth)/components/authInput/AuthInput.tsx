@@ -13,7 +13,7 @@ interface AuthInputPropTypes extends InputHTMLAttributes<HTMLInputElement> {
 const AuthInput = ({
   id,
   label,
-  errorMessage,
+  errorMessage = '',
   showDuplicateCheck = false,
   onDuplicateCheck,
   type = 'text',
@@ -21,6 +21,7 @@ const AuthInput = ({
 }: AuthInputPropTypes) => {
   const fallbackId = useId();
   const inputId = id ?? fallbackId;
+
   return (
     <div className={styles.container}>
       <label htmlFor={inputId} className={styles.label}>
@@ -37,7 +38,7 @@ const AuthInput = ({
         )}
       </div>
 
-      {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
+      <p className={styles.errorMessage}>{errorMessage}</p>
     </div>
   );
 };
