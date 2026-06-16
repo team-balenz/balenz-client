@@ -2,9 +2,9 @@ import type { IdeologyType } from '@/shared/components/scopeArticleItem/types';
 
 // 중앙화 필요
 export const IDEOLOGY_LABELS: Record<IdeologyType, string> = {
-  progressive: '진보',
-  center: '중도',
-  conservative: '보수',
+  value: '진보',
+  neutral: '중도',
+  norm: '보수',
 };
 
 // 브레이크포인트별 레이블 상수
