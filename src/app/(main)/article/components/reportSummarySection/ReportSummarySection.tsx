@@ -43,9 +43,9 @@ const ReportSummarySection = ({
 
   // dominantFrameType을 IdeologyType으로 변환 (추후 통일)
   const biasIdeologyMap: Record<string, IdeologyType> = {
-    VALUE: 'progressive',
-    NORM: 'conservative',
-    NEUTRAL: 'center',
+    VALUE: 'value',
+    NORM: 'norm',
+    NEUTRAL: 'neutral',
   };
   const biasIdeology: IdeologyType = biasIdeologyMap[dominantFrameType] || 'center';
 

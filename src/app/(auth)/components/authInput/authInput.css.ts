@@ -59,6 +59,7 @@ export const errorMessage = style({
   ...typography.desktop.caption,
   color: color.system.error,
   marginTop: '0.25rem',
+  minHeight: '1rem',
 
   '@media': {
     [media.tablet]: {
