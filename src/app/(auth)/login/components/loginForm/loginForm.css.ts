@@ -9,7 +9,7 @@ export const form = style({
 export const inputGroup = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: '0.12rem',
+  gap: '0.13rem',
   '@media': {
     [media.tablet]: {
       gap: '0.44rem',
@@ -21,10 +21,10 @@ export const inputGroup = style({
 });
 
 export const buttonWrapper = style({
-  marginTop: '2.19rem',
+  marginTop: '1.81rem',
   '@media': {
     [media.tablet]: {
-      marginTop: '2.38rem',
+      marginTop: '2.37rem',
     },
     [media.mobile]: {
       marginTop: '2.31rem',
