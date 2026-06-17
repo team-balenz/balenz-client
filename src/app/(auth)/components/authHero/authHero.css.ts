@@ -4,8 +4,11 @@ import { media } from '@/shared/styles';
 export const container = style({
   position: 'relative',
   width: '100%',
-  minHeight: '100dvh',
-  padding: '3rem 2.5rem',
+  maxWidth: '40.0625rem',
+  height: 'calc(100dvh - 3.75rem)',
+  minHeight: '38rem',
+  maxHeight: '45.9375rem',
+
   '@media': {
     [media.belowDesktop]: {
       display: 'none',
