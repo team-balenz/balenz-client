@@ -11,7 +11,7 @@ const AuthHero = () => {
           alt="Balenz 소개 이미지"
           fill
           className={styles.image}
-          priority
+          sizes="(max-width: 1023px) 1px, 40.0625rem"
         />
       </div>
     </section>
