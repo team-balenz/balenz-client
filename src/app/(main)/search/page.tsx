@@ -5,7 +5,8 @@ import * as styles from './page.css';
 import ArticleTabs from '@/shared/components/articleTabs/ArticleTabs';
 import NewsResultList from './components/searchResultContent/newsResultList/NewsResultList';
 import ScopeResultList from './components/searchResultContent/scopeResultList/ScopeResultList';
-import { useState } from 'react';
+import { Suspense, useCallback, useEffect, useMemo, useState } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { SEARCH_TAB_LIST, SearchTabValue } from '@/shared/components/articleTabs/constants';
 import type { SearchArticlePreviewItemTypes } from '@/shared/types/articleItemType';
 import { NewsArticleItemData } from './types/search';
@@ -14,6 +15,7 @@ import SearchPagenation from './components/searchPagenation/SearchPagenation';
 import SearchInput from './components/searchInput/SearchInput';
 
 const ITEMS_PER_PAGE = 7;
+const PAGE_PARAM = 'page';
 
 const mapArticleToNewsItem = (article: NewsArticleItemData): SearchArticlePreviewItemTypes => ({
   renderType: 'search',
@@ -23,9 +25,18 @@ const mapArticleToNewsItem = (article: NewsArticleItemData): SearchArticlePrevie
   frameType: article.frameType,
 });
 
-export default function SearchPage() {
+const getPageParam = (searchParams: Pick<URLSearchParams, 'get'>) => {
+  const page = Number(searchParams.get(PAGE_PARAM));
+
+  return Number.isInteger(page) && page > 0 ? page : 1;
+};
+
+function SearchPageContent() {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
   const [selectedResultType, setSelectedResultType] = useState<SearchTabValue>('scope');
-  const [currentPage, setCurrentPage] = useState(1);
 
   const [searchInputValue, setSearchInputValue] = useState('');
   const [submittedSearchValue, setSubmittedSearchValue] = useState('검색어');
@@ -37,14 +48,55 @@ export default function SearchPage() {
 
   // pagenation 관련 변수
   const totalPages = Math.ceil(activeItems.length / ITEMS_PER_PAGE);
+  const currentPage = useMemo(() => getPageParam(searchParams), [searchParams]);
+  const pageParamValue = searchParams.get(PAGE_PARAM);
   const pageStartIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const paginatedScopeItems = scopeItems.slice(pageStartIndex, pageStartIndex + ITEMS_PER_PAGE);
   const paginatedNewsItems = newsItems.slice(pageStartIndex, pageStartIndex + ITEMS_PER_PAGE);
 
+  const updatePageParam = useCallback(
+    (page: number, navigationType: 'push' | 'replace' = 'push') => {
+      const nextSearchParams = new URLSearchParams(searchParams.toString());
+
+      if (page <= 1) {
+        nextSearchParams.delete(PAGE_PARAM);
+      } else {
+        nextSearchParams.set(PAGE_PARAM, String(page));
+      }
+
+      const queryString = nextSearchParams.toString();
+      const nextUrl = queryString ? `${pathname}?${queryString}` : pathname;
+      const currentQueryString = searchParams.toString();
+      const currentUrl = currentQueryString ? `${pathname}?${currentQueryString}` : pathname;
+
+      if (nextUrl === currentUrl) {
+        return;
+      }
+
+      if (navigationType === 'replace') {
+        router.replace(nextUrl);
+        return;
+      }
+
+      router.push(nextUrl);
+    },
+    [pathname, router, searchParams],
+  );
+
+  useEffect(() => {
+    if (pageParamValue !== null && (currentPage === 1 || String(currentPage) !== pageParamValue)) {
+      updatePageParam(currentPage, 'replace');
+      return;
+    }
+
+    if (currentPage > totalPages) {
+      updatePageParam(Math.max(totalPages, 1), 'replace');
+    }
+  }, [currentPage, pageParamValue, totalPages, updatePageParam]);
+
   const handleTabChange = (resultType: SearchTabValue) => {
     setSelectedResultType(resultType);
-    setCurrentPage(1);
-    console.log(resultType);
+    updatePageParam(1);
   };
 
   const handleSearch = () => {
@@ -53,7 +105,7 @@ export default function SearchPage() {
     if (!nextSearchValue) return;
 
     setSubmittedSearchValue(nextSearchValue);
-    setCurrentPage(1);
+    updatePageParam(1);
   };
 
   return (
@@ -101,7 +153,7 @@ export default function SearchPage() {
             <SearchPagenation
               currentPage={currentPage}
               totalPages={totalPages}
-              onPageChange={setCurrentPage}
+              onPageChange={updatePageParam}
             />
           </div>
         )}
@@ -110,5 +162,13 @@ export default function SearchPage() {
         <div className={styles.adSection}>ad</div>
       </div>
     </div>
+  );
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense>
+      <SearchPageContent />
+    </Suspense>
   );
 }
