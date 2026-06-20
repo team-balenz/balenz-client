@@ -117,6 +117,7 @@ function SearchPageContent() {
     if (!nextSearchValue) return;
 
     setSubmittedSearchValue(nextSearchValue);
+    setSelectedResultType(scopeItems.length === 0 ? 'news' : 'scope');
     updatePageParam(1);
   };
 
