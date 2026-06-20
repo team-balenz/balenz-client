@@ -5,7 +5,7 @@ import * as styles from './page.css';
 import ArticleTabs from '@/shared/components/articleTabs/ArticleTabs';
 import NewsResultList from './components/searchResultContent/newsResultList/NewsResultList';
 import ScopeResultList from './components/searchResultContent/scopeResultList/ScopeResultList';
-import { Suspense, useCallback, useEffect, useMemo, useState } from 'react';
+import { Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { SEARCH_TAB_LIST, SearchTabValue } from '@/shared/components/articleTabs/constants';
 import type { SearchArticlePreviewItemTypes } from '@/shared/types/articleItemType';
@@ -40,6 +40,7 @@ function SearchPageContent() {
 
   const [searchInputValue, setSearchInputValue] = useState('');
   const [submittedSearchValue, setSubmittedSearchValue] = useState('검색어');
+  const hasMountedRef = useRef(false);
 
   const scopeItems = SEARCH_RESULT_DATA.keywords;
   const newsItems = SEARCH_RESULT_DATA.articles.map(mapArticleToNewsItem);
@@ -95,6 +96,15 @@ function SearchPageContent() {
       updatePageParam(Math.max(totalPages, 1), 'replace');
     }
   }, [currentPage, pageParamValue, totalPages, updatePageParam]);
+
+  useEffect(() => {
+    if (!hasMountedRef.current) {
+      hasMountedRef.current = true;
+      return;
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentPage]);
 
   const handleTabChange = (resultType: SearchTabValue) => {
     setSelectedResultType(resultType);
