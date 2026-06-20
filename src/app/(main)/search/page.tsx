@@ -45,6 +45,8 @@ function SearchPageContent() {
   const newsItems = SEARCH_RESULT_DATA.articles.map(mapArticleToNewsItem);
 
   const activeItems = selectedResultType === 'scope' ? scopeItems : newsItems;
+  const resultCount = selectedResultType === 'scope' ? scopeItems.length : newsItems.length;
+  const resultUnit = selectedResultType === 'scope' ? '주제' : '기사';
 
   // pagenation 관련 변수
   const totalPages = Math.ceil(activeItems.length / ITEMS_PER_PAGE);
@@ -136,7 +138,7 @@ function SearchPageContent() {
         {/* 검색어 + 검색 결과 개수 문구 섹션 */}
         <div
           className={styles.resultCount}
-        >{`"${submittedSearchValue}"에 대한 ${activeItems.length}개의 결과`}</div>
+        >{`"${submittedSearchValue}"에 대한 ${resultCount}개의 ${resultUnit}`}</div>
 
         {/* 검색 결과 리스트 섹션 */}
         <div className={styles.resultListWrapper}>
