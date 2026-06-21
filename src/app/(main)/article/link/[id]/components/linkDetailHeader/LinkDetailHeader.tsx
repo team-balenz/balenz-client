@@ -5,7 +5,7 @@ import { useState } from 'react';
 import ArticleDetailActions from '@/app/(main)/article/components/articleDetailActions/ArticleDetailActions';
 import ShareModal from '@/app/(main)/article/components/shareModal/ShareModal';
 import IdeologyIndicator from '@/common/components/indicator/IdeologyIndicator';
-import { IdeologyIndicatorValueTypes } from '@/common/components/indicator/constants';
+import { IdeologyFrameType } from '@/shared/types/frame';
 
 import * as styles from './linkDetailHeader.css';
 
@@ -15,7 +15,7 @@ interface LinkDetailHeaderPropTypes {
   summary: string;
   newsAgencyName: string;
   publishedAt: string;
-  frameType: IdeologyIndicatorValueTypes;
+  frameType: IdeologyFrameType;
   isScraped: boolean;
 }
 
