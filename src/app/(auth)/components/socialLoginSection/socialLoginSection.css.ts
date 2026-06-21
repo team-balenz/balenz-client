@@ -5,7 +5,7 @@ import { color, media, typography } from '@/shared/styles';
 export const container = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: '1.5rem',
+  gap: '0.94rem',
   width: '100%',
 });
 
