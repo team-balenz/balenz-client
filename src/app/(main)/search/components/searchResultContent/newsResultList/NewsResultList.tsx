@@ -3,7 +3,7 @@
 import * as styles from './newsResultList.css';
 
 import ArticlePreviewItem from '@/shared/components/articlePreviewItem/ArticlePreviewItem';
-import type { SearchArticlePreviewItemTypes } from '@/shared/types/articleItemType';
+import type { SearchArticlePreviewItemTypes } from '@/shared/components/articlePreviewItem/types';
 
 interface NewsListPropTypes {
   items: SearchArticlePreviewItemTypes[];

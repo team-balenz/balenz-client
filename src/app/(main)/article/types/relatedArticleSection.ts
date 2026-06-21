@@ -1,7 +1,7 @@
 import {
   type ArticleBaseTypes,
   type ExpandedArticleExtraTypes,
-} from '@/shared/types/articleItemType';
+} from '@/shared/components/articlePreviewItem/types';
 
 export type IdeologyType = 'progressive' | 'center' | 'conservative';
 

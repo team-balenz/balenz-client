@@ -1,12 +1,12 @@
 // articleItemType.ts
-import { type IdeologyIndicatorValueTypes } from '@/common/components/indicator/constants';
+import { IdeologyFrameType } from '../../types/frame';
 
 // 아티클 아이템 기본 공통 타입 (default, compact, expanded, search 모두 사용)
 export interface ArticleBaseTypes {
   articleId: number;
   mediaName: string;
   articleTitle: string;
-  frameType: IdeologyIndicatorValueTypes;
+  frameType: IdeologyFrameType;
   //   onArticleClick: (articleId: number) => void;
 }
 
