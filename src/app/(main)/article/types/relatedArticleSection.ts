@@ -3,9 +3,9 @@ import {
   type ExpandedArticleExtraTypes,
 } from '@/shared/components/articlePreviewItem/types';
 
-export type IdeologyType = 'progressive' | 'center' | 'conservative';
+import { BaseFrameType } from '@/shared/types/frame';
 
 export interface RelatedArticleSectionGroupTypes {
-  ideology: IdeologyType;
+  ideology: BaseFrameType;
   articleItems: (ArticleBaseTypes & ExpandedArticleExtraTypes)[];
 }

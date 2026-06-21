@@ -1,16 +1,16 @@
-import { type IdeologyIndicatorValueTypes } from '@/common/components/indicator/constants';
+import { FrameSide, IdeologyFrameType } from '@/shared/types/frame';
 
 export interface HotIssueArticleItemTypes {
   articleId: number;
   articleThumbnail: string;
-  frameType: IdeologyIndicatorValueTypes;
+  frameType: IdeologyFrameType;
   articleTitle: string;
   mediaName: string;
 }
 
 export interface HotIssueGroupTypes {
   keywordId: number;
-  ideology: 'progressive' | 'conservative';
+  ideology: FrameSide;
   keyword: string;
   articleItems: HotIssueArticleItemTypes[];
 }

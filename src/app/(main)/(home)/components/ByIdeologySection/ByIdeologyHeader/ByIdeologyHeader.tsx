@@ -1,9 +1,10 @@
 import { color } from '@/shared/styles/color.css';
+import { BaseFrameType } from '@/shared/types/frame';
 
 import * as styles from './byIdeologyHeader.css';
 
 interface ByIdeologyHeaderPropTypes {
-  ideology: 'progressive' | 'center' | 'conservative';
+  ideology: BaseFrameType;
 }
 
 const IDEOLOGY_MAPPING_TITLE = {
