@@ -12,7 +12,7 @@ import ByIdeologyGroup from './ByIdeologyGroup/ByIdeologyGroup';
 import * as styles from './byIdeologySection.css';
 
 const ByIdeologySection = () => {
-  const [activeKey, setActiveKey] = useState<string>('progressive');
+  const [activeKey, setActiveKey] = useState<string>('VALUE');
 
   const isMobile = useMediaQuery() === 'mobile';
 

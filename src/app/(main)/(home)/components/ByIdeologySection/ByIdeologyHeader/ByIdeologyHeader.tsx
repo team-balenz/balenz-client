@@ -8,25 +8,21 @@ interface ByIdeologyHeaderPropTypes {
 }
 
 const IDEOLOGY_MAPPING_TITLE = {
-  progressive: '진보 성향 기사',
-  center: '중도 성향 기사',
-  conservative: '보수 성향 기사',
+  VALUE: '진보 성향 기사',
+  NEUTRAL: '중도 성향 기사',
+  NORM: '보수 성향 기사',
 } as const;
 
 const IDEOLOGY_COLOR_THEME = {
-  progressive: color.brand.progressive,
-  center: color.brand.center,
-  conservative: color.brand.conservative,
+  VALUE: color.brand.progressive,
+  NEUTRAL: color.brand.center,
+  NORM: color.brand.conservative,
 } as const;
 
 const ByIdeologyHeader = ({ ideology }: ByIdeologyHeaderPropTypes) => {
-  const headerColor = IDEOLOGY_COLOR_THEME[ideology] ?? IDEOLOGY_COLOR_THEME.center;
-
   return (
-    <div className={styles.container} style={{ backgroundColor: headerColor }}>
-      <p className={styles.title}>
-        {IDEOLOGY_MAPPING_TITLE[ideology] ?? IDEOLOGY_MAPPING_TITLE.center}
-      </p>
+    <div className={styles.container} style={{ backgroundColor: IDEOLOGY_COLOR_THEME[ideology] }}>
+      <p className={styles.title}>{IDEOLOGY_MAPPING_TITLE[ideology]}</p>
     </div>
   );
 };

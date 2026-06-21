@@ -20,7 +20,7 @@ export const SCOPE_DETAIL_MOCK = {
   bias: 44,
   dominantFrameType: 'VALUE',
   mainArticles: {
-    center: {
+    NEUTRAL: {
       frameType: 'NEUTRAL',
       id: 15,
       newsAgencyName: '경향신문',
@@ -28,7 +28,7 @@ export const SCOPE_DETAIL_MOCK = {
       summary: '요약요약dddd',
       title: '기사 제목',
     },
-    conservative: {
+    NORM: {
       frameType: 'NORM',
       id: 113,
       newsAgencyName: '경향신문',
@@ -36,7 +36,7 @@ export const SCOPE_DETAIL_MOCK = {
       summary: '요약요약',
       title: '기사 제목',
     },
-    progressive: {
+    VALUE: {
       frameType: 'STRONG_VALUE',
       id: 5,
       newsAgencyName: '경향신문',

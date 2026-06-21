@@ -112,15 +112,15 @@ export const activeTab = recipe({
         color: color.text.main,
       },
 
-      progressive: {
+      VALUE: {
         color: color.brand.progressive,
       },
 
-      center: {
+      NEUTRAL: {
         color: color.brand.center,
       },
 
-      conservative: {
+      NORM: {
         color: color.brand.conservative,
       },
     },
