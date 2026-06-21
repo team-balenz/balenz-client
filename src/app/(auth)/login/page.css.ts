@@ -26,7 +26,7 @@ export const content = style({
   gap: '1.44rem',
   '@media': {
     [media.belowDesktop]: {
-      gap: '1.5rem',
+      gap: '1.94rem',
     },
   },
 });
