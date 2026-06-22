@@ -14,18 +14,18 @@ export const NAV_ITEMS = [
  */
 export const LOGO_SIZE = {
   desktop: {
-    width: '167px',
-    height: '32px',
+    width: '10.4375rem',
+    height: '2rem',
     aspectRatio: '167/32',
   },
   tablet: {
-    width: '126px',
-    height: '24px',
+    width: '7.875rem',
+    height: '1.5rem',
     aspectRatio: '21/4',
   },
   mobile: {
-    width: '105px',
-    height: '20px',
+    width: '6.5625rem',
+    height: '1.25rem',
     aspectRatio: '21/4',
   },
 };
@@ -35,15 +35,15 @@ export const LOGO_SIZE = {
  */
 export const HEADER_LAYOUT = {
   desktop: {
-    padding: '0 80px',
-    height: '80px',
+    padding: '0 5rem',
+    height: '5rem',
   },
   tablet: {
-    padding: '0 40px',
-    height: '70px',
+    padding: '0 2.5rem',
+    height: '4.375rem',
   },
   mobile: {
-    padding: '15px 20px',
+    padding: '0.9375rem 1.25rem',
     height: 'fit-content',
   },
 };
