@@ -130,14 +130,4 @@ export const adSection = style({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  marginTop: '8.56rem',
-
-  '@media': {
-    [media.tablet]: {
-      marginTop: '12rem',
-    },
-    [media.mobile]: {
-      marginTop: '12.75rem',
-    },
-  },
 });
