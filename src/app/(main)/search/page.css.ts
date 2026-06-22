@@ -9,26 +9,65 @@ export const container = style({
 
   '@media': {
     [media.mobile]: {
-      padding: '1.25rem',
+      padding: '0 1.25rem',
     },
   },
 });
 
+// 브라우저 화면 높이
+// - Header 높이 80px
+// - contentWrapper marginTop 5.81rem
+// - contentWrapper marginBottom 2.56rem
+// = contentWrapper가 최소로 가져야 할 높이
 export const contentWrapper = style({
   width: '39.25rem',
   marginTop: '5.81rem',
   marginBottom: '2.56rem',
+  minHeight: 'calc(100dvh - 5rem - 5.81rem - 2.56rem)',
+  display: 'flex',
+  flexDirection: 'column',
 
   '@media': {
     [media.tablet]: {
       width: '31.875rem',
       marginTop: '5.94rem',
       marginBottom: '6.87rem',
+      minHeight: 'calc(100dvh - 4.375rem - 5.94rem - 6.87rem)',
     },
     [media.mobile]: {
       width: '100%',
       marginTop: '3.13rem',
       marginBottom: '1.75rem',
+      minHeight: 'calc(100dvh - 4.375rem - 3.13rem - 1.75rem)',
+    },
+  },
+});
+
+// 검색어 미입력 시 초기 화면 wrapper
+export const initialContentWrapper = style({
+  minHeight: 'auto',
+  height: 'calc(100dvh - 5rem - 5.81rem - 2.56rem)',
+
+  '@media': {
+    [media.tablet]: {
+      height: 'calc(100dvh - 4.375rem - 5.94rem - 6.87rem)',
+    },
+    [media.mobile]: {
+      height: 'calc(100dvh - 4.375rem - 3.13rem - 1.75rem)',
+    },
+  },
+});
+
+// 검색어 미입력 시 초기 화면 section
+export const initialAdSection = style({
+  marginTop: 'auto',
+
+  '@media': {
+    [media.tablet]: {
+      marginTop: 'auto',
+    },
+    [media.mobile]: {
+      marginTop: 'auto',
     },
   },
 });

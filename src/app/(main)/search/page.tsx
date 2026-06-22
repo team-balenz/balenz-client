@@ -13,6 +13,7 @@ import { NewsArticleItemData } from './types/search';
 import { SEARCH_RESULT_DATA } from '@/mocks/data/search';
 import SearchPagenation from './components/searchPagenation/SearchPagenation';
 import SearchInput from './components/searchInput/SearchInput';
+import EmptyResult from './components/searchResultContent/emptyResult/EmptyResult';
 
 const ITEMS_PER_PAGE = 7;
 const PAGE_PARAM = 'page';
@@ -40,14 +41,16 @@ function SearchPageContent() {
 
   const [searchInputValue, setSearchInputValue] = useState('');
   const [submittedSearchValue, setSubmittedSearchValue] = useState('검색어');
+  const [searchResultData, setSearchResultData] = useState<typeof SEARCH_RESULT_DATA | null>(null);
   const hasMountedRef = useRef(false);
 
-  const scopeItems = SEARCH_RESULT_DATA.keywords;
-  const newsItems = SEARCH_RESULT_DATA.articles.map(mapArticleToNewsItem);
+  const scopeItems = searchResultData?.keywords ?? [];
+  const newsItems = searchResultData?.articles.map(mapArticleToNewsItem) ?? [];
 
   const activeItems = selectedResultType === 'scope' ? scopeItems : newsItems;
   const resultCount = selectedResultType === 'scope' ? scopeItems.length : newsItems.length;
   const resultUnit = selectedResultType === 'scope' ? '주제' : '기사';
+  const hasSearchResultData = searchResultData !== null;
 
   // pagenation 관련 변수
   const totalPages = Math.ceil(activeItems.length / ITEMS_PER_PAGE);
@@ -116,14 +119,19 @@ function SearchPageContent() {
 
     if (!nextSearchValue) return;
 
+    const nextSearchResultData = SEARCH_RESULT_DATA;
+
     setSubmittedSearchValue(nextSearchValue);
-    setSelectedResultType(scopeItems.length === 0 ? 'news' : 'scope');
+    setSearchResultData(nextSearchResultData);
+    setSelectedResultType(nextSearchResultData.keywords.length === 0 ? 'news' : 'scope');
     updatePageParam(1);
   };
 
   return (
     <div className={styles.container}>
-      <div className={styles.contentWrapper}>
+      <div
+        className={`${styles.contentWrapper} ${!hasSearchResultData ? styles.initialContentWrapper : ''}`}
+      >
         {/* 검색어 input 섹션 */}
         <div className={styles.searchInputWrapper}>
           <h1 className={styles.inputTitle}>궁금한 소식을 검색해보세요</h1>
@@ -134,45 +142,57 @@ function SearchPageContent() {
           />
         </div>
 
-        {/* scope/news tab 섹션 */}
-        <div className={styles.tabSection}>
-          <div className={styles.tabWrapper}>
-            <ArticleTabs
-              tabs={SEARCH_TAB_LIST}
-              activeTab={selectedResultType}
-              onTabChange={handleTabChange}
-              variant="correction"
-            />
-          </div>
-        </div>
+        {hasSearchResultData && (
+          <>
+            {/* scope/news tab 섹션 */}
+            <div className={styles.tabSection}>
+              <div className={styles.tabWrapper}>
+                <ArticleTabs
+                  tabs={SEARCH_TAB_LIST}
+                  activeTab={selectedResultType}
+                  onTabChange={handleTabChange}
+                  variant="correction"
+                />
+              </div>
+            </div>
 
-        {/* 검색어 + 검색 결과 개수 문구 섹션 */}
-        <div
-          className={styles.resultCount}
-        >{`"${submittedSearchValue}"에 대한 ${resultCount}개의 ${resultUnit}`}</div>
+            {/* 검색어 + 검색 결과 개수 문구 섹션 */}
+            {resultCount > 0 && (
+              <div
+                className={styles.resultCount}
+              >{`"${submittedSearchValue}"에 대한 ${resultCount}개의 ${resultUnit}`}</div>
+            )}
 
-        {/* 검색 결과 리스트 섹션 */}
-        <div className={styles.resultListWrapper}>
-          {selectedResultType === 'scope' ? (
-            <ScopeResultList items={paginatedScopeItems} />
-          ) : (
-            <NewsResultList items={paginatedNewsItems} />
-          )}
-        </div>
+            {/* 검색 결과 리스트 섹션 */}
+            <div className={styles.resultListWrapper}>
+              {activeItems.length === 0 ? (
+                <EmptyResult searchKeyword={submittedSearchValue} resultType={selectedResultType} />
+              ) : selectedResultType === 'scope' ? (
+                <ScopeResultList items={paginatedScopeItems} />
+              ) : (
+                <NewsResultList items={paginatedNewsItems} />
+              )}
+            </div>
 
-        {/* 페이지네이션 섹션 */}
-        {totalPages > 1 && (
-          <div className={styles.pagenation}>
-            <SearchPagenation
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={updatePageParam}
-            />
-          </div>
+            {/* 페이지네이션 섹션 */}
+            {totalPages > 1 && (
+              <div className={styles.pagenation}>
+                <SearchPagenation
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  onPageChange={updatePageParam}
+                />
+              </div>
+            )}
+          </>
         )}
 
         {/* 광고 섹션 */}
-        <div className={styles.adSection}>ad</div>
+        <div
+          className={`${styles.adSection} ${!hasSearchResultData ? styles.initialAdSection : ''}`}
+        >
+          ad
+        </div>
       </div>
     </div>
   );
