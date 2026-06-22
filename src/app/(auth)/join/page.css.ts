@@ -6,7 +6,7 @@ export const container = style({
   maxWidth: '31.4375rem',
   display: 'flex',
   flexDirection: 'column',
-  gap: '3.06rem',
+  gap: '1.875rem',
   boxSizing: 'border-box',
 
   '@media': {
@@ -15,7 +15,7 @@ export const container = style({
     },
     [media.mobile]: {
       maxWidth: '100%',
-      gap: '3.5rem',
+      gap: '2.62rem',
     },
   },
 });
@@ -26,7 +26,7 @@ export const content = style({
   gap: '1.44rem',
   '@media': {
     [media.belowDesktop]: {
-      gap: '1.94rem',
+      gap: '1.5rem',
     },
   },
 });
