@@ -7,7 +7,7 @@ import NewsResultList from './components/searchResultContent/newsResultList/News
 import ScopeResultList from './components/searchResultContent/scopeResultList/ScopeResultList';
 import { useState } from 'react';
 import { SEARCH_TAB_LIST, SearchTabValue } from '@/shared/components/articleTabs/constants';
-import type { SearchArticlePreviewItemTypes } from '@/shared/types/articleItemType';
+import type { SearchArticlePreviewItemTypes } from '@/shared/components/articlePreviewItem/types';
 import { NewsArticleItemData } from './types/search';
 import { SEARCH_RESULT_DATA } from '@/mocks/data/search';
 import SearchPagenation from './components/searchPagenation/SearchPagenation';

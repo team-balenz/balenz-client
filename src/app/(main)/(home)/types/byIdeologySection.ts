@@ -1,8 +1,7 @@
-import { type ArticleBaseTypes } from '@/shared/types/articleItemType';
-
-export type IdeologyType = 'progressive' | 'center' | 'conservative';
+import { type ArticleBaseTypes } from '@/shared/components/articlePreviewItem/types';
+import { BaseFrameType } from '@/shared/types/frame';
 
 export interface ByIdeologySectionGroupTypes {
-  ideology: IdeologyType;
+  ideology: BaseFrameType;
   articleItems: ArticleBaseTypes[];
 }

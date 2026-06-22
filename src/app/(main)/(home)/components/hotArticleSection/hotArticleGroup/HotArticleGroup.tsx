@@ -30,7 +30,7 @@ const HotArticleGroup = ({ ideology, articleItems }: HotArticleSectionGroupTypes
   return (
     <div className={styles.group}>
       <div className={styles.ideologyLabel({ ideology })}>
-        {ideology === 'progressive' ? '진보 독자' : '보수 독자'}
+        {ideology === 'VALUE' ? '진보 독자' : '보수 독자'}
       </div>
 
       {/* desktop only */}

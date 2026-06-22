@@ -22,9 +22,9 @@ const FilterTabs = ({ tabs, activeKey, onChange, variant = 'scope' }: FilterTabs
               tab.key === activeKey
                 ? styles.activeTab({
                     tone: (variant === 'byIdeology' ? tab.key : 'default') as
-                      | 'progressive'
-                      | 'center'
-                      | 'conservative'
+                      | 'VALUE'
+                      | 'NEUTRAL'
+                      | 'NORM'
                       | 'default',
                   })
                 : ''

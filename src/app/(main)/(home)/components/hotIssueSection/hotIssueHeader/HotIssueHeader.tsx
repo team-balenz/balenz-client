@@ -1,19 +1,21 @@
 import Image from 'next/image';
 
+import { FrameSide } from '@/shared/types/frame';
+
 import * as styles from './hotIssueHeader.css';
 
 interface HotIssueHeaderPropTypes {
-  ideology: 'progressive' | 'conservative';
+  ideology: FrameSide;
   keyword: string;
 }
 
-const IDEOLOGY_ICON_PATHS: Record<HotIssueHeaderPropTypes['ideology'], string> = {
-  progressive: '/icons/ic_hash_blue.svg',
-  conservative: '/icons/ic_hash_red.svg',
+const IDEOLOGY_ICON_PATHS: Record<FrameSide, string> = {
+  VALUE: '/icons/ic_hash_blue.svg',
+  NORM: '/icons/ic_hash_red.svg',
 };
 
 const HotIssueHeader = ({ ideology, keyword }: HotIssueHeaderPropTypes) => {
-  const iconPath = IDEOLOGY_ICON_PATHS[ideology] ?? IDEOLOGY_ICON_PATHS.conservative;
+  const iconPath = IDEOLOGY_ICON_PATHS[ideology];
 
   return (
     <div className={styles.container}>
