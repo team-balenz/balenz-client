@@ -1,9 +1,10 @@
 import * as styles from './ideologyIndicator.css';
-import { IDEOLOGY_OPTIONS, type IdeologyIndicatorValueTypes } from './constants';
+import { IDEOLOGY_OPTIONS } from './constants';
+import { IdeologyFrameType } from '@/shared/types/frame';
 import { type IdeologyIndicatorResponsiveSizeTypes } from './types';
 
 interface IdeologyIndicatorPropTypes {
-  value: IdeologyIndicatorValueTypes;
+  value: IdeologyFrameType;
   size?: IdeologyIndicatorResponsiveSizeTypes;
 }
 
