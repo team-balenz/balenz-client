@@ -50,14 +50,12 @@ export const socialButton = style({
 
   flex: 1,
   height: '3.125rem',
-
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
+  paddingInline: '1.25rem',
 
   border: 'none',
   borderRadius: '0.3125rem',
   cursor: 'pointer',
+
   '@media': {
     [media.belowDesktop]: {
       ...typography.tablet.body3,
@@ -66,30 +64,32 @@ export const socialButton = style({
 });
 
 export const buttonContent = style({
-  display: 'contents',
+  display: 'grid',
+  gridTemplateColumns: '18px 1fr',
+  alignItems: 'center',
+  width: '100%',
+  height: '100%',
 
   '@media': {
     [media.mobile]: {
       display: 'flex',
       alignItems: 'center',
+      justifyContent: 'center',
       gap: '0.5rem',
     },
   },
 });
 
 export const icon = style({
-  position: 'absolute',
-  left: '1.25rem',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'flex-start',
+});
 
+export const buttonText = style({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-
-  '@media': {
-    [media.mobile]: {
-      position: 'static',
-    },
-  },
 });
 
 export const naverButton = style({
