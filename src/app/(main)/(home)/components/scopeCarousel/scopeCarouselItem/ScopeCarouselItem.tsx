@@ -1,15 +1,15 @@
 import Image from 'next/image';
 import * as styles from './scopeCarouselItem.css';
-import { IdeologyType } from '@/shared/components/scopeArticleItem/types';
+import { ScopeFrameType } from '@/shared/types/frame';
 
 interface ScopeCarouselItemPropTypes {
   title: string;
   imageUrl: string;
-  ideology: IdeologyType;
+  ideology: ScopeFrameType;
 }
 
 const ScopeCarouselItem = ({ title, imageUrl, ideology }: ScopeCarouselItemPropTypes) => {
-  const isValue = ideology === 'value';
+  const isValue = ideology === 'VALUE';
   const barClass = isValue ? styles.valueBar : styles.normBar;
 
   return (
