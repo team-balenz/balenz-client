@@ -8,6 +8,16 @@ export const wrapper = style({
   justifyContent: 'center',
   gap: '3.12rem',
   width: '100%',
+  paddingBottom: '8.56rem',
+
+  '@media': {
+    [media.tablet]: {
+      paddingBottom: '12rem',
+    },
+    [media.mobile]: {
+      paddingBottom: '12.75rem',
+    },
+  },
 });
 
 export const pageList = style({
