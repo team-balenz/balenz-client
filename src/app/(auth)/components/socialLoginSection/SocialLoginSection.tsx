@@ -23,7 +23,8 @@ const SocialLoginSection = () => {
             <span className={styles.icon}>
               <Image src="/icons/ic_naver_logo.svg" alt="네이버 로고" width={18} height={18} />
             </span>
-            <span>네이버로 시작하기</span>
+
+            <span className={styles.buttonText}>네이버로 시작하기</span>
           </div>
         </button>
 
@@ -36,7 +37,8 @@ const SocialLoginSection = () => {
             <span className={styles.icon}>
               <Image src="/icons/ic_kakao_logo.svg" alt="카카오 로고" width={18} height={18} />
             </span>
-            <span>카카오로 시작하기</span>
+
+            <span className={styles.buttonText}>카카오로 시작하기</span>
           </div>
         </button>
       </div>
