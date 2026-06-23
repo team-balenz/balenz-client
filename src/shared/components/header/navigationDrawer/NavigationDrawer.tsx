@@ -54,7 +54,7 @@ const NavigationDrawer = ({ open, onOpenChange }: NavigationDrawerPropTypes) => 
           </nav>
 
           <Image
-            src="/logo/reportmodal_logo.svg"
+            src="/logo/watermark_logo.svg"
             alt=""
             className={styles.backgroundLogo}
             width={306}

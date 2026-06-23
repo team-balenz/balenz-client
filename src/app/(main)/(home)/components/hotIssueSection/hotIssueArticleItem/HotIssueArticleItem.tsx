@@ -5,14 +5,14 @@ import { useRouter } from 'next/navigation';
 
 import { ROUTES } from '@/shared/constants/route';
 import IdeologyIndicator from '@/common/components/indicator/IdeologyIndicator';
-import { type IdeologyIndicatorValueTypes } from '@/common/components/indicator/constants';
+import { IdeologyFrameType } from '@/shared/types/frame';
 
 import * as styles from './hotIssueArticleItem.css';
 
 interface HotIssueArticleItemPropTypes {
   articleId: number;
   articleThumbnail: string;
-  frameType: IdeologyIndicatorValueTypes;
+  frameType: IdeologyFrameType;
   articleTitle: string;
   mediaName: string;
 }

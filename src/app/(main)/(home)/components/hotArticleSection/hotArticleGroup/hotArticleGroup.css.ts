@@ -55,16 +55,16 @@ export const ideologyLabel = recipe({
   },
   variants: {
     ideology: {
-      progressive: {
+      VALUE: {
         color: color.brand.progressive,
       },
-      conservative: {
+      NORM: {
         color: color.brand.conservative,
       },
     },
   },
   defaultVariants: {
-    ideology: 'progressive',
+    ideology: 'VALUE',
   },
 });
 

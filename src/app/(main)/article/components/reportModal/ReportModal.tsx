@@ -67,7 +67,7 @@ const ReportModal = ({ open, onOpenChange }: ReportModalPropTypes) => {
           </p>
           <Image
             className={styles.logoImage}
-            src="/logo/reportmodal_logo.svg"
+            src="/logo/watermark_logo.svg"
             alt="제보 완료"
             width={305}
             height={308}

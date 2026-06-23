@@ -8,7 +8,7 @@ import { type RelatedArticleSectionGroupTypes } from '@/app/(main)/article/types
 export const HOT_ISSUE_ARTICLE_GROUP: HotIssueGroupTypes[] = [
   {
     keywordId: 1,
-    ideology: 'progressive',
+    ideology: 'VALUE',
     keyword: '키워드',
     articleItems: [
       {
@@ -31,7 +31,7 @@ export const HOT_ISSUE_ARTICLE_GROUP: HotIssueGroupTypes[] = [
   },
   {
     keywordId: 2,
-    ideology: 'conservative',
+    ideology: 'NORM',
     keyword: '키워드',
     articleItems: [
       {
@@ -54,7 +54,7 @@ export const HOT_ISSUE_ARTICLE_GROUP: HotIssueGroupTypes[] = [
   },
   {
     keywordId: 3,
-    ideology: 'progressive',
+    ideology: 'VALUE',
     keyword: '키워드',
     articleItems: [
       {
@@ -77,7 +77,7 @@ export const HOT_ISSUE_ARTICLE_GROUP: HotIssueGroupTypes[] = [
   },
   {
     keywordId: 4,
-    ideology: 'conservative',
+    ideology: 'NORM',
     keyword: '키워드',
     articleItems: [
       {
@@ -100,7 +100,7 @@ export const HOT_ISSUE_ARTICLE_GROUP: HotIssueGroupTypes[] = [
   },
   {
     keywordId: 5,
-    ideology: 'progressive',
+    ideology: 'VALUE',
     keyword: '키워드',
     articleItems: [
       {
@@ -123,7 +123,7 @@ export const HOT_ISSUE_ARTICLE_GROUP: HotIssueGroupTypes[] = [
   },
   {
     keywordId: 6,
-    ideology: 'conservative',
+    ideology: 'NORM',
     keyword: '키워드',
     articleItems: [
       {
@@ -532,7 +532,7 @@ export const MOCK_SCOPE_ARTICLES: Record<string, ScopeArticleItemData[]> = {
  */
 export const HOT_ARTICLE_GROUP: HotArticleSectionGroupTypes[] = [
   {
-    ideology: 'progressive',
+    ideology: 'VALUE',
     articleItems: [
       {
         articleId: 1,
@@ -579,7 +579,7 @@ export const HOT_ARTICLE_GROUP: HotArticleSectionGroupTypes[] = [
     ],
   },
   {
-    ideology: 'conservative',
+    ideology: 'NORM',
     articleItems: [
       {
         articleId: 7,
@@ -629,7 +629,7 @@ export const HOT_ARTICLE_GROUP: HotArticleSectionGroupTypes[] = [
 
 export const BY_IDEOLOGY_SECTION_DATA: ByIdeologySectionGroupTypes[] = [
   {
-    ideology: 'progressive',
+    ideology: 'VALUE',
     articleItems: [
       {
         articleId: 1,
@@ -704,7 +704,7 @@ export const BY_IDEOLOGY_SECTION_DATA: ByIdeologySectionGroupTypes[] = [
     ],
   },
   {
-    ideology: 'center',
+    ideology: 'NEUTRAL',
     articleItems: [
       {
         articleId: 11,
@@ -779,7 +779,7 @@ export const BY_IDEOLOGY_SECTION_DATA: ByIdeologySectionGroupTypes[] = [
     ],
   },
   {
-    ideology: 'conservative',
+    ideology: 'NORM',
     articleItems: [
       {
         articleId: 21,
@@ -858,7 +858,7 @@ export const BY_IDEOLOGY_SECTION_DATA: ByIdeologySectionGroupTypes[] = [
 // 스코프, 링크 세부 페이지 연관기사 영역 데이터
 export const RELATED_ARTICLE_SECTION_DATA: RelatedArticleSectionGroupTypes[] = [
   {
-    ideology: 'progressive',
+    ideology: 'VALUE',
     articleItems: [
       {
         articleId: 1,
@@ -883,7 +883,7 @@ export const RELATED_ARTICLE_SECTION_DATA: RelatedArticleSectionGroupTypes[] = [
     ],
   },
   {
-    ideology: 'center',
+    ideology: 'NEUTRAL',
     articleItems: [
       {
         articleId: 3,
@@ -908,7 +908,7 @@ export const RELATED_ARTICLE_SECTION_DATA: RelatedArticleSectionGroupTypes[] = [
     ],
   },
   {
-    ideology: 'conservative',
+    ideology: 'NORM',
     articleItems: [
       {
         articleId: 5,

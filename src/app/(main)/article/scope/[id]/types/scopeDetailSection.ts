@@ -1,6 +1,5 @@
 import type { ArticleSummarySectionTypes } from '@/app/(main)/article/scope/[id]/types/articleSummarySection';
-
-export type DominantFrameType = 'VALUE' | 'NEUTRAL' | 'NORM' | 'BALANCED';
+import { ScopeFrameType } from '@/shared/types/frame';
 
 export interface ScopeDetailArticleCountTypes {
   neutral: number;
@@ -21,6 +20,6 @@ export interface ScopeDetailTypes {
   keywordSummary: string;
   articleCount: ScopeDetailArticleCountTypes;
   bias: number;
-  dominantFrameType: DominantFrameType;
+  dominantFrameType: ScopeFrameType;
   mainArticles: ArticleSummarySectionTypes;
 }

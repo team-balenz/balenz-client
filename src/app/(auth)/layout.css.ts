@@ -31,8 +31,13 @@ export const contentSection = style({
   '@media': {
     [media.belowDesktop]: {
       minHeight: '100dvh',
-      paddingInline: '1.25rem',
       boxSizing: 'border-box',
+    },
+    [media.tablet]: {
+      padding: '9rem 8.06rem',
+    },
+    [media.mobile]: {
+      padding: '6rem 1.25rem',
     },
   },
 });

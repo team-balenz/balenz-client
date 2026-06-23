@@ -1,8 +1,8 @@
-import { type ArticleBaseTypes } from '@/shared/types/articleItemType';
+import { type ArticleBaseTypes } from '@/shared/components/articlePreviewItem/types';
 
-export type IdeologyType = 'progressive' | 'conservative';
+import { FrameSide } from '@/shared/types/frame';
 
 export interface HotArticleSectionGroupTypes {
-  ideology: IdeologyType;
+  ideology: FrameSide;
   articleItems: ArticleBaseTypes[];
 }

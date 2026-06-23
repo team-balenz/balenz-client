@@ -1,7 +1,7 @@
-import { type IdeologyIndicatorValueTypes } from '@/common/components/indicator/constants';
+import { IdeologyFrameType } from '@/shared/types/frame';
 
 export interface ArticleSummaryItemTypes {
-  frameType: IdeologyIndicatorValueTypes;
+  frameType: IdeologyFrameType;
   id: number;
   newsAgencyName: string;
   publishedAt?: string;
@@ -10,7 +10,7 @@ export interface ArticleSummaryItemTypes {
 }
 
 export interface ArticleSummarySectionTypes {
-  center: ArticleSummaryItemTypes;
-  conservative: ArticleSummaryItemTypes;
-  progressive: ArticleSummaryItemTypes;
+  NEUTRAL: ArticleSummaryItemTypes;
+  NORM: ArticleSummaryItemTypes;
+  VALUE: ArticleSummaryItemTypes;
 }

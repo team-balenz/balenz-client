@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { ROUTES } from '@/shared/constants/route';
 import IdeologyIndicator from '@/common/components/indicator/IdeologyIndicator';
 import { type IdeologyIndicatorResponsiveSizeTypes } from '@/common/components/indicator/types';
-import { type ArticlePreviewItemTypes } from '@/shared/types/articleItemType';
+import { type ArticlePreviewItemTypes } from '@/shared/components/articlePreviewItem/types';
 
 import * as styles from './articlePreviewItem.css';
 

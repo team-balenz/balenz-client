@@ -1,20 +1,22 @@
 import { color, typography } from '@/shared/styles';
+import { IdeologyFrameType } from '@/shared/types/frame';
 
 /**
  * 이념 지표 관련 데이터 상수화
  */
 
 // 이념 지표 옵션 리스트 (value, label)
-export const IDEOLOGY_OPTIONS = [
+export const IDEOLOGY_OPTIONS: {
+  value: IdeologyFrameType;
+
+  label: string;
+}[] = [
   { value: 'STRONG_VALUE', label: 'SL' },
   { value: 'VALUE', label: 'L' },
   { value: 'NEUTRAL', label: 'C' },
   { value: 'NORM', label: 'R' },
   { value: 'STRONG_NORM', label: 'SR' },
-] as const;
-
-// 이념 지표 값 타입
-export type IdeologyIndicatorValueTypes = (typeof IDEOLOGY_OPTIONS)[number]['value'];
+];
 
 //------------------------------------------------
 

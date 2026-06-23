@@ -15,7 +15,7 @@ interface ArticleSummarySectionPropTypes {
 }
 
 const ArticleSummarySection = ({ mainArticles }: ArticleSummarySectionPropTypes) => {
-  const [summaryActiveKey, setSummaryActiveKey] = useState<string>('progressive');
+  const [summaryActiveKey, setSummaryActiveKey] = useState<string>('VALUE');
   const summaryItem = mainArticles[summaryActiveKey as keyof ArticleSummarySectionTypes];
 
   return (
