@@ -33,9 +33,17 @@ const ShareModal = ({
   const breakpoint = useMediaQuery();
   const pathname = usePathname();
 
-  // prop으로 받은 url이 있으면 사용, 없으면 현재 페이지 URL 사용
-  const shareUrl =
-    customShareUrl ?? (typeof window !== 'undefined' ? `${window.location.origin}${pathname}` : '');
+  // 전달받은 URL을 사용하고, 없으면 현재 페이지 경로를 사용합니다.
+  // 상대 경로는 현재 도메인을 붙여 완전한 공유 URL로 변환합니다.
+  const shareUrl = (() => {
+    if (typeof window === 'undefined') return '';
+
+    try {
+      return new URL(customShareUrl ?? pathname, window.location.origin).toString();
+    } catch {
+      return new URL(pathname, window.location.origin).toString();
+    }
+  })();
 
   // 모바일일 때는 BottomSheet, 그 외에는 BaseModal 사용
   const isMobile = breakpoint === 'mobile';
