@@ -66,9 +66,11 @@ const DailyFocusCard = ({ data }: DailyFocusCardPropTypes) => {
       <ShareModal
         open={shareModalOpen}
         onOpenChange={setShareModalOpen}
+        shareUrl={ROUTES.SCOPE_DETAIL(id)}
+        shareImage={imageUrl}
         shareTitle={name}
         shareSummary={summary}
-        shareType="link"
+        shareType="scope"
       />
     </div>
   );
