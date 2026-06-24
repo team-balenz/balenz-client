@@ -1,9 +1,4 @@
-/**
- * Ideology 타입
- */
-export type IdeologyType = 'value' | 'neutral' | 'norm';
-
-export type ScopeDominantFrameType = 'VALUE' | 'NEUTRAL' | 'NORM' | 'BALANCED';
+import { ScopeFrameType } from '@/shared/types/frame';
 
 /**
  * ScopeArticleItem 컴포넌트에 전달되는 기사 아이템 데이터
@@ -22,7 +17,7 @@ export interface ScopeArticleItemData {
     value: number;
     valueRatio: number;
   };
-  dominantFrameType: ScopeDominantFrameType;
+  dominantFrameType: ScopeFrameType;
   id: number;
   imageUrl: string;
   name: string;

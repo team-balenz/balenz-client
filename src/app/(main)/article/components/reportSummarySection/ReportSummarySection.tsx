@@ -2,7 +2,7 @@
 
 import { Fragment } from 'react';
 import { useMediaQuery } from '@/shared/hooks/useMediaQuery';
-import type { IdeologyType } from '@/shared/components/scopeArticleItem/types';
+import type { ScopeFrameType } from '@/shared/types/frame';
 import * as styles from './reportSummarySection.css';
 import { IDEOLOGY_LABELS, ITEM_LABELS } from './constants';
 
@@ -21,7 +21,7 @@ interface ReportSummarySectionPropTypes {
     valueRatio: number;
   };
   bias: number;
-  dominantFrameType: string;
+  dominantFrameType: ScopeFrameType;
 }
 
 const ReportSummarySection = ({
@@ -40,14 +40,6 @@ const ReportSummarySection = ({
   const neutralCount = articleCount.neutral;
   const totalNewsCount = articleCount.value + articleCount.norm + articleCount.neutral;
   const biasPercentage = bias;
-
-  // dominantFrameType을 IdeologyType으로 변환 (추후 통일)
-  const biasIdeologyMap: Record<string, IdeologyType> = {
-    VALUE: 'value',
-    NORM: 'norm',
-    NEUTRAL: 'neutral',
-  };
-  const biasIdeology: IdeologyType = biasIdeologyMap[dominantFrameType] || 'center';
 
   // 숫자 값에 '건' 단위를 붙여 반환 — mobile 전용
   const countValue = (count: number) =>
@@ -78,10 +70,10 @@ const ReportSummarySection = ({
       value: isMobile ? (
         <>
           {biasPercentage}
-          <span className={styles.unit}>%</span> {IDEOLOGY_LABELS[biasIdeology]}
+          <span className={styles.unit}>%</span> {IDEOLOGY_LABELS[dominantFrameType]}
         </>
       ) : (
-        `${biasPercentage}% ${IDEOLOGY_LABELS[biasIdeology]}`
+        `${biasPercentage}% ${IDEOLOGY_LABELS[dominantFrameType]}`
       ),
     },
   ];
