@@ -36,31 +36,8 @@ export const container = style({
   },
 });
 
-export const actionButton = style({
-  display: 'flex',
-  alignItems: 'center',
-  gap: '0.5rem',
-  cursor: 'pointer',
-  '@media': {
-    [media.mobile]: {
-      gap: '0.19rem',
-    },
-  },
-});
-
 export const scrapButtonContainer = style({
   position: 'relative',
-});
-
-export const actionIcon = style({
-  width: '1.5rem',
-  height: '1.5rem',
-  '@media': {
-    [media.mobile]: {
-      width: '1.125rem',
-      height: '1.125rem',
-    },
-  },
 });
 
 export const scrapToast = style({
@@ -90,20 +67,6 @@ export const scrapToast = style({
       top: '50%',
       left: '50%',
       transform: 'translate(-50%, -50%)',
-    },
-  },
-});
-
-export const actionText = style({
-  ...typography.correction,
-  ...typography.desktop.h4,
-  color: color.text.tertiary,
-  '@media': {
-    [media.tablet]: {
-      ...typography.tablet.h4,
-    },
-    [media.mobile]: {
-      ...typography.phone.body2,
     },
   },
 });
