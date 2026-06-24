@@ -51,6 +51,20 @@ export const defaultButton = recipe({
           },
         },
       },
+
+      compact: {
+        ...typography.desktop.caption,
+        padding: '0.5rem 0.625rem',
+
+        '@media': {
+          [media.tablet]: {
+            ...typography.tablet.caption,
+          },
+          [media.mobile]: {
+            ...typography.phone.caption,
+          },
+        },
+      },
     },
   },
 
