@@ -63,16 +63,26 @@ export const indicatorWrapper = style({
   },
 });
 
+export const summaryClip = style({
+  height: '10rem',
+  minHeight: 0,
+  overflow: 'hidden',
+
+  '@media': {
+    [media.mobile]: {
+      height: '12.4375rem',
+    },
+  },
+});
+
 export const summary = style({
   ...typography.desktop.body3,
   color: color.text.main,
-
-  height: '10rem',
-
   display: '-webkit-box',
   WebkitLineClamp: 8,
   WebkitBoxOrient: 'vertical',
   overflow: 'hidden',
+  lineClamp: 8,
 
   '@media': {
     [media.belowDesktop]: {
@@ -81,11 +91,12 @@ export const summary = style({
     [media.tablet]: {
       ...typography.tablet.body3,
       WebkitLineClamp: 9,
+      lineClamp: 9,
     },
     [media.mobile]: {
       ...typography.phone.body2,
-      height: '12.4375rem',
       WebkitLineClamp: 10,
+      lineClamp: 10,
     },
   },
 });

@@ -24,7 +24,9 @@ const DailyFocusArticle = ({
         />
       </div>
 
-      <div className={styles.summary}>{summary}</div>
+      <div className={styles.summaryClip}>
+        <div className={styles.summary}>{summary}</div>
+      </div>
     </div>
   );
 };
