@@ -1,10 +1,11 @@
-import type { IdeologyType } from '@/shared/components/scopeArticleItem/types';
+import { ScopeFrameType } from '@/shared/types/frame';
 
 // 중앙화 필요
-export const IDEOLOGY_LABELS: Record<IdeologyType, string> = {
-  value: '진보',
-  neutral: '중도',
-  norm: '보수',
+export const IDEOLOGY_LABELS: Record<ScopeFrameType, string> = {
+  VALUE: '진보',
+  NEUTRAL: '중도',
+  NORM: '보수',
+  BALANCED: '균형',
 };
 
 // 브레이크포인트별 레이블 상수

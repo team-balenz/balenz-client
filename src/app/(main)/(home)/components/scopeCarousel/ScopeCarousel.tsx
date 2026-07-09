@@ -54,12 +54,12 @@ const ScopeCarousel = () => {
               <ScopeCarouselItem
                 title={category.valueArticleTitle}
                 imageUrl={category.valueImageUrl}
-                ideology="value"
+                ideology="VALUE"
               />
               <ScopeCarouselItem
                 title={category.normArticleTitle}
                 imageUrl={category.normImageUrl}
-                ideology="norm"
+                ideology="NORM"
               />
             </div>
           ))}

@@ -7,7 +7,7 @@ interface DefaultButtonPropTypes {
   onClick?: () => void;
   disabled?: boolean;
   type?: 'button' | 'submit' | 'reset';
-  variant?: 'default' | 'auth';
+  variant?: 'default' | 'auth' | 'compact';
 }
 
 const DefaultButton = ({

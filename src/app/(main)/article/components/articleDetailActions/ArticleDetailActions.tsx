@@ -1,11 +1,13 @@
 'use client';
 
-import Image from 'next/image';
-import { useEffect, useRef, useState } from 'react';
-
+import ContentActionButton from '@/shared/components/contentActionButton/ContentActionButton';
+import {
+  CONTENT_ACTION_ICON_PATH,
+  CONTENT_ACTION_TEXT,
+} from '@/shared/components/contentActionButton/constants';
 import { useMediaQuery } from '@/shared/hooks/useMediaQuery';
+import { useScrapToast } from '@/shared/hooks/useScrapToast';
 
-import { BUTTON_TEXT, ICON_PATH, TOAST_DURATION_MS, TOAST_MESSAGE } from './constants';
 import * as styles from './articleDetailActions.css';
 
 interface ArticleDetailActionsPropTypes {
@@ -14,102 +16,41 @@ interface ArticleDetailActionsPropTypes {
   onScrapClick: () => void;
 }
 
-interface ToastStateTypes {
-  id: number;
-  message: string;
-}
-
 const ArticleDetailActions = ({
   isScraped,
   onShareClick,
   onScrapClick,
 }: ArticleDetailActionsPropTypes) => {
-  // 버튼 텍스트 구분을 위해 모바일 환경인지 확인
   const breakpoint = useMediaQuery();
-
-  // 토스트 메시지 상태: 스크랩 성공 또는 취소 메시지 표시
-  const [toast, setToast] = useState<ToastStateTypes | null>(null);
-
-  // 토스트 메시지 타이머 리프: 토스트 메시지 지속 시간 관리 (2초)
-  const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  // 공유 아이콘 경로
-  const shareIconPath = ICON_PATH.share;
-
-  // 스크랩 아이콘 경로
-  const bookmarkIconPath = isScraped ? ICON_PATH.bookmarkFilled : ICON_PATH.bookmarkOutlined;
-
-  // 공유 버튼 텍스트
+  const { toast, handleScrapClick } = useScrapToast({ isScraped, onScrapClick });
   const shareButtonText =
-    breakpoint === 'mobile' ? BUTTON_TEXT.share.mobile : BUTTON_TEXT.share.default;
-
-  // 스크랩 버튼 텍스트
+    breakpoint === 'mobile' ? CONTENT_ACTION_TEXT.share.mobile : CONTENT_ACTION_TEXT.share.default;
   const scrapButtonText =
     breakpoint === 'mobile'
-      ? BUTTON_TEXT.scrap.mobile
+      ? CONTENT_ACTION_TEXT.scrap.mobile
       : isScraped
-        ? BUTTON_TEXT.scrap.cancel
-        : BUTTON_TEXT.scrap.create;
-
-  /**
-   * 스크랩 버튼 클릭 핸들러
-   * 스크랩 성공 또는 취소 메시지 표시 및 토스트 메시지 지속 시간 관리
-   * 토스트 메시지 아이디 증가 및 메시지 설정 - 토스트 메시지 유니크 키 생성
-   */
-  const handleScrapClick = () => {
-    onScrapClick();
-    const nextToastMessage = isScraped
-      ? TOAST_MESSAGE.scrapCancelSuccess
-      : TOAST_MESSAGE.scrapSuccess;
-    setToast((prevToast) => ({
-      id: (prevToast?.id ?? 0) + 1,
-      message: nextToastMessage,
-    }));
-
-    if (toastTimerRef.current) {
-      clearTimeout(toastTimerRef.current);
-    }
-
-    toastTimerRef.current = setTimeout(() => {
-      setToast(null);
-    }, TOAST_DURATION_MS);
-  };
-
-  /**
-   * 토스트 메시지 타이머 리프: 토스트 메시지 지속 시간 관리 (2초)
-   * 토스트 메시지 지속 시간 만료 시 토스트 메시지 제거
-   */
-  useEffect(() => {
-    return () => {
-      if (toastTimerRef.current) {
-        clearTimeout(toastTimerRef.current);
-      }
-    };
-  }, []);
+        ? CONTENT_ACTION_TEXT.scrap.cancel
+        : CONTENT_ACTION_TEXT.scrap.create;
+  const bookmarkIconPath = isScraped
+    ? CONTENT_ACTION_ICON_PATH.bookmarkFilled
+    : CONTENT_ACTION_ICON_PATH.bookmarkOutlined;
 
   return (
     <div className={styles.container}>
-      <button className={styles.actionButton} onClick={onShareClick}>
-        <Image
-          className={styles.actionIcon}
-          src={shareIconPath}
-          width={24}
-          height={24}
-          alt="share"
-        />
-        <span className={styles.actionText}>{shareButtonText}</span>
-      </button>
+      <ContentActionButton
+        iconSrc={CONTENT_ACTION_ICON_PATH.share}
+        label={shareButtonText}
+        aria-label="공유하기"
+        onClick={onShareClick}
+      />
       <div className={styles.scrapButtonContainer}>
-        <button className={styles.actionButton} onClick={handleScrapClick}>
-          <Image
-            className={styles.actionIcon}
-            src={bookmarkIconPath}
-            width={24}
-            height={24}
-            alt="bookmark"
-          />
-          <span className={styles.actionText}>{scrapButtonText}</span>
-        </button>
+        <ContentActionButton
+          iconSrc={bookmarkIconPath}
+          label={scrapButtonText}
+          aria-label={isScraped ? '스크랩 취소' : '스크랩하기'}
+          aria-pressed={isScraped}
+          onClick={handleScrapClick}
+        />
         {toast && (
           <div key={toast.id} className={styles.scrapToast} role="status" aria-live="polite">
             {toast.message}

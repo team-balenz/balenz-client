@@ -1,13 +1,13 @@
-import type { IdeologyType } from './types';
+import { BaseFrameType } from '@/shared/types/frame';
 
 /**
  * ScopeArticleItem 컴포넌트의 상수
  */
 
-export const IDEOLOGY_LABELS: Record<IdeologyType, string> = {
-  value: '진보',
-  neutral: '중도',
-  norm: '보수',
+export const IDEOLOGY_LABELS: Record<BaseFrameType, string> = {
+  VALUE: '진보',
+  NEUTRAL: '중도',
+  NORM: '보수',
 } as const;
 
 /**

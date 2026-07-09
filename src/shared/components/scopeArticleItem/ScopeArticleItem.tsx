@@ -6,11 +6,7 @@ import { useRouter } from 'next/navigation';
 import ScopePercentBar from '@/common/components/percentBar/ScopePercentBar';
 import { ROUTES } from '@/shared/constants/route';
 import { useMediaQuery } from '@/shared/hooks/useMediaQuery';
-import type {
-  IdeologyType,
-  ScopeArticleItemData,
-  ScopeDominantFrameType,
-} from '@/shared/components/scopeArticleItem/types';
+import type { ScopeArticleItemData } from '@/shared/components/scopeArticleItem/types';
 
 import { IDEOLOGY_LABELS, PERCENT_BAR_SIZE_BY_ITEM_SIZE } from './constants';
 import * as styles from './scopeArticleItem.css';
@@ -18,14 +14,6 @@ import * as styles from './scopeArticleItem.css';
 interface ScopeArticleItemPropTypes extends ScopeArticleItemData {
   size?: 'small' | 'large';
 }
-
-// NEUTRAL 타입과 BALANCED 타입을 구분해야하는지 확인 필요
-const FRAME_TYPE_TO_IDEOLOGY: Record<ScopeDominantFrameType, IdeologyType> = {
-  VALUE: 'value',
-  NEUTRAL: 'neutral',
-  BALANCED: 'neutral',
-  NORM: 'norm',
-};
 
 const ScopeArticleItem = ({
   articleCount,
@@ -38,15 +26,17 @@ const ScopeArticleItem = ({
   const router = useRouter();
   const percentBarSize = PERCENT_BAR_SIZE_BY_ITEM_SIZE[size];
   const breakpoint = useMediaQuery();
-  const ideology = FRAME_TYPE_TO_IDEOLOGY[dominantFrameType];
   const { valueRatio, neutralRatio, normRatio } = articleCount;
 
   const usesFramingDescription =
     breakpoint === 'desktop' || (breakpoint === 'tablet' && size === 'large');
 
-  const description = usesFramingDescription
-    ? `에 대해 ${IDEOLOGY_LABELS[ideology]} 성향으로 프레이밍한 기사가 더 많습니다.`
-    : `에 대해 ${IDEOLOGY_LABELS[ideology]} 관점으로 보도된 기사가 더 많습니다.`;
+  const description =
+    dominantFrameType === 'BALANCED'
+      ? '에 대한 기사가 다양한 관점에서 균형 있게 보도되었습니다.'
+      : usesFramingDescription
+        ? `에 대해 ${IDEOLOGY_LABELS[dominantFrameType]} 성향으로 프레이밍한 기사가 더 많습니다.`
+        : `에 대해 ${IDEOLOGY_LABELS[dominantFrameType]} 관점으로 보도된 기사가 더 많습니다.`;
 
   return (
     <div

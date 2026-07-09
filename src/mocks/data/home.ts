@@ -240,7 +240,7 @@ export const SCOPE_CAROUSEL_DATA: ScopeCarouselDataType[] = [
       value: 5,
       valueRatio: 0.33,
     },
-    id: 21,
+    id: 27,
     name: '삼성전자',
     normArticleTitle: '보수 기사 제목입니다 ~',
     normImageUrl: 'https://i.pinimg.com/736x/44/b0/f0/44b0f0315ece65cdc3b64130c91ea009.jpg',

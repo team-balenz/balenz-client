@@ -1,5 +1,6 @@
 import { keyframes, style } from '@vanilla-extract/css';
-import { color, typography, media, zIndex } from '@/shared/styles';
+
+import { color, media, typography, zIndex } from '@/shared/styles';
 
 const toastFadeInOut = keyframes({
   '0%': {
@@ -22,22 +23,15 @@ const toastFadeInOut = keyframes({
 
 export const container = style({
   width: '100%',
-  padding: '0 0.25rem',
   display: 'flex',
   alignItems: 'center',
-  gap: '2.19rem',
-  '@media': {
-    [media.tablet]: {
-      gap: '1.56rem',
-    },
-    [media.mobile]: {
-      gap: '0.94rem',
-    },
-  },
+  justifyContent: 'space-between',
 });
 
-export const scrapButtonContainer = style({
-  position: 'relative',
+export const buttonContainer = style({
+  display: 'flex',
+  alignItems: 'center',
+  gap: '0.94rem',
 });
 
 export const scrapToast = style({
@@ -45,10 +39,10 @@ export const scrapToast = style({
   ...typography.desktop.body2,
   backgroundColor: color.brand.main,
   color: color.text.inverse,
-  position: 'absolute',
-  top: 'calc(100% + 0.62rem)',
+  position: 'fixed',
+  top: '50%',
   left: '50%',
-  transform: 'translateX(-50%)',
+  transform: 'translate(-50%, -50%)',
   borderRadius: '0.3125rem',
   padding: '1.25rem 1.875rem',
   whiteSpace: 'nowrap',
@@ -57,16 +51,9 @@ export const scrapToast = style({
   '@media': {
     [media.tablet]: {
       ...typography.tablet.body2,
-      top: 'calc(100% + 0.62rem)',
-      left: '100%',
-      transform: 'translateX(-100%)',
     },
     [media.mobile]: {
       ...typography.phone.body2,
-      position: 'fixed',
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
     },
   },
 });
