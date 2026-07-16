@@ -163,6 +163,8 @@ export const label = style({
   display: 'block',
   minHeight: '1.5em',
   color: color.text.tertiary,
+  textAlign: 'center',
+  wordBreak: 'keep-all',
   ...typography.desktop.body2,
 
   '@media': {
