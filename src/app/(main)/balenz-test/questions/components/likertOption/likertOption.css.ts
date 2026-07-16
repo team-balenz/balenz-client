@@ -1,6 +1,7 @@
 import { color, media, typography } from '@/shared/styles';
 import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
+import { LIKERT_BOX_SHADOW, LIKERT_CENTER_CIRCLE_SIZE, LIKERT_CIRCLE_SIZE } from './constants';
 
 export const option = style({
   display: 'flex',
@@ -25,17 +26,17 @@ export const circleWrapper = style({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  width: '6.25rem',
-  height: '6.25rem',
+  width: LIKERT_CIRCLE_SIZE.large.desktop,
+  height: LIKERT_CIRCLE_SIZE.large.desktop,
 
   '@media': {
     [media.tablet]: {
-      width: '3.90625rem',
-      height: '3.90625rem',
+      width: LIKERT_CIRCLE_SIZE.large.tablet,
+      height: LIKERT_CIRCLE_SIZE.large.tablet,
     },
     [media.mobile]: {
-      width: '2.73438rem',
-      height: '2.73438rem',
+      width: LIKERT_CIRCLE_SIZE.large.mobile,
+      height: LIKERT_CIRCLE_SIZE.large.mobile,
     },
   },
 });
@@ -57,27 +58,27 @@ export const circle = recipe({
       position: 'absolute',
       top: '50%',
       left: '50%',
-      width: '1.177rem',
-      height: '1.177rem',
+      width: LIKERT_CENTER_CIRCLE_SIZE.desktop,
+      height: LIKERT_CENTER_CIRCLE_SIZE.desktop,
       borderRadius: '50%',
       backgroundColor: color.brand.gray2,
       transform: 'translate(-50%, -50%)',
-      boxShadow: '0 0 0 0.70625rem #F5F5F5',
+      boxShadow: LIKERT_BOX_SHADOW.unselected.desktop,
     },
 
     '@media': {
       [media.tablet]: {
         '::after': {
-          width: '0.73563rem',
-          height: '0.73563rem',
-          boxShadow: '0 0 0 0.4412rem #F5F5F5',
+          width: LIKERT_CENTER_CIRCLE_SIZE.tablet,
+          height: LIKERT_CENTER_CIRCLE_SIZE.tablet,
+          boxShadow: LIKERT_BOX_SHADOW.unselected.tablet,
         },
       },
       [media.mobile]: {
         '::after': {
-          width: '0.51494rem',
-          height: '0.51494rem',
-          boxShadow: '0 0 0 0.3088rem #F5F5F5',
+          width: LIKERT_CENTER_CIRCLE_SIZE.mobile,
+          height: LIKERT_CENTER_CIRCLE_SIZE.mobile,
+          boxShadow: LIKERT_BOX_SHADOW.unselected.mobile,
         },
       },
     },
@@ -86,33 +87,33 @@ export const circle = recipe({
   variants: {
     size: {
       default: {
-        width: '4.6875rem',
-        height: '4.6875rem',
+        width: LIKERT_CIRCLE_SIZE.default.desktop,
+        height: LIKERT_CIRCLE_SIZE.default.desktop,
 
         '@media': {
           [media.tablet]: {
-            width: '2.92969rem',
-            height: '2.92969rem',
+            width: LIKERT_CIRCLE_SIZE.default.tablet,
+            height: LIKERT_CIRCLE_SIZE.default.tablet,
           },
           [media.mobile]: {
-            width: '2.05081rem',
-            height: '2.05081rem',
+            width: LIKERT_CIRCLE_SIZE.default.mobile,
+            height: LIKERT_CIRCLE_SIZE.default.mobile,
           },
         },
       },
 
       large: {
-        width: '6.25rem',
-        height: '6.25rem',
+        width: LIKERT_CIRCLE_SIZE.large.desktop,
+        height: LIKERT_CIRCLE_SIZE.large.desktop,
 
         '@media': {
           [media.tablet]: {
-            width: '3.90625rem',
-            height: '3.90625rem',
+            width: LIKERT_CIRCLE_SIZE.large.tablet,
+            height: LIKERT_CIRCLE_SIZE.large.tablet,
           },
           [media.mobile]: {
-            width: '2.73438rem',
-            height: '2.73438rem',
+            width: LIKERT_CIRCLE_SIZE.large.mobile,
+            height: LIKERT_CIRCLE_SIZE.large.mobile,
           },
         },
       },
@@ -125,7 +126,7 @@ export const circle = recipe({
         selectors: {
           '&::after': {
             backgroundColor: color.brand.main,
-            boxShadow: '0 0 0 0.70625rem #767A7F',
+            boxShadow: LIKERT_BOX_SHADOW.selected.desktop,
           },
         },
 
@@ -133,14 +134,14 @@ export const circle = recipe({
           [media.tablet]: {
             selectors: {
               '&::after': {
-                boxShadow: '0 0 0 0.4412rem #767A7F',
+                boxShadow: LIKERT_BOX_SHADOW.selected.tablet,
               },
             },
           },
           [media.mobile]: {
             selectors: {
               '&::after': {
-                boxShadow: '0 0 0 0.3088rem #767A7F',
+                boxShadow: LIKERT_BOX_SHADOW.selected.mobile,
               },
             },
           },
