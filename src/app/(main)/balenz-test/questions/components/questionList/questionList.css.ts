@@ -1,9 +1,10 @@
+import { media } from '@/shared/styles';
 import { keyframes, style } from '@vanilla-extract/css';
 
 const questionEnter = keyframes({
   from: {
     opacity: 0,
-    transform: 'translateY(32px)',
+    transform: 'translateY(2rem)',
   },
 
   to: {
@@ -20,11 +21,11 @@ export const container = style({
   gap: '5.94rem',
 
   '@media': {
-    'screen and (max-width: 846px)': {
+    [media.tablet]: {
       gap: '4.38rem',
     },
 
-    'screen and (max-width: 480px)': {
+    [media.mobile]: {
       gap: '3.12rem',
     },
   },
@@ -32,9 +33,6 @@ export const container = style({
 
 export const questionWrapper = style({
   width: '100%',
-
-  // 고정 헤더가 있다면 스크롤 위치 보정
-  scrollMarginTop: '120px',
 
   animation: `${questionEnter} 450ms cubic-bezier(0.22, 1, 0.36, 1) both`,
 
