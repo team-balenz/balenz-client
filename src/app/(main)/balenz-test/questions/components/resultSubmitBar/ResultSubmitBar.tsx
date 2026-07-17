@@ -3,7 +3,6 @@ import * as styles from './resultSubmitBar.css';
 interface ResultSubmitBarProps {
   totalCount: number;
   answeredCount: number;
-  isSubmitting?: boolean;
   onSubmit: () => void;
 }
 
