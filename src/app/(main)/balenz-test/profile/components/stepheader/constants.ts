@@ -1,10 +1,8 @@
-export const STEP_HEADER = {
-  BIRTH_YEAR: {
-    section: '응답자 정보',
-    title: '태어난 연도를 선택해 주세요.',
-  },
-  LEGAL_GENDER: {
-    section: '응답자 정보',
-    title: '법적 성별을 선택해 주세요.',
-  },
-} as const;
+import type { ProfileStepTypes } from '../../types/header';
+
+export const STEP_HEADER_LABEL = '응답자 정보';
+
+export const PROFILE_STEP_TITLE = {
+  birthYear: '태어난 연도를 선택해 주세요.',
+  gender: '법적 성별을 선택해 주세요.',
+} satisfies Record<ProfileStepTypes, string>;
