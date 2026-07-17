@@ -1,4 +1,4 @@
-import { color, media, typography } from '@/shared/styles';
+import { color, media, typography, zIndex } from '@/shared/styles';
 import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 import { LIKERT_BOX_SHADOW, LIKERT_CENTER_CIRCLE_SIZE, LIKERT_CIRCLE_SIZE } from './constants';
@@ -22,7 +22,7 @@ export const option = style({
 
 export const circleWrapper = style({
   position: 'relative',
-  zIndex: 1,
+  zIndex: zIndex.foreground,
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',

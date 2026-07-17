@@ -1,4 +1,4 @@
-import { color, media, typography } from '@/shared/styles';
+import { color, media, typography, zIndex } from '@/shared/styles';
 import { style } from '@vanilla-extract/css';
 
 export const wrapper = style({
@@ -38,7 +38,7 @@ export const progressFill = style({
 
 export const submitButton = style({
   position: 'relative',
-  zIndex: 1,
+  zIndex: zIndex.foreground,
 
   display: 'flex',
   alignItems: 'center',

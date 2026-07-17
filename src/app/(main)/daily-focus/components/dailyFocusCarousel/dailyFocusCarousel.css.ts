@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { color, media } from '@/shared/styles';
+import { color, media, zIndex } from '@/shared/styles';
 
 export const root = style({
   width: '100%',
@@ -58,12 +58,12 @@ export const slide = style({
   minWidth: 0,
   opacity: 0.62,
   transition: 'opacity 320ms ease',
-  zIndex: 0,
+  zIndex: zIndex.base,
 
   selectors: {
     "&[data-selected='true']": {
       opacity: 1,
-      zIndex: 1,
+      zIndex: zIndex.foreground,
     },
   },
 
@@ -104,7 +104,7 @@ export const slideContent = style({
       content: '',
       position: 'absolute',
       inset: 0,
-      zIndex: 1,
+      zIndex: zIndex.foreground,
       background: 'linear-gradient(180deg, rgba(39, 39, 39, 0.80) 0%, #272727 100%)',
       pointerEvents: 'none',
       transition: 'opacity 320ms ease',
