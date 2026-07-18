@@ -1,4 +1,4 @@
-import type { ProfileStepTypes } from '../../types/header';
+import type { ProfileStepTypes } from '../../types/profileStep';
 
 export const STEP_HEADER_LABEL = '응답자 정보';
 
