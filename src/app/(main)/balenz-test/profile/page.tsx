@@ -57,7 +57,7 @@ export default function ProfilePage() {
       gender: selectedGender,
     });
 
-    router.push('/balenz-test/question');
+    router.push(ROUTES.BALENZ_TEST_QUESTIONS);
   };
 
   const handleSkip = () => {
@@ -68,7 +68,7 @@ export default function ProfilePage() {
       gender: null, // TODO: API 명세에 맞는 건너뛰기 값으로 변경
     });
 
-    router.push('/balenz-test/question');
+    router.push(ROUTES.BALENZ_TEST_QUESTIONS);
   };
 
   return (
