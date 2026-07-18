@@ -1,4 +1,4 @@
-import type { LinkDetailTypes } from '@/app/(main)/article/link/[id]/types/linkDetailSection';
+import type { LinkDetailTypes } from '@/app/(main)/(with-header)/article/link/[id]/types/linkDetailSection';
 
 export const LINK_DETAIL_MOCK = {
   id: 5,

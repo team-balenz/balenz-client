@@ -1,4 +1,4 @@
-import type { ScopeDetailTypes } from '@/app/(main)/article/scope/[id]/types/scopeDetailSection';
+import type { ScopeDetailTypes } from '@/app/(main)/(with-header)/article/scope/[id]/types/scopeDetailSection';
 
 export const SCOPE_DETAIL_MOCK = {
   id: 19,

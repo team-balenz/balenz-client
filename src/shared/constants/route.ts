@@ -13,6 +13,11 @@ export const ROUTES = {
   JOIN: '/join',
   SEARCH: '/search',
   DAILY_FOCUS: '/daily-focus',
+
+  BALENZ_TEST: '/balenz-test',
+  BALENZ_TEST_PROFILE: '/balenz-test/profile',
+  BALENZ_TEST_QUESTIONS: '/balenz-test/questions',
+
   SCOPE_DETAIL: (id: number | string) => `/article/scope/${id}`,
   LINK_DETAIL: (id: number | string) => `/article/link/${id}`,
 } as const;

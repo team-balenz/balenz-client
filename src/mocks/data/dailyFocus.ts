@@ -1,4 +1,4 @@
-import type { DailyFocusData } from '@/app/(main)/daily-focus/types/types';
+import type { DailyFocusData } from '@/app/(main)/(with-header)/daily-focus/types/types';
 
 export const MOCK_DAILY_FOCUS = {
   articles: [
