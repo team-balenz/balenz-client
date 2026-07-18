@@ -1,4 +1,4 @@
-import * as styles from './stepheader.css';
+import * as styles from './stepHeader.css';
 
 interface StepHeaderProps {
   section: string;
