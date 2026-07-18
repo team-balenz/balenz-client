@@ -4,6 +4,8 @@
 
 export const zIndex = {
   base: 0,
+  foreground: 1,
+  questionSubmitBar: 10,
   carouselCard: 10, // ScopeCarouselItem 내부 cardContent
   carouselBar: 20, // ScopeCarouselItem 내부 ideologyBar
   header: 100,

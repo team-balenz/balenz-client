@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { color, typography, media } from '@/shared/styles';
+import { color, typography, media, zIndex } from '@/shared/styles';
 
 export const container = style({
   position: 'relative',
@@ -17,7 +17,7 @@ export const image = style({
 
 export const overlay = style({
   position: 'relative',
-  zIndex: 1,
+  zIndex: zIndex.foreground,
   width: '100%',
   height: '100%',
   padding: '0.62rem 0.63rem 0.67rem 1.25rem',
