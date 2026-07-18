@@ -1,4 +1,4 @@
-import { NewsArticleItemData } from '@/app/(main)/search/types/search';
+import { NewsArticleItemData } from '@/app/(main)/(with-header)/search/types/search';
 import { ScopeArticleItemData } from '@/shared/components/scopeArticleItem/types';
 
 // 검색 결과 목데이터
