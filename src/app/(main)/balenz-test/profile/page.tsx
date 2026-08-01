@@ -20,7 +20,7 @@ export default function ProfilePage() {
 
   const [currentStep, setCurrentStep] = useState<ProfileStepTypes>('birthYear');
 
-  const [selectedBirthYear, setSelectedBirthYear] = useState<number | null>(null);
+  const [selectedBirthYear, setSelectedBirthYear] = useState<number>(2000);
   const [selectedGender, setSelectedGender] = useState<GenderType | null>(null);
 
   const isBirthYearStep = currentStep === 'birthYear';
@@ -35,17 +35,9 @@ export default function ProfilePage() {
   };
 
   const handleNext = () => {
-    // TODO: BirthYearSlider 구현 후 출생 연도 선택 여부에 따라 다음 단계로 이동
-    // if (isBirthYearStep) {
-    //   if (selectedBirthYear === null) return;
-
-    //   setCurrentStep('gender');
-    //   return;
-    // }
-
-    // TODO: BirthYearSlider 구현 전 임시 처리
     if (isBirthYearStep) {
-      setSelectedBirthYear(2026);
+      if (selectedBirthYear === null) return;
+
       setCurrentStep('gender');
       return;
     }
