@@ -151,16 +151,6 @@ const BirthYearSlider = ({
     viewportRef.current?.focus({ preventScroll: true });
   }, []);
 
-  const handleViewportBlur = () => {
-    if (isEditing) {
-      return;
-    }
-
-    requestAnimationFrame(() => {
-      viewportRef.current?.focus({ preventScroll: true });
-    });
-  };
-
   /**
    * 선택된 가운데 연도를 직접 입력 모드로 전환
    */
@@ -292,7 +282,6 @@ const BirthYearSlider = ({
         role="group"
         aria-label={`출생 연도 선택. 현재 선택된 연도는 ${selectedYear}년입니다.`}
         onKeyDown={handleSliderKeyDown}
-        onBlur={handleViewportBlur}
       >
         <div className={styles.container}>
           {years.map((year) => {
