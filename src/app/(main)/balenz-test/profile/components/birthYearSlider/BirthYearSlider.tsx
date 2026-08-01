@@ -198,7 +198,8 @@ const BirthYearSlider = ({
 
   const adjustDraftYear = useCallback(
     (delta: number) => {
-      const nextYear = clampYear(Number(draftYear || selectedYear) + delta, minYear, maxYear);
+      const baseYear = /^\d{4}$/.test(draftYear) ? Number(draftYear) : selectedYear;
+      const nextYear = clampYear(baseYear + delta, minYear, maxYear);
 
       setDraftYear(String(nextYear));
       setErrorMessage('');
