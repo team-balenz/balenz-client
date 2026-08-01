@@ -36,8 +36,6 @@ export default function ProfilePage() {
 
   const handleNext = () => {
     if (isBirthYearStep) {
-      if (selectedBirthYear === null) return;
-
       setCurrentStep('gender');
       return;
     }
@@ -88,7 +86,7 @@ export default function ProfilePage() {
           <StepNavigation
             showPrevious
             showSkip={!isBirthYearStep}
-            isNextDisabled={isBirthYearStep ? selectedBirthYear === null : selectedGender === null}
+            isNextDisabled={isBirthYearStep ? false : selectedGender === null}
             onPrevious={handlePrevious}
             onNext={handleNext}
             onSkip={handleSkip}
