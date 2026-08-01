@@ -88,11 +88,7 @@ export default function ProfilePage() {
           <StepNavigation
             showPrevious
             showSkip={!isBirthYearStep}
-            // TODO: BirthYearSlider 구현 후 출생 연도 선택 여부도 버튼 활성화 조건에 반영
-            // isNextDisabled={isBirthYearStep ? selectedBirthYear === null : selectedGender === null}
-
-            // TODO: BirthYearSlider 구현 전 임시 처리
-            isNextDisabled={!isBirthYearStep && selectedGender === null}
+            isNextDisabled={isBirthYearStep ? selectedBirthYear === null : selectedGender === null}
             onPrevious={handlePrevious}
             onNext={handleNext}
             onSkip={handleSkip}
