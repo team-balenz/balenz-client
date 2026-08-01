@@ -321,8 +321,7 @@ const BirthYearSlider = ({
                       const isCommitted = commitInput();
 
                       if (!isCommitted) {
-                        setDraftYear(String(selectedYear));
-                        setIsEditing(false);
+                        cancelEditing();
                       }
                     }}
                   />
