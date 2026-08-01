@@ -70,10 +70,10 @@ export const birthYearNavigationArea = style({
 
   '@media': {
     [media.tablet]: {
-      marginTop: '4rem',
+      marginTop: '23.62rem',
     },
     [media.mobile]: {
-      marginTop: '3rem',
+      marginTop: '22.56rem',
     },
   },
 });
