@@ -5,9 +5,9 @@ export const BUSINESS_INFO = [
 ] as const;
 
 export const POLICY_LINKS = [
-  { label: '이용약관', href: '/terms' },
-  { label: '개인정보처리방침', href: '/privacy' },
-  { label: '콘텐츠 이용정책', href: '/content-policy' },
+  { label: '이용약관', href: '#' },
+  { label: '개인정보처리방침', href: '#' },
+  { label: '콘텐츠 이용정책', href: '#' },
 ] as const;
 
 export const NOTICE_LINES = [
