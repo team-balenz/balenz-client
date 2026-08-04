@@ -28,7 +28,7 @@ const Footer = () => {
                 </div>
               ))}
 
-              <div className={styles.infoRow} aria-label="서비스 정책">
+              <div className={styles.policyInfoRow} aria-label="서비스 정책">
                 {POLICY_LINKS.map(({ label, href }, index) => (
                   <Fragment key={label}>
                     {index > 0 && <span aria-hidden="true">|</span>}

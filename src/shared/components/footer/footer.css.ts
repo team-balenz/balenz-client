@@ -101,10 +101,21 @@ export const infoRow = style({
     },
     [media.mobile]: {
       ...typography.phone.body1,
-      gap: '0.5rem',
+      gap: '1.25rem',
     },
   },
 });
+
+export const policyInfoRow = style([
+  infoRow,
+  {
+    '@media': {
+      [media.mobile]: {
+        gap: '0.5rem',
+      },
+    },
+  },
+]);
 
 export const noticeSection = style({
   ...typography.desktop.body1,
