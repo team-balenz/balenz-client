@@ -65,7 +65,7 @@ const Footer = () => {
         <div className={styles.divider} />
 
         <div className={styles.bottomSection}>
-          <Link href="/" aria-label="발렌즈 홈으로 이동">
+          <Link href="/#top" aria-label="발렌즈 홈 최상단으로 이동">
             <Image
               src={FOOTER_LOGO.src}
               alt={FOOTER_LOGO.alt}

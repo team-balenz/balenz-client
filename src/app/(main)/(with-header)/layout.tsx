@@ -8,6 +8,7 @@ export default function MainLayout({
 }>) {
   return (
     <>
+      <div id="top" />
       <Header />
       {children}
       <Footer />
